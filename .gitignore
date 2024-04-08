@@ -1,2 +1,4 @@
 .env
+*.tar.gz
+model
 test-trainer

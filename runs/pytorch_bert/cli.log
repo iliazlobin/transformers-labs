@@ -1,0 +1,29 @@
+[2024-04-07 14:07:56,092][launcher][INFO] - ََAllocating process launcher
+[2024-04-07 14:07:56,092][process][INFO] - 	+ Setting multiprocessing start method to spawn.
+[2024-04-07 14:07:56,095][process][INFO] - 	+ Launched benchmark in isolated process 194510.
+[PROC-0][2024-04-07 14:07:57,779][datasets][INFO] - PyTorch version 2.2.2+cu121 available.
+[PROC-0][2024-04-07 14:07:58,453][backend][INFO] - َAllocating pytorch backend
+[PROC-0][2024-04-07 14:07:58,453][backend][INFO] - 	+ Setting random seed to 42
+[PROC-0][2024-04-07 14:07:58,854][pytorch][INFO] - 	+ Using AutoModel class AutoModelForMaskedLM
+[PROC-0][2024-04-07 14:07:58,855][pytorch][INFO] - 	+ Creating backend temporary directory
+[PROC-0][2024-04-07 14:07:58,855][pytorch][INFO] - 	+ Loading model with random weights
+[PROC-0][2024-04-07 14:07:58,855][pytorch][INFO] - 	+ Creating no weights model
+[PROC-0][2024-04-07 14:07:58,855][pytorch][INFO] - 	+ Creating no weights model directory
+[PROC-0][2024-04-07 14:07:58,855][pytorch][INFO] - 	+ Creating no weights model state dict
+[PROC-0][2024-04-07 14:07:58,858][pytorch][INFO] - 	+ Saving no weights model safetensors
+[PROC-0][2024-04-07 14:07:58,859][pytorch][INFO] - 	+ Saving no weights model pretrained config
+[PROC-0][2024-04-07 14:07:58,859][pytorch][INFO] - 	+ Loading no weights AutoModel
+[PROC-0][2024-04-07 14:07:58,859][pytorch][INFO] - 	+ Loading model directly on device: cuda
+[PROC-0][2024-04-07 14:07:59,235][pytorch][INFO] - 	+ Turning on model's eval mode
+[PROC-0][2024-04-07 14:07:59,240][benchmark][INFO] - Allocating inference benchmark
+[PROC-0][2024-04-07 14:07:59,241][inference][INFO] - 	+ Creating input generator
+[PROC-0][2024-04-07 14:07:59,241][input][INFO] - 	+ Using fill-mask task generator
+[PROC-0][2024-04-07 14:07:59,241][inference][INFO] - 	+ Generating Inference inputs
+[PROC-0][2024-04-07 14:07:59,243][inference][INFO] - 	+ Preparing Inference inputs
+[PROC-0][2024-04-07 14:07:59,244][inference][INFO] - 	+ Initializing Inference report
+[PROC-0][2024-04-07 14:07:59,244][inference][INFO] - 	+ Preparing backend for Inference
+[PROC-0][2024-04-07 14:07:59,244][inference][INFO] - 	+ Warming up backend for Inference
+[PROC-0][2024-04-07 14:07:59,428][inference][INFO] - 	+ Running memory tracking
+[PROC-0][2024-04-07 14:07:59,428][memory][INFO] - 	+ Tracking RAM memory
+[PROC-0][2024-04-07 14:07:59,428][memory][INFO] - 	+ Tracking VRAM memory of CUDA devices: [0]
+[PROC-0][2024-04-07 14:07:59,428][memory][INFO] - 	+ Tracking Allocated/Reserved memory of 1 Pytorch CUDA devices

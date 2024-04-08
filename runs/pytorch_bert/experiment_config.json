@@ -1,0 +1,93 @@
+{
+    "experiment_name": "pytorch_bert",
+    "backend": {
+        "name": "pytorch",
+        "version": "2.2.2+cu121",
+        "_target_": "optimum_benchmark.backends.pytorch.backend.PyTorchBackend",
+        "model": "bert-base-uncased",
+        "task": "fill-mask",
+        "library": "transformers",
+        "device": "cuda",
+        "device_ids": "0",
+        "seed": 42,
+        "inter_op_num_threads": null,
+        "intra_op_num_threads": null,
+        "hub_kwargs": {
+            "revision": "main",
+            "force_download": false,
+            "local_files_only": false,
+            "trust_remote_code": false
+        },
+        "no_weights": true,
+        "device_map": null,
+        "torch_dtype": null,
+        "amp_autocast": false,
+        "amp_dtype": null,
+        "eval_mode": true,
+        "to_bettertransformer": false,
+        "low_cpu_mem_usage": null,
+        "attn_implementation": null,
+        "cache_implementation": null,
+        "torch_compile": false,
+        "torch_compile_config": {},
+        "quantization_scheme": null,
+        "quantization_config": {},
+        "deepspeed_inference": false,
+        "deepspeed_inference_config": {},
+        "peft_type": null,
+        "peft_config": {}
+    },
+    "launcher": {
+        "name": "process",
+        "_target_": "optimum_benchmark.launchers.process.launcher.ProcessLauncher",
+        "device_isolation": false,
+        "start_method": "spawn"
+    },
+    "benchmark": {
+        "name": "inference",
+        "_target_": "optimum_benchmark.benchmarks.inference.benchmark.InferenceBenchmark",
+        "duration": 10,
+        "warmup_runs": 10,
+        "input_shapes": {
+            "batch_size": 2,
+            "num_choices": 2,
+            "sequence_length": 16
+        },
+        "new_tokens": null,
+        "latency": true,
+        "memory": true,
+        "energy": false,
+        "forward_kwargs": {},
+        "generate_kwargs": {},
+        "call_kwargs": {}
+    },
+    "environment": {
+        "cpu": " 12th Gen Intel(R) Core(TM) i9-12900KF",
+        "cpu_count": 24,
+        "cpu_ram_mb": 33547.739136,
+        "system": "Linux",
+        "machine": "x86_64",
+        "platform": "Linux-5.15.146.1-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+        "processor": "x86_64",
+        "python_version": "3.12.2",
+        "gpu": [
+            "NVIDIA GeForce RTX 3080"
+        ],
+        "gpu_count": 1,
+        "gpu_vram_mb": 10737418240,
+        "optimum_benchmark_version": "0.2.0",
+        "optimum_benchmark_commit": "1f9d6451269c44786f5e5a7f6f0c611fcb20aeb1",
+        "transformers_version": "4.39.2",
+        "transformers_commit": null,
+        "accelerate_version": "0.28.0",
+        "accelerate_commit": null,
+        "diffusers_version": null,
+        "diffusers_commit": null,
+        "optimum_version": null,
+        "optimum_commit": null,
+        "timm_version": null,
+        "timm_commit": null,
+        "peft_version": null,
+        "peft_commit": null
+    }
+}
