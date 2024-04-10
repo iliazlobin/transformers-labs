@@ -49,12 +49,50 @@ resource "azurerm_network_interface" "this" {
   }
 }
 
-resource "azurerm_virtual_machine" "this" {
-  name                  = "workstation-test"
+# resource "azurerm_virtual_machine" "test" {
+#   name                  = "workstation-test"
+#   location              = azurerm_resource_group.this.location
+#   resource_group_name   = azurerm_resource_group.this.name
+#   network_interface_ids = [azurerm_network_interface.this.id]
+#   vm_size               = "Standard_B1s"
+
+#   delete_os_disk_on_termination    = true
+#   delete_data_disks_on_termination = true
+
+#   storage_image_reference {
+#     publisher = "Canonical"
+#     offer     = "0001-com-ubuntu-confidential-vm-jammy"
+#     sku       = "22_04-lts-cvm"
+#     version   = "latest"
+#   }
+
+#   storage_os_disk {
+#     name              = "workstation-standard-disk"
+#     caching           = "ReadWrite"
+#     create_option     = "FromImage"
+#     managed_disk_type = "Standard_LRS"
+#   }
+
+#   os_profile {
+#     computer_name  = "workstation"
+#     admin_username = "izlobin"
+#   }
+
+#   os_profile_linux_config {
+#     disable_password_authentication = true
+#     ssh_keys {
+#       path     = "/home/izlobin/.ssh/authorized_keys"
+#       key_data = file("~/.ssh/id_rsa.pub")
+#     }
+#   }
+# }
+
+resource "azurerm_virtual_machine" "d2s" {
+  name                  = "workstation-d2s"
   location              = azurerm_resource_group.this.location
   resource_group_name   = azurerm_resource_group.this.name
   network_interface_ids = [azurerm_network_interface.this.id]
-  vm_size               = "Standard_B1s"
+  vm_size               = "Standard_D2s_v3"
 
   delete_os_disk_on_termination    = true
   delete_data_disks_on_termination = true
@@ -84,6 +122,31 @@ resource "azurerm_virtual_machine" "this" {
       path     = "/home/izlobin/.ssh/authorized_keys"
       key_data = file("~/.ssh/id_rsa.pub")
     }
+  }
+
+  connection {
+    type        = "ssh"
+    user        = "izlobin"
+    private_key = file("~/.ssh/id_rsa")
+    host        = azurerm_public_ip.this.ip_address
+  }
+
+  provisioner "file" {
+    source      = "~/back.tar.gz"
+    destination = "~/back.tar.gz"
+  }
+
+  provisioner "file" {
+    source      = "~/.ssh/id_rsa"
+    destination = "~/.ssh/id_rsa"
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "tar xvzf ~/back.tar.gz",
+      "cat ~/.bashrc.iz >> ~/.bashrc",
+      "ls -la",
+    ]
   }
 }
 
