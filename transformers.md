@@ -100,3 +100,16 @@ export HYDRA_FULL_ERROR=1
 optimum-benchmark --config-dir benchmark/ --config-name pytorch_bert
 
 ```
+
+## Ruff
+```sh
+/home/izlobin/.vscode-server/extensions/charliermarsh.ruff-2024.16.0-linux-x64/bundled/libs/bin/ruff --version
+
+/home/izlobin/.vscode-server/extensions/charliermarsh.ruff-2024.16.0-linux-x64/bundled/libs/bin/ruff \
+  format --stdin-filename /home/izlobin/ws/transformers-labs/model-evaluation/evaluate.py
+
+ruff --version
+ruff format /home/izlobin/ws/transformers-labs/model-evaluation/test.py
+ruff format /home/izlobin/ws/transformers-labs/model-evaluation/evaluate.py
+
+```

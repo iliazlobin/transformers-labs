@@ -1,4 +1,5 @@
 .env
 *.tar.gz
+**/__pycache__
 model
 test-trainer
