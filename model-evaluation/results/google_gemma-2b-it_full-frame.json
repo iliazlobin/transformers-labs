@@ -1,0 +1,47 @@
+{
+  "rouge": {
+    "model": "google/gemma-2b-it",
+    "scores": {
+      "rouge1": 0.5475570281,
+      "rouge2": 0.5297068293,
+      "rougeL": 0.5462733688,
+      "rougeLsum": 0.546584887
+    },
+    "sps": 3.9484482622,
+    "task": "fluency",
+    "total_params": 2506172416,
+    "total_samples": 100
+  },
+  "sacreblue": {
+    "model": "google/gemma-2b-it",
+    "scores": {
+      "score": 36.509113377,
+      "counts": [4223, 4033, 3853, 3684],
+      "totals": [10951, 10851, 10751, 10651],
+      "precisions": [38.562688339, 37.167081375, 35.8385266487, 34.5883015679],
+      "bp": 1.0,
+      "sys_len": 10951,
+      "ref_len": 4283
+    },
+    "sps": 3.9484482622,
+    "task": "fluency",
+    "total_params": 2506172416,
+    "total_samples": 100
+  },
+  "sari": {
+    "model": "google/gemma-2b-it",
+    "scores": { "sari": 65.9307283548 },
+    "sps": 3.9484482622,
+    "task": "fluency",
+    "total_params": 2506172416,
+    "total_samples": 100
+  },
+  "em": {
+    "model": "google/gemma-2b-it",
+    "scores": { "exact_match": 0.0 },
+    "sps": 3.9484482622,
+    "task": "fluency",
+    "total_params": 2506172416,
+    "total_samples": 100
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "rouge": {
+    "model": "google/flan-t5-large",
+    "scores": {
+      "rouge1": 0.9717958308,
+      "rouge2": 0.9549616966,
+      "rougeL": 0.9717279462,
+      "rougeLsum": 0.9717895551
+    },
+    "sps": 3.5656045534,
+    "task": "fluency",
+    "total_params": 783150080,
+    "total_samples": 100
+  },
+  "sacreblue": {
+    "model": "google/flan-t5-large",
+    "scores": {
+      "score": 89.7566243058,
+      "counts": [4068, 3823, 3594, 3377],
+      "totals": [4217, 4117, 4017, 3917],
+      "precisions": [
+        96.4666824757, 92.8588778237, 89.4697535474, 86.2139392392
+      ],
+      "bp": 0.9844709028,
+      "sys_len": 4217,
+      "ref_len": 4283
+    },
+    "sps": 3.5656045534,
+    "task": "fluency",
+    "total_params": 783150080,
+    "total_samples": 100
+  },
+  "sari": {
+    "model": "google/flan-t5-large",
+    "scores": { "sari": 61.0133027336 },
+    "sps": 3.5656045534,
+    "task": "fluency",
+    "total_params": 783150080,
+    "total_samples": 100
+  },
+  "em": {
+    "model": "google/flan-t5-large",
+    "scores": { "exact_match": 0.0 },
+    "sps": 3.5656045534,
+    "task": "fluency",
+    "total_params": 783150080,
+    "total_samples": 100
+  }
+}

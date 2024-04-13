@@ -96,11 +96,11 @@ def process_batch(batch, idx, **kwargs):
 
 
 all_flat_frames = []
+if os.path.exists("results/all-flat-frames.csv"):
+    all_flat_frames = pd.read_csv("results/all-flat-frames.csv").to_dict("records")
 
 
-def save_frame(model_name, model_alias, total_samples, processed_samples, processed_sps):
-    model_name = "grammarly/coedit-large"
-
+def save_frame(model_name, model_alias, total_samples, processed_samples, processed_sps, total_params):
     scores = calculate_scores(processed_samples)
     # pprint(scores)
 
@@ -117,6 +117,7 @@ def save_frame(model_name, model_alias, total_samples, processed_samples, proces
     base_frame = {
         "model": model_name,
         "total_samples": total_samples,
+        "total_params": total_params,
         "sps": processed_sps,
         "task": "fluency",
     }
@@ -160,7 +161,7 @@ def main():
     utilization = calculate_utilization()
     utilization_str = format_utilization_narrow(utilization)
     print(
-        f"total/used/cuda/res/ram(Gb): {utilization_str["total_memory"]}/{utilization_str["memory_used"]}/"
+        f"total/used/cuda/res/ram (Gb): {utilization_str["total_memory"]}/{utilization_str["memory_used"]}/"
         f"{utilization_str["cuda_allocated"]}/{utilization_str["cuda_reserved"]}/{utilization_str["ram_usage"]}"
     )
 
@@ -168,11 +169,15 @@ def main():
     batch_size = 20
     loaded_samples = get_iterater_samples(label="fluency", num_samples=num_samples)
     total_samples = len(loaded_samples)
-    pprint(loaded_samples)
+    # pprint(loaded_samples)
 
     start_time = time.time()
 
-    model_names = ["grammarly/coedit-large"]
+    model_names = [
+        "grammarly/coedit-large",
+        "google/flan-t5-large",
+    ]
+
     model_count = 0
     total_models = len(model_names)
     for model_name in model_names:
@@ -214,6 +219,7 @@ def main():
             total_samples=total_samples,
             processed_samples=processed_samples,
             processed_sps=processed_sps,
+            total_params=total_params,
         )
 
     print(f"End")
