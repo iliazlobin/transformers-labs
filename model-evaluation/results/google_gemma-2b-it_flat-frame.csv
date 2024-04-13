@@ -1,2 +1,0 @@
-model,total_samples,sps,task,total_params,score.rouge.rouge1,score.sacreblue.score,score.sari.sari,score.em.exact_match
-google/gemma-2b-it,100,3.948448262160071,fluency,2506172416,0.5475570280830255,36.509113376975606,65.93072835484202,0.0

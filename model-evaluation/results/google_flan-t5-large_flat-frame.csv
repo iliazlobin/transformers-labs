@@ -1,2 +1,2 @@
-model,total_samples,sps,task,total_params,score.rouge.rouge1,score.sacreblue.score,score.sari.sari,score.em.exact_match
-google/flan-t5-large,100,3.5656045534009535,fluency,783150080,0.9717958307815554,89.75662430584337,61.013302733603616,0.0
+model,total_samples,total_params,sps,task,score.rouge.rouge1,score.sacreblue.score,score.sari.sari,score.em.exact_match
+google/flan-t5-large,100,783150080,1.1796385131258953,fluency,0.9716951871940851,89.45734697367203,60.91905343829529,0.0

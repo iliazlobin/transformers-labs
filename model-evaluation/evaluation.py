@@ -11,13 +11,10 @@ import torch
 from datasets.utils.logging import disable_progress_bar
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer, T5ForConditionalGeneration, T5Tokenizer
 from utils.dataset import get_iterater_samples
-from utils.metric import calculate_scores, em_metric, rouge_metric, sacreblue_metric, sari_metric
+from utils.metric import calculate_scores
 from utils.monitoring import (
     calculate_utilization,
-    format_utilization,
     format_utilization_narrow,
-    print_utilization,
-    print_utilization_header,
 )
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -147,9 +144,9 @@ def save_frame(model_name, model_alias, total_samples, processed_samples, proces
 
     full_frame = base_frame.copy()
     full_frame.update({"scores": scores})
-    full_df = pd.DataFrame.from_records(full_frame)
+    full_df = pd.DataFrame.from_records([full_frame])
 
-    full_df.to_json(f"results/{model_alias}_full-frame.json", orient="index")
+    full_df.to_json(f"results/{model_alias}_full-frame.json", orient="records")
 
 
 disable_progress_bar()
