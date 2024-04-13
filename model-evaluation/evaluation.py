@@ -1,13 +1,17 @@
+import os
 import sys
 import threading
 import time
 from pprint import pprint
 
 import debugpy
+import numpy as np
+import pandas as pd
 import torch
+from datasets.utils.logging import disable_progress_bar
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer, T5ForConditionalGeneration, T5Tokenizer
 from utils.dataset import get_iterater_samples
-from utils.metric import em_metric, rouge_metric, sacreblue_metric, sari_metric
+from utils.metric import calculate_scores, em_metric, rouge_metric, sacreblue_metric, sari_metric
 from utils.monitoring import (
     calculate_utilization,
     format_utilization,
@@ -20,24 +24,27 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 pprint(f"Device: {device}")
 torch.cuda.empty_cache()
 
-# Load model
-tokenizer = AutoTokenizer.from_pretrained("grammarly/coedit-large")
-# model = T5ForConditionalGeneration.from_pretrained("grammarly/coedit-large", device_map=0)
-model = T5ForConditionalGeneration.from_pretrained("grammarly/coedit-large")
-model = model.to(device)
 
-print(f"Allocated: {torch.cuda.memory_allocated(device)/1024**3:.2f} GB")
-print(f"Reserved: {torch.cuda.memory_reserved(device)/1024**3:.2f} GB")
+def load_model(model_name):
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    # model = T5ForConditionalGeneration.from_pretrained(model_name, device_map=0)
+    model = T5ForConditionalGeneration.from_pretrained(model_name)
+    model = model.to(device)
+    print(
+        f"Model loaded, allocated/reserved (Gb): {torch.cuda.memory_allocated(device)/1024**3:.2f}/{torch.cuda.memory_reserved(device)/1024**3:.2f}"
+    )
 
-# Model info
-total_params = sum(p.numel() for p in model.parameters())
-print(f"Total Parameters: {total_params}")
-total_trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
-print(f"Trainable Parameters: {total_trainable_params}")
-# total_memory_GB = total_params * 4 / (1024**3)
-# print(f"Estimated model memory: {total_memory_GB:.2f} GB")
-# for param_tensor in model.state_dict():
-#     print(param_tensor, "\t", model.state_dict()[param_tensor].size())
+    # Model info
+    total_params = sum(p.numel() for p in model.parameters())
+    total_trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
+    print(f"Total/trainable params: {total_params}/{total_trainable_params}")
+    # total_memory_GB = total_params * 4 / (1024**3)
+    # print(f"Estimated model memory: {total_memory_GB:.2f} GB")
+    # for param_tensor in model.state_dict():
+    #     print(param_tensor, "\t", model.state_dict()[param_tensor].size())
+
+    return model, tokenizer, total_params, total_trainable_params
+
 
 # Utilization
 utilization = calculate_utilization()
@@ -58,9 +65,13 @@ torch.cuda.set_per_process_memory_fraction(0.95, 0)
 
 
 # Process
-def process_batch(batch):
-    num_tokens = len(batch["task"])
+def process_batch(batch, idx, **kwargs):
+    num_samples = len(batch["task"])
     start_time = time.time()
+
+    model = kwargs.get("model")
+    tokenizer = kwargs.get("tokenizer")
+    total_samples = kwargs.get("total_samples")
 
     input_ids = tokenizer(batch["task"], padding=True, return_tensors="pt").input_ids.to(device)
     # input_ids = tokenizer(item["task"], return_tensors="pt").input_ids
@@ -70,50 +81,77 @@ def process_batch(batch):
 
     end_time = time.time()
     elapsed_time = end_time - start_time
-    tps = num_tokens / elapsed_time
-    tps_str = f"{tps:.2f}"
+    sps = num_samples / elapsed_time
+    sps_str = f"{sps:.2f}"
 
     utilization = calculate_utilization()
     utilization_str = format_utilization_narrow(utilization)
     print(
-        f"total/used/cuda/res/ram(Gb): {utilization_str["total_memory"]}/{utilization_str["memory_used"]}/"
-        f"{utilization_str["cuda_allocated"]}/{utilization_str["cuda_reserved"]}/{utilization_str["ram_usage"]}"
-    )
-    print(
-        f"batch/tps: {num_tokens}/{tps_str}"
+        f"{idx[0]}-{idx[-1]}/{total_samples} | total/used/cuda/res/ram(Gb): {utilization_str["total_memory"]}/{utilization_str["memory_used"]}/"
+        f"{utilization_str["cuda_allocated"]}/{utilization_str["cuda_reserved"]}/{utilization_str["ram_usage"]} | "
+        f"batch/sps: {num_samples}/{sps_str}"
     )
 
     return {"processed": processed}
 
 
-# Calculate scores
-def calculate_scores(processed_samples):
-    rouge_score = rouge_metric.compute(
-        predictions=processed_samples["processed"], references=processed_samples["references"]
-    )
-    # pprint(rouge_score)
+all_flat_frames = []
 
-    sacreblue_score = sacreblue_metric.compute(
-        predictions=processed_samples["processed"], references=processed_samples["references"]
-    )
-    # pprint(sacreblue_score)
 
-    sari_score = sari_metric.compute(
-        sources=processed_samples["source"],
-        predictions=processed_samples["processed"],
-        references=processed_samples["references"],
-    )
-    # pprint(sari_score)
+def save_frame(model_name, model_alias, total_samples, processed_samples, processed_sps):
+    model_name = "grammarly/coedit-large"
 
-    score = em_metric.compute(predictions=processed_samples["processed"], references=processed_samples["reference"])
-    # pprint(score)
+    scores = calculate_scores(processed_samples)
+    # pprint(scores)
 
-    return {
-        "rouge": rouge_score,
-        "sacreblue": sacreblue_score,
-        "sari": sari_score,
-        "em": score,
+    score_paths = [
+        "rouge.rouge1",
+        # "rouge.rouge2",
+        # "rouge.rougeL",
+        # "rouge.rougeLsum",
+        "sacreblue.score",
+        "sari.sari",
+        "em.exact_match",
+    ]
+
+    base_frame = {
+        "model": model_name,
+        "total_samples": total_samples,
+        "sps": processed_sps,
+        "task": "fluency",
     }
+
+    normalized_scores = {}
+    for k, v in scores.items():
+        for k2, v2 in v.items():
+            if not isinstance(v2, list):
+                # normalized_scores[f"score.{k}.{k2}"] = v2
+                path = f"{k}.{k2}"
+                if path in score_paths:
+                    normalized_scores[f"score.{k}.{k2}"] = v2
+    # pprint(normalized_scores)
+
+    flat_frame = base_frame.copy()
+    flat_frame.update(normalized_scores)
+    # pprint(frame)
+
+    flat_df = pd.DataFrame.from_records([flat_frame])
+    # pprint(df)
+    print(flat_df.head().to_markdown(index=False))
+    flat_df.to_csv(f"results/{model_alias}_flat-frame.csv", index=False)
+
+    all_flat_frames.append(flat_frame)
+    all_flat_dfs = pd.DataFrame.from_records(all_flat_frames)
+    all_flat_dfs.to_csv(f"results/all-flat-frames.csv", index=False)
+
+    full_frame = base_frame.copy()
+    full_frame.update({"scores": scores})
+    full_df = pd.DataFrame.from_records(full_frame)
+
+    full_df.to_json(f"results/{model_alias}_full-frame.json", orient="index")
+
+
+disable_progress_bar()
 
 
 def main():
@@ -126,15 +164,57 @@ def main():
         f"{utilization_str["cuda_allocated"]}/{utilization_str["cuda_reserved"]}/{utilization_str["ram_usage"]}"
     )
 
-    loaded_samples = get_iterater_samples(label="fluency", num_samples=100)
+    num_samples = 100
+    batch_size = 20
+    loaded_samples = get_iterater_samples(label="fluency", num_samples=num_samples)
+    total_samples = len(loaded_samples)
     pprint(loaded_samples)
 
-    processed_samples = loaded_samples.map(process_batch, num_proc=1, batched=True, batch_size=20)
-    pprint(processed_samples)
-    pprint(processed_samples["processed"][:2])
+    start_time = time.time()
 
-    scores = calculate_scores(processed_samples)
-    pprint(scores)
+    model_names = ["grammarly/coedit-large"]
+    model_count = 0
+    total_models = len(model_names)
+    for model_name in model_names:
+        model_count += 1
+        model_alias = model_name.replace("/", "_")
+
+        file_path = f"results/{model_alias}_full-frame.json"
+        if os.path.exists(file_path):
+            print(f"Model has already been processed ({model_count}/{total_models}): {model_name}")
+            continue
+
+        print(f"Processing model ({model_count}/{total_models}): {model_name}")
+
+        model, tokenizer, total_params, total_trainable_params = load_model(model_name)
+
+        processed_samples = loaded_samples.map(
+            process_batch,
+            fn_kwargs={
+                "model": model,
+                "tokenizer": tokenizer,
+                "total_samples": total_samples,
+            },
+            num_proc=1,
+            batched=True,
+            batch_size=batch_size,
+            with_indices=True,
+        )
+
+        end_time = time.time()
+        elapsed_time = end_time - start_time
+        processed_sps = total_samples / elapsed_time
+
+        # scores = calculate_scores(processed_samples)
+        # pprint(scores)
+
+        save_frame(
+            model_name=model_name,
+            model_alias=model_alias,
+            total_samples=total_samples,
+            processed_samples=processed_samples,
+            processed_sps=processed_sps,
+        )
 
     print(f"End")
 
@@ -155,7 +235,6 @@ if __name__ == "__main__":
         main()
     finally:
         debugpy.wait_for_client()
-        debugpy.breakpoint()
         print(f"Finalling threads")
         for t in threading.enumerate():
             print(f"Thread: ", t.getName)

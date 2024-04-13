@@ -1,0 +1,2 @@
+model,total_samples,sps,task,score.rouge.rouge1,score.sacreblue.score,score.sari.sari,score.em.exact_match
+grammarly/coedit-large,100,2.925019695553183,fluency,0.9651016300868771,85.66081415729968,52.33387425863478,0.0

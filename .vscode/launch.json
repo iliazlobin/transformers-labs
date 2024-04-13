@@ -9,6 +9,7 @@
       "type": "debugpy",
       "request": "launch",
       "program": "${file}",
+      "cwd": "${fileDirname}",
       "envFile": "${workspaceFolder}/.env",
       // "env": {
       //   "PYTPYDEVD_DISABLE_FILE_VALIDATION": "0"

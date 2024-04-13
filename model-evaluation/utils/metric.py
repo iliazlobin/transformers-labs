@@ -20,6 +20,35 @@ sari_metric = evaluate.load("sari")
 em_metric = evaluate.load("exact_match")
 
 
+def calculate_scores(processed_samples):
+    rouge_score = rouge_metric.compute(
+        predictions=processed_samples["processed"], references=processed_samples["references"]
+    )
+    # pprint(rouge_score)
+
+    sacreblue_score = sacreblue_metric.compute(
+        predictions=processed_samples["processed"], references=processed_samples["references"]
+    )
+    # pprint(sacreblue_score)
+
+    sari_score = sari_metric.compute(
+        sources=processed_samples["source"],
+        predictions=processed_samples["processed"],
+        references=processed_samples["references"],
+    )
+    # pprint(sari_score)
+
+    score = em_metric.compute(predictions=processed_samples["processed"], references=processed_samples["reference"])
+    # pprint(score)
+
+    return {
+        "rouge": rouge_score,
+        "sacreblue": sacreblue_score,
+        "sari": sari_score,
+        "em": score,
+    }
+
+
 # def main():
 #     # Rouge metric
 #     samples = get_samples(grammarly_dataset, task="gec", num_samples=100)
