@@ -2,4 +2,5 @@
 *.tar.gz
 **/__pycache__
 model
+model-training/*-model*
 test-trainer
