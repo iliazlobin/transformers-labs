@@ -10,6 +10,11 @@ import pandas as pd
 import torch
 from datasets.utils.logging import disable_progress_bar
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer, T5ForConditionalGeneration, T5Tokenizer
+
+current_dir = os.getcwd()
+parent_dir = os.path.dirname(current_dir)
+sys.path.append(parent_dir)
+
 from utils.dataset import get_iterater_samples
 from utils.metric import calculate_scores
 from utils.monitoring import (
