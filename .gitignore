@@ -5,3 +5,4 @@ model
 model-train/*-model*
 model-train/*-train*
 test-trainer
+!*.ipynb
