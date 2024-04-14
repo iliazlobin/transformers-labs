@@ -1,0 +1,30 @@
+[
+  {
+    "model": "facebook/bart-large",
+    "total_samples": 100,
+    "sps": 1.3712062651,
+    "task": "fluency",
+    "total_params": 406291456,
+    "scores": {
+      "rouge": {
+        "rouge1": 0.8841852964,
+        "rouge2": 0.8565620623,
+        "rougeL": 0.8762177267,
+        "rougeLsum": 0.8749096829
+      },
+      "sacreblue": {
+        "score": 76.024562306,
+        "counts": [4073, 3799, 3559, 3339],
+        "totals": [4995, 4895, 4795, 4695],
+        "precisions": [
+          81.5415415415, 77.6098059244, 74.2231491137, 71.1182108626
+        ],
+        "bp": 1.0,
+        "sys_len": 4995,
+        "ref_len": 4283
+      },
+      "sari": { "sari": 57.8868026571 },
+      "em": { "exact_match": 0.0 }
+    }
+  }
+]

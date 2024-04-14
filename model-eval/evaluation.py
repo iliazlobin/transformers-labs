@@ -93,8 +93,8 @@ def process_batch(batch, idx, **kwargs):
 
 
 all_flat_frames = []
-if os.path.exists("results/all-flat-frames.csv"):
-    all_flat_frames = pd.read_csv("results/all-flat-frames.csv").to_dict("records")
+if os.path.exists("results/all-scores.csv"):
+    all_flat_frames = pd.read_csv("results/all-scores.csv").to_dict("records")
 
 
 def save_frame(model_name, model_alias, total_samples, processed_samples, processed_sps, total_params):
@@ -136,17 +136,17 @@ def save_frame(model_name, model_alias, total_samples, processed_samples, proces
     flat_df = pd.DataFrame.from_records([flat_frame])
     # pprint(df)
     print(flat_df.head().to_markdown(index=False))
-    flat_df.to_csv(f"results/{model_alias}_flat-frame.csv", index=False)
+    flat_df.to_csv(f"results/{model_alias}.csv", index=False)
 
     all_flat_frames.append(flat_frame)
     all_flat_dfs = pd.DataFrame.from_records(all_flat_frames)
-    all_flat_dfs.to_csv(f"results/all-flat-frames.csv", index=False)
+    all_flat_dfs.to_csv(f"results/all-scores.csv", index=False)
 
     full_frame = base_frame.copy()
     full_frame.update({"scores": scores})
     full_df = pd.DataFrame.from_records([full_frame])
 
-    full_df.to_json(f"results/{model_alias}_full-frame.json", orient="records")
+    full_df.to_json(f"results/{model_alias}.json", orient="records")
 
 
 disable_progress_bar()
@@ -181,7 +181,7 @@ def main():
         model_count += 1
         model_alias = model_name.replace("/", "_")
 
-        file_path = f"results/{model_alias}_full-frame.json"
+        file_path = f"results/{model_alias}.json"
         if os.path.exists(file_path):
             print(f"Model has already been processed ({model_count}/{total_models}): {model_name}")
             continue

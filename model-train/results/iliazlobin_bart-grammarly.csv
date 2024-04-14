@@ -1,0 +1,2 @@
+model,total_samples,sps,task,total_params,score.rouge.rouge1,score.sacreblue.score,score.sari.sari,score.em.exact_match
+iliazlobin/bart-grammarly,100,24.55270801599522,fluency,406291456,0.9589655447744974,87.51824845694881,56.46073895963886,0.0

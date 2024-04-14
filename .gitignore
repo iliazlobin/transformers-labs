@@ -2,6 +2,6 @@
 *.tar.gz
 **/__pycache__
 model
-model-training/*-model*
-model-training/*-train*
+model-train/*-model*
+model-train/*-train*
 test-trainer

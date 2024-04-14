@@ -1,0 +1,30 @@
+[
+  {
+    "model": "iliazlobin/bart-grammarly",
+    "total_samples": 100,
+    "sps": 24.552708016,
+    "task": "fluency",
+    "total_params": 406291456,
+    "scores": {
+      "rouge": {
+        "rouge1": 0.9589655448,
+        "rouge2": 0.9327464874,
+        "rougeL": 0.9571017838,
+        "rougeLsum": 0.9570152942
+      },
+      "sacreblue": {
+        "score": 87.5182484569,
+        "counts": [4017, 3744, 3489, 3253],
+        "totals": [4237, 4137, 4037, 3937],
+        "precisions": [
+          94.80764692, 90.5003625816, 86.4255635373, 82.6263652527
+        ],
+        "bp": 0.9892019834,
+        "sys_len": 4237,
+        "ref_len": 4283
+      },
+      "sari": { "sari": 56.4607389596 },
+      "em": { "exact_match": 0.0 }
+    }
+  }
+]
