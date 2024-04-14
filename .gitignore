@@ -3,4 +3,5 @@
 **/__pycache__
 model
 model-training/*-model*
+model-training/*-train*
 test-trainer
