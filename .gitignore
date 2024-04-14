@@ -1,8 +1,8 @@
+!*.ipynb
 .env
 *.tar.gz
 **/__pycache__
 model
-model-train/*-model*
-model-train/*-train*
+model-train/model-*
+model-train/model-*-train/
 test-trainer
-!*.ipynb
