@@ -2,8 +2,13 @@
 * https://pytorch.org/get-started/previous-versions/
 ```sh
 conda deactivate
-conda create -n pytorch python=3.12
-conda activate pytorch
+# conda env remove -n pytorch-3.10
+# conda create -n pytorch-gptq python=3.12
+conda create -n pytorch-3.10 python=3.10
+# conda activate pytorch
+conda activate pytorch-3.10
+# conda activate pytorch-3.12
+conda activate pytorch-gptq
 python --version
 echo $CONDA_PREFIX
 du -sh $CONDA_PREFIX
@@ -12,25 +17,39 @@ conda config --set channel_priority strict
 conda clean -y --all
 conda update -y --all
 
+# all
+# pip install sentencepiece pytz mpmath xxhash urllib3 tzdata typing-extensions tqdm sympy safetensors rouge regex python-dateutil pyarrow-hotfix psutil packaging nvidia-nvtx-cu12 nvidia-nvjitlink-cu12 nvidia-nccl-cu12 nvidia-curand-cu12 nvidia-cufft-cu12 nvidia-cuda-runtime-cu12 nvidia-cuda-nvrtc-cu12 nvidia-cuda-cupti-cu12 nvidia-cublas-cu12 numpy networkx multidict MarkupSafe idna fsspec frozenlist filelock dill charset-normalizer certifi attrs async-timeout yarl triton requests pyarrow pandas nvidia-cusparse-cu12 nvidia-cudnn-cu12 multiprocess jinja2 gekko aiosignal nvidia-cusolver-cu12 huggingface-hub aiohttp torch tokenizers transformers datasets accelerate peft auto-gptq
+pip install auto-gptq
+pip install scikit-learn
+# pip install auto-gptq --extra-index-url https://huggingface.github.io/autogptq-index/whl/cu121/
+# pip install auto-gptq --extra-index-url https://huggingface.github.io/autogptq-index/whl/cu118/
+
 # common packages
+# pip install ipykernel
 conda install -y ipykernel ipywidgets conda-forge
 pip install python-dotenv pipreqs
+pip install jupyter ipywidgets
 
 # torch (https://pytorch.org/get-started/locally/)
 nvcc --version
 # conda install -y pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
 
-# conda install -y pytorch==2.2.1 torchvision==0.17.1 torchaudio==2.2.1 pytorch-cuda=12.1 -c pytorch -c nvidia
-conda install -y pytorch==2.2.1 torchvision==0.17.1 torchaudio==2.2.1 -c pytorch
-conda install -y pytorch-cuda=12.1 -c pytorch -c nvidia
+conda install -y pytorch==2.2.1 torchvision==0.17.1 torchaudio==2.2.1 pytorch-cuda=12.1 -c pytorch -c nvidia
+# conda install -y pytorch==2.2.1 torchvision==0.17.1 torchaudio==2.2.1 -c pytorch
+# conda install -y pytorch-cuda=12.1 -c pytorch -c nvidia
 
 python -c "import os, torch; print(os.path.dirname(torch.__file__))"
 python -c "import torch; print(torch.backends.cudnn.enabled)"
 python -c "import torch; print(torch.cuda.is_available())"
+python -c "import torch; print(torch.version.cuda)"
 python -c "import torch; print(torch. __version__)"
 python -m torch.utils.collect_env
 
+# libs
+conda install -c conda-forge scikit-learn
+
+# bench
 python benchmark.py
 
 pip install -y -U "huggingface_hub[cli]"

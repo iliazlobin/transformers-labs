@@ -1,0 +1,2 @@
+model,total_samples,sps,task,total_params,score.rouge.rouge1,score.sacreblue.score,score.sari.sari,score.em.exact_match
+TheBloke/Nous-Hermes-Llama-2-7B-GPTQ,100,0.22799713164737573,fluency,262410240,0.5329106202789279,28.24786076958948,64.93343806576448,0.0

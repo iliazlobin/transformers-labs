@@ -1,1 +1,30 @@
-[{"model":"grammarly\/coedit-large","total_samples":100,"total_params":783092736,"sps":2.0838879283,"task":"fluency","scores":{"rouge":{"rouge1":0.9654062838,"rouge2":0.9393479328,"rougeL":0.9648116152,"rougeLsum":0.9646704611},"sacreblue":{"score":85.6608141573,"counts":[3998,3678,3396,3134],"totals":[4186,4086,3986,3886],"precisions":[95.5088389871,90.0146842878,85.1981936779,80.6484817293],"bp":0.9770939404,"sys_len":4186,"ref_len":4283},"sari":{"sari":52.3338742586},"em":{"exact_match":0.0}}}]
+[
+  {
+    "model": "grammarly/coedit-large",
+    "total_samples": 100,
+    "total_params": 783092736,
+    "sps": 2.0838879283,
+    "task": "fluency",
+    "scores": {
+      "rouge": {
+        "rouge1": 0.9654062838,
+        "rouge2": 0.9393479328,
+        "rougeL": 0.9648116152,
+        "rougeLsum": 0.9646704611
+      },
+      "sacreblue": {
+        "score": 85.6608141573,
+        "counts": [3998, 3678, 3396, 3134],
+        "totals": [4186, 4086, 3986, 3886],
+        "precisions": [
+          95.5088389871, 90.0146842878, 85.1981936779, 80.6484817293
+        ],
+        "bp": 0.9770939404,
+        "sys_len": 4186,
+        "ref_len": 4283
+      },
+      "sari": { "sari": 52.3338742586 },
+      "em": { "exact_match": 0.0 }
+    }
+  }
+]
