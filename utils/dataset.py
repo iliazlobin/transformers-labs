@@ -40,13 +40,13 @@ def print_samples(samples) -> None:
 # iterater_dataset = load_dataset("wanyu/IteraTeR_v2") # human in the loop
 iterater_dataset = load_dataset("wanyu/IteraTeR_full_sent")
 # pprint(iterater_dataset)
-iterater_validation_dataset = load_dataset("wanyu/IteraTeR_full_sent", split="validation")
+# iterater_validation_dataset = load_dataset("wanyu/IteraTeR_full_sent", split="validation")
 # pprint(iterater_validation_dataset)
 # pprint(iterater_validation_dataset['validation'][0])
 
 
 verbolizers = {
-    "gce": {
+    "fluency": {
         "tokens": ["<fluency>"],
         "verbs": [
             "Fix grammar",
@@ -77,7 +77,65 @@ verbolizers = {
             "Fix the grammar mistakes",
             "Fix grammatical mistakes",
         ],
-    }
+    },
+    "clarity": {
+        "tokens": ["<clarity>"],
+        "verbs": [
+            "Clarify the sentence",
+            "Clarify this sentence",
+            "Clarify this text",
+            "Write a clearer version for the sentence,",
+            "Write a clarified version of the sentence",
+            "Write a readable version of the sentence",
+            "Write a better readable version of the sentence",
+            "Rewrite the sentence more clearly",
+            "Rewrite this sentence clearly",
+            "Rewrite this sentence for clarity",
+            "Rewrite this sentence for readability",
+            "Improve this sentence for readability",
+            "Make this sentence better readable",
+            "Make this sentence more readable",
+            "Make this sentence readable",
+            "Make the sentence clear",
+            "Make the sentence clearer",
+            "Clarify",
+            "Make the text more understandable",
+            "Make this easier to read",
+            "Clarification",
+            "Change to clearer wording",
+            "Clarify this paragraph",
+            "Use clearer wording",
+        ],
+    },
+    "coherence": {
+        "tokens": ["<coherence>"],
+        "verbs": [
+            "Fix coherence",
+            "Fix coherence in this sentence",
+            "Fix coherence in the sentence",
+            "Fix coherence in this text,",
+            "Fix coherence in the text",
+            "Fix coherence errors",
+            "Fix sentence flow",
+            "Fix sentence transition",
+            "Fix coherence",
+            "errors in this sentence",
+            "Fix coherence mistakes in this sentence",
+            "Fix coherence in this sentence",
+            "Fix coherence of the sentence",
+            "Fix lack of coherence in the sentence",
+            "Make the text more coherent",
+            "Make the text coherent",
+            "Make the text more cohesive logically linked and consistent as a whole",
+            "Make the text more cohesive",
+            "Improve the cohesiveness of the text",
+            "Make the text more logical",
+            "Make the text more consistent",
+            "Improve the consistency of the text",
+            "Make the text clearer",
+            "Improve the coherence of the text",
+        ],
+    },
 }
 
 
@@ -97,8 +155,20 @@ def substitute_verbolizer(text, verbolizer, count=[0]):
 
     return replaced_text
 
+def add_verbolizer(text, verbolizer, count=[0]):
+    verbs = verbolizers[verbolizer]["verbs"]
 
-def get_iterater_samples(label, category="validation", num_samples=0, seed=42, confidence_threshold=0.9):
+    # print(f"count: {count[0]}, len(verbs): {len(verbs)}")
+    verb = verbs[count[0]]
+    replaced_text = f"{verb}: {text}"
+
+    count[0] += 1
+    if count[0] >= len(verbs):
+        count[0] = 0
+
+    return replaced_text
+
+def get_iterater_samples_simplified(label, category="validation", num_samples=0, seed=42, confidence_threshold=0.9):
     filtered_samples = (
         iterater_dataset[category]
         .shuffle(seed=seed)
@@ -106,12 +176,12 @@ def get_iterater_samples(label, category="validation", num_samples=0, seed=42, c
     )
     max_samples = len(filtered_samples)
     selected = max_samples if num_samples == 0 else num_samples
-    print(f"max_samples: {max_samples}, selected: {selected}, num_samples: {num_samples}")
+    print(f"max_samples: {max_samples}, num_samples: {num_samples}, selected: {selected}")
     samples = filtered_samples.select(range(selected))
 
     return samples.map(
         lambda item: {
-            "task": substitute_verbolizer(item["before_sent_with_intent"], "gce"),
+            "task": add_verbolizer(item["before_sent"], label),
             "source": item["before_sent"],
             "reference": item["after_sent"],
             "references": [item["after_sent"]],

@@ -1,2 +1,4 @@
-model,total_samples,total_params,sps,task,score.rouge.rouge1,score.sacreblue.score,score.sari.sari,score.em.exact_match
-grammarly/coedit-large,100,783092736,2.083887928303075,fluency,0.9654062837992795,85.66081415729968,52.33387425863478,0.0
+model,total_params,category,total_samples,sps,score.rouge.rouge1,score.sacreblue.score,score.sari.sari,score.em.exact_match
+grammarly/coedit-large,783092736,fluency,100,2.687488007617611,0.965598030438003,86.49455749652661,53.11002833647551,0.0
+grammarly/coedit-large,783092736,clarity,100,3.7505606207802766,0.8785580795636908,79.48871643447734,56.17778485475146,0.0
+grammarly/coedit-large,783092736,coherence,100,2.304714241972005,0.7013014463318381,53.1639581707359,58.87354100852868,0.0
