@@ -1,0 +1,62 @@
+[
+  {
+    "task": "Make this sentence more readable:  Dr. Farley Stillwell appears in Spider-Man: The Animated  , voiced by Michael Rye. Response: ",
+    "source": " Dr. Farley Stillwell appears in Spider-Man: The Animated  , voiced by Michael Rye.",
+    "reference": " Dr. Farley Stillwell appears in Spider-Man: The Animated Series , voiced by Michael Rye.",
+    "processed": " Dr. Farley Stillwell appears inSpider-Man: The Animated, voiced by Michael Rye."
+  },
+  {
+    "task": "Make this sentence readable:  Mr. Hand stated that he was speaking as a tribal delegate with the consensus of the Oglala Treaty Delegation and his chief, Oliver Red Cloud . Response: ",
+    "source": " Mr. Hand stated that he was speaking as a tribal delegate with the consensus of the Oglala Treaty Delegation and his chief, Oliver Red Cloud .",
+    "reference": " Mr. Hand stated that he was speaking as a tribal delegate with the consensus of the Oglala Treaty Delegation and his chief, .",
+    "processed": " Mr. Hand stated that he was speaking as a tribal delegate with the consensus of the Oglala Tribal Delegation and his chief, Oliver Red Cloud"
+  },
+  {
+    "task": "Make the sentence clear:  Starting from a single-core performance model we can describe the intra-chip saturation characteristics of the code and its optimal operating point in terms of energy to solution as a function of the propagation method, the clock frequency, and the SIMD vectorization. Response: ",
+    "source": " Starting from a single-core performance model we can describe the intra-chip saturation characteristics of the code and its optimal operating point in terms of energy to solution as a function of the propagation method, the clock frequency, and the SIMD vectorization.",
+    "reference": " Starting from a single-core performance model we can describe the intra-chip saturation characteristics and the optimal operating point in terms of energy to solution as a function of the propagation method, the clock frequency, and the SIMD vectorization.",
+    "processed": "Starting from a single-core performance model we can describe the intra-chip saturation characteristics of the code and its optimal operating point in terms of energy to solution as a function of the propagation method, the clock frequency, and the SIMD vectorization."
+  },
+  {
+    "task": "Make the sentence clearer:  Our proposed designs in HyPar-Flow offer up to 3.1x speedup over sequential training for ResNet-110 and up to 1.6x speedup over Horovod-based data-parallel training for ResNet-1001; Response: ",
+    "source": " Our proposed designs in HyPar-Flow offer up to 3.1x speedup over sequential training for ResNet-110 and up to 1.6x speedup over Horovod-based data-parallel training for ResNet-1001;",
+    "reference": " Our proposed designs in HyPar-Flow provides: 1) Up to 1.6x speedup over Horovod-based data-parallel training for ResNet-1001;",
+    "processed": " Our proposed designs in HyPar-Flow offer up to 3.1x speedup over sequential training for ResNet-110 and 1.6x speedup over Horovod-based data-parallel training for ResNet-1001."
+  },
+  {
+    "task": "Clarify:  None of his \"big four\" targets have shown any indication of changing: the Washington Redskins, the Kansas City Chiefs , the  Cleveland Indians or the Atlanta Braves . Post-season use of American Indian mascots were banned by the National Collegiate Athletic Association in 2005, suggesting the names are \"hostile or abusive\". Response: ",
+    "source": " None of his \"big four\" targets have shown any indication of changing: the Washington Redskins, the Kansas City Chiefs , the  Cleveland Indians or the Atlanta Braves . Post-season use of American Indian mascots were banned by the National Collegiate Athletic Association in 2005, suggesting the names are \"hostile or abusive\".",
+    "reference": " None of his \"big four\" targets have shown any indication of changing: the Washington Redskins, the Kansas City Chiefs , the Cleveland Indians or the . Post-season use of American Indian mascots were banned by the National Collegiate Athletic Association in 2005, suggesting the names are \"hostile or abusive\".",
+    "processed": " None of the four big-four targets have shown any indication that they have changed. The Washington Redskins, the Kansas City Chiefs, the Cleveland Indians and the Atlanta Braves were all banned from use in the post-season after the National Collegiate Athletic Association banned American Indians mascots in 2005"
+  },
+  {
+    "task": "Make the text more understandable:  In contrast, under such a pure-jump model, the dependence on the overall jump intensity and Y is already reflected in the leading term, which is of the form d_{1}t^{1/Y}. Response: ",
+    "source": " In contrast, under such a pure-jump model, the dependence on the overall jump intensity and Y is already reflected in the leading term, which is of the form d_{1}t^{1/Y}.",
+    "reference": " In contrast, under a pure-jump model, the dependence on the overall jump intensity and Y is already reflected in the leading term, which is of the form d_{1}t^{1/Y}.",
+    "processed": " In contrast, under a pure-jump model, the dependence on the overall jump intensity, which already reflects in the leading term, is already reflected in the leading term, which is of the form d_{1}t^{1/Y}."
+  },
+  {
+    "task": "Make this easier to read:  There are thousands of manuscripts which are set to be read in this manner, and works of Sophocles, Euripides and Hesiod which have been unavailable for well over a thousand years have already been recovered. Response: ",
+    "source": " There are thousands of manuscripts which are set to be read in this manner, and works of Sophocles, Euripides and Hesiod which have been unavailable for well over a thousand years have already been recovered.",
+    "reference": " There are thousands of which are set to be read in this manner, and works of Sophocles, Euripides and Hesiod which have been unavailable for well over a thousand years have already been recovered.",
+    "processed": " There are thousands of manuscripts which are set to be read in this manner, and works of Sophocles, Euripides, and Hesiod, which have been unavailable for over a thousand years, have already been recovered."
+  },
+  {
+    "task": "Clarification:  The noise is generated by a general affine Markov process. Response: ",
+    "source": " The noise is generated by a general affine Markov process.",
+    "reference": " Uncertainty is generated by a general affine Markov process.",
+    "processed": "The noise is generated by a Markov process."
+  },
+  {
+    "task": "Change to clearer wording:  An overall shape of such data is hard to visualise when data points are given by coordinates in a high-dimensional Euclidean space. More general data can be represented by an abstract graph with weights or distances on links between data points. Response: ",
+    "source": " An overall shape of such data is hard to visualise when data points are given by coordinates in a high-dimensional Euclidean space. More general data can be represented by an abstract graph with weights or distances on links between data points.",
+    "reference": " An overall shape of a noisy cloud of points sampled from a non-linear object that is more complicated than a union of disjoint clusters.",
+    "processed": "\u00a0An overall shape of such data is hard to visualise when data points are given by coordinates in a high-dimensional Euclidean space. More general data can be represented by an abstract graph with weights in a link between data points."
+  },
+  {
+    "task": "Clarify this paragraph:  The decision was taken by the Board of the Biennale, upon the proposal of the Director of this year's exhibition, Kazuyo Sejima . Response: ",
+    "source": " The decision was taken by the Board of the Biennale, upon the proposal of the Director of this year's exhibition, Kazuyo Sejima .",
+    "reference": " The decision was taken by the Board of the Biennale, upon the proposal of the Director of this year's exhibition, .",
+    "processed": "_______________________________"
+  }
+]

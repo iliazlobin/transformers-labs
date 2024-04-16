@@ -155,6 +155,7 @@ def substitute_verbolizer(text, verbolizer, count=[0]):
 
     return replaced_text
 
+
 def add_verbolizer(text, verbolizer, count=[0]):
     verbs = verbolizers[verbolizer]["verbs"]
 
@@ -167,6 +168,7 @@ def add_verbolizer(text, verbolizer, count=[0]):
         count[0] = 0
 
     return replaced_text
+
 
 def get_iterater_samples_simplified(label, category="validation", num_samples=0, seed=42, confidence_threshold=0.9):
     filtered_samples = (
@@ -182,6 +184,49 @@ def get_iterater_samples_simplified(label, category="validation", num_samples=0,
     return samples.map(
         lambda item: {
             "task": add_verbolizer(item["before_sent"], label),
+            "source": item["before_sent"],
+            "reference": item["after_sent"],
+            "references": [item["after_sent"]],
+        },
+        remove_columns=[
+            "before_sent_with_intent",
+            "before_sent",
+            "after_sent",
+            "labels",
+            "confidence",
+            "doc_id",
+            "revision_depth",
+        ],
+    )
+
+
+def get_iterater_samples_with_instruction(
+    label,
+    category="validation",
+    num_samples=0,
+    seed=42,
+    confidence_threshold=0.9,
+    pre_instruction="",
+    post_instruction="",
+):
+    filtered_samples = (
+        iterater_dataset[category]
+        .shuffle(seed=seed)
+        .filter(lambda item: item["labels"] == label and float(item["confidence"]) >= confidence_threshold)
+    )
+    max_samples = len(filtered_samples)
+    selected = max_samples if num_samples == 0 else num_samples
+    print(f"max_samples: {max_samples}, num_samples: {num_samples}, selected: {selected}")
+    samples = filtered_samples.select(range(selected))
+
+    if pre_instruction:
+        pre_instruction = f"{pre_instruction} "
+    if post_instruction:
+        post_instruction = f" {post_instruction}"
+
+    return samples.map(
+        lambda item: {
+            "task": f"{pre_instruction}{add_verbolizer(item['before_sent'], label)}{post_instruction}",
             "source": item["before_sent"],
             "reference": item["after_sent"],
             "references": [item["after_sent"]],
