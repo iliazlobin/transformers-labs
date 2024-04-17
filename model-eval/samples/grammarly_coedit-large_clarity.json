@@ -1,0 +1,8 @@
+[
+  {
+    "task": "clarity",
+    "input": "Write a better readable version of the sentence: He is a six-time All-Star, and six-time Gold Glove Award winner.",
+    "reference": "He is a six-time All-Star, six-time Gold Glove Award winner.",
+    "processed": "He is a six-time All-Star, and six-time Gold Glove Award winner."
+  }
+]

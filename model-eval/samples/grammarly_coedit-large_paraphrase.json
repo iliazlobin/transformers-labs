@@ -1,0 +1,1 @@
+[{"task":"paraphrase","input":"Write a paraphrase for the sentence: Yes, I have a bicycle.","reference":"Yes, I've got a bike.","processed":"Yes, I've got a bike."},{"task":"paraphrase","input":"Paraphrase this sentence: All these resources should be owned by the EU.","reference":"The EU should own all of these funds.","processed":"The EU should own all such resources."}]

@@ -1,0 +1,14 @@
+[
+  {
+    "task": "coherence",
+    "input": "Fix coherence of the sentence: Silver went to Japan's Miho Takagi in a time of 1: 54.55. Bronze went to Marrit Leenstra of the Netherlands in a time of 1.",
+    "reference": "Silver went to Japan's Miho Takagi in a time of 1: 54.55, while bronze went to Marrit Leenstra of the Netherlands in a time of 1.",
+    "processed": "Silver went to Japan's Miho Takagi in a time of 1: 54.55, while bronze went to Marrit Leenstra of the Netherlands in a time of 1."
+  },
+  {
+    "task": "coherence",
+    "input": "Improve the cohesiveness of the text: Heather Blonsky a math and science competition for middle-school students. Heather Blonsky is a mentor of a finalist in the 2011 Broadcom MASTERS.",
+    "reference": "Heather Blonsky, a mentor of a finalist in the 2011 Broadcom MASTERS, a math and science competition for middle-school students.",
+    "processed": "Heather Blonsky, a mentor of a finalist in the 2011 Broadcom MASTERS, a math and science competition for middle-school students."
+  }
+]
