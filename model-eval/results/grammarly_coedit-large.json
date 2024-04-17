@@ -5,210 +5,218 @@
     "total_params": 783092736,
     "gec": {
       "task": "gec",
-      "total_samples": 3,
-      "elapsed_time": 9.9677948952,
-      "sps": 0.3009692747,
-      "batch_size": 5,
-      "max_length": 256,
+      "total_samples": 2031,
+      "elapsed_time": 187.2346081734,
+      "sps": 10.8473535946,
+      "batch_size": 20,
+      "max_length": 350,
       "scores": {
         "rouge": {
-          "rouge1": 0.8529318792,
-          "rouge2": 0.697071016,
-          "rougeL": 0.8469258732,
-          "rougeLsum": 0.8469258732
+          "rouge1": 0.9417301515,
+          "rouge2": 0.8875293618,
+          "rougeL": 0.937867941,
+          "rougeLsum": 0.9378387288
         },
         "sacreblue": {
-          "score": 65.1607167265,
-          "counts": [149, 120, 99, 84],
-          "totals": [174, 171, 168, 165],
+          "score": 75.5218972399,
+          "counts": [44226, 37540, 32374, 28040],
+          "totals": [49491, 47460, 45434, 43413],
           "precisions": [
-            85.632183908, 70.1754385965, 58.9285714286, 50.9090909091
+            89.3617021277, 79.0981879477, 71.2550072633, 64.588948011
           ],
           "bp": 1.0,
-          "sys_len": 174,
-          "ref_len": 169
+          "sys_len": 49491,
+          "ref_len": 49411
         },
-        "sari": { "sari": 71.8374051435 },
-        "em": { "exact_match": 0.0 }
+        "sari": { "sari": 87.3128192756 },
+        "em": { "exact_match": 0.5553914328 }
       },
       "utilization": {
         "total_memory": 10736893952,
-        "memory_used": 10366541824,
-        "cuda_allocated": 3293166592,
-        "cuda_reserved": 6673137664,
-        "ram_usage": 19201527808
+        "memory_used": 9414139904,
+        "cuda_allocated": 3359555584,
+        "cuda_reserved": 8193572864,
+        "ram_usage": 20155977728
       }
     },
     "coherence": {
       "task": "coherence",
-      "total_samples": 2,
-      "elapsed_time": 5.7750799656,
-      "sps": 0.3463155509,
-      "batch_size": 5,
-      "max_length": 256,
+      "total_samples": 1062,
+      "elapsed_time": 90.7774715424,
+      "sps": 11.6989378747,
+      "batch_size": 20,
+      "max_length": 350,
       "scores": {
         "rouge": {
-          "rouge1": 1.0,
-          "rouge2": 1.0,
-          "rougeL": 1.0,
-          "rougeLsum": 1.0
+          "rouge1": 0.9940714667,
+          "rouge2": 0.9886655083,
+          "rougeL": 0.9940221284,
+          "rougeLsum": 0.9940300577
         },
         "sacreblue": {
-          "score": 100.0,
-          "counts": [52, 50, 48, 46],
-          "totals": [52, 50, 48, 46],
-          "precisions": [100.0, 100.0, 100.0, 100.0],
-          "bp": 1.0,
-          "sys_len": 52,
-          "ref_len": 52
+          "score": 97.9883853956,
+          "counts": [32426, 31122, 29853, 28602],
+          "totals": [32682, 31620, 30558, 29496],
+          "precisions": [
+            99.2166942048, 98.4250474383, 97.6929118398, 96.9690805533
+          ],
+          "bp": 0.9991436262,
+          "sys_len": 32682,
+          "ref_len": 32710
         },
-        "sari": { "sari": 94.9027014652 },
-        "em": { "exact_match": 1.0 }
+        "sari": { "sari": 92.9670195981 },
+        "em": { "exact_match": 0.8079096045 }
       },
       "utilization": {
         "total_memory": 10736893952,
-        "memory_used": 10354614272,
-        "cuda_allocated": 3293166592,
-        "cuda_reserved": 6673137664,
-        "ram_usage": 20196032512
+        "memory_used": 9310330880,
+        "cuda_allocated": 3359555584,
+        "cuda_reserved": 8193572864,
+        "ram_usage": 21159723008
       }
     },
     "simplification": {
       "task": "simplification",
-      "total_samples": 2,
-      "elapsed_time": 4.3909087181,
-      "sps": 0.4554865811,
-      "batch_size": 5,
-      "max_length": 256,
+      "total_samples": 1144,
+      "elapsed_time": 69.9666543007,
+      "sps": 16.3506460532,
+      "batch_size": 20,
+      "max_length": 350,
       "scores": {
         "rouge": {
-          "rouge1": 1.0,
-          "rouge2": 1.0,
-          "rougeL": 1.0,
-          "rougeLsum": 1.0
+          "rouge1": 0.7800149225,
+          "rouge2": 0.6904079983,
+          "rougeL": 0.7562703692,
+          "rougeLsum": 0.7560982035
         },
         "sacreblue": {
-          "score": 100.0,
-          "counts": [17, 15, 13, 11],
-          "totals": [17, 15, 13, 11],
-          "precisions": [100.0, 100.0, 100.0, 100.0],
-          "bp": 1.0,
-          "sys_len": 17,
-          "ref_len": 17
+          "score": 51.2783196915,
+          "counts": [13990, 11081, 9238, 7754],
+          "totals": [16963, 15819, 14675, 13531],
+          "precisions": [
+            82.4736190532, 70.0486756432, 62.9505962521, 57.3054467519
+          ],
+          "bp": 0.7589376578,
+          "sys_len": 16963,
+          "ref_len": 21642
         },
-        "sari": { "sari": 100.0 },
-        "em": { "exact_match": 1.0 }
+        "sari": { "sari": 77.7713058804 },
+        "em": { "exact_match": 0.3286713287 }
       },
       "utilization": {
         "total_memory": 10736893952,
-        "memory_used": 10354876416,
-        "cuda_allocated": 3293166592,
-        "cuda_reserved": 6673137664,
-        "ram_usage": 20191076352
+        "memory_used": 9302237184,
+        "cuda_allocated": 3359555584,
+        "cuda_reserved": 8193572864,
+        "ram_usage": 20920848384
       }
     },
     "paraphrase": {
       "task": "paraphrase",
-      "total_samples": 2,
-      "elapsed_time": 3.9766449928,
-      "sps": 0.5029365215,
-      "batch_size": 5,
-      "max_length": 256,
+      "total_samples": 1590,
+      "elapsed_time": 92.4141767025,
+      "sps": 17.205152464,
+      "batch_size": 20,
+      "max_length": 350,
       "scores": {
         "rouge": {
-          "rouge1": 0.8333333333,
-          "rouge2": 0.8076923077,
-          "rougeL": 0.8333333333,
-          "rougeLsum": 0.8333333333
+          "rouge1": 0.6662320873,
+          "rouge2": 0.4665500464,
+          "rougeL": 0.6116807748,
+          "rougeLsum": 0.6110206002
         },
         "sacreblue": {
-          "score": 70.5384204634,
-          "counts": [13, 10, 8, 6],
-          "totals": [15, 13, 11, 9],
+          "score": 40.8021846208,
+          "counts": [27136, 18087, 13094, 9682],
+          "totals": [39175, 37585, 35995, 34405],
           "precisions": [
-            86.6666666667, 76.9230769231, 72.7272727273, 66.6666666667
+            69.2686662412, 48.1229213782, 36.3772746215, 28.141258538
           ],
-          "bp": 0.935506985,
-          "sys_len": 15,
-          "ref_len": 16
+          "bp": 0.9493312901,
+          "sys_len": 39175,
+          "ref_len": 41212
         },
-        "sari": { "sari": 88.7293609169 },
-        "em": { "exact_match": 0.5 }
+        "sari": { "sari": 63.1413371404 },
+        "em": { "exact_match": 0.0220125786 }
       },
       "utilization": {
         "total_memory": 10736893952,
-        "memory_used": 10387316736,
-        "cuda_allocated": 3293166592,
-        "cuda_reserved": 6673137664,
-        "ram_usage": 20102963200
+        "memory_used": 9332543488,
+        "cuda_allocated": 3359555584,
+        "cuda_reserved": 8193572864,
+        "ram_usage": 21162070016
       }
     },
     "clarity": {
       "task": "clarity",
-      "total_samples": 1,
-      "elapsed_time": 4.7460706234,
-      "sps": 0.2107006152,
-      "batch_size": 5,
-      "max_length": 256,
+      "total_samples": 126,
+      "elapsed_time": 22.8215939999,
+      "sps": 5.5210867392,
+      "batch_size": 20,
+      "max_length": 350,
       "scores": {
         "rouge": {
-          "rouge1": 0.962962963,
-          "rouge2": 0.88,
-          "rougeL": 0.962962963,
-          "rougeLsum": 0.962962963
+          "rouge1": 0.9058686932,
+          "rouge2": 0.8529962655,
+          "rougeL": 0.8992446084,
+          "rougeLsum": 0.8985964873
         },
         "sacreblue": {
-          "score": 76.1160600335,
-          "counts": [12, 10, 8, 6],
-          "totals": [13, 12, 11, 10],
-          "precisions": [92.3076923077, 83.3333333333, 72.7272727273, 60.0],
+          "score": 83.897848832,
+          "counts": [3640, 3352, 3136, 2942],
+          "totals": [4074, 3948, 3822, 3696],
+          "precisions": [
+            89.3470790378, 84.9037487335, 82.0512820513, 79.5995670996
+          ],
           "bp": 1.0,
-          "sys_len": 13,
-          "ref_len": 12
+          "sys_len": 4074,
+          "ref_len": 3943
         },
-        "sari": { "sari": 69.5550566689 },
-        "em": { "exact_match": 0.0 }
+        "sari": { "sari": 72.5159649198 },
+        "em": { "exact_match": 0.253968254 }
       },
       "utilization": {
         "total_memory": 10736893952,
-        "memory_used": 10386989056,
-        "cuda_allocated": 3293166592,
-        "cuda_reserved": 6673137664,
-        "ram_usage": 20135415808
+        "memory_used": 9329070080,
+        "cuda_allocated": 3359555584,
+        "cuda_reserved": 8193572864,
+        "ram_usage": 20102959104
       }
     },
     "neutralize": {
       "task": "neutralize",
-      "total_samples": 2,
-      "elapsed_time": 5.0749549866,
-      "sps": 0.3940921654,
-      "batch_size": 5,
-      "max_length": 256,
+      "total_samples": 1127,
+      "elapsed_time": 113.5591390133,
+      "sps": 9.924344353,
+      "batch_size": 20,
+      "max_length": 350,
       "scores": {
         "rouge": {
-          "rouge1": 0.9677419355,
-          "rouge2": 0.95,
-          "rougeL": 0.9677419355,
-          "rougeLsum": 0.9677419355
+          "rouge1": 0.9689939529,
+          "rouge2": 0.9418788981,
+          "rougeL": 0.9689451135,
+          "rougeLsum": 0.9689744086
         },
         "sacreblue": {
-          "score": 90.8120276921,
-          "counts": [49, 46, 43, 40],
-          "totals": [50, 48, 46, 44],
-          "precisions": [98.0, 95.8333333333, 93.4782608696, 90.9090909091],
-          "bp": 0.9607894392,
-          "sys_len": 50,
-          "ref_len": 52
+          "score": 93.8310910999,
+          "counts": [25195, 23556, 22003, 20520],
+          "totals": [25660, 24533, 23406, 22285],
+          "precisions": [
+            98.1878409977, 96.0176089349, 94.0058104759, 92.0798743549
+          ],
+          "bp": 0.9872218594,
+          "sys_len": 25660,
+          "ref_len": 25990
         },
-        "sari": { "sari": 82.5958827546 },
-        "em": { "exact_match": 0.5 }
+        "sari": { "sari": 85.4913950663 },
+        "em": { "exact_match": 0.5838509317 }
       },
       "utilization": {
         "total_memory": 10736893952,
-        "memory_used": 10337280000,
-        "cuda_allocated": 3293166592,
-        "cuda_reserved": 6673137664,
-        "ram_usage": 20026789888
+        "memory_used": 9663332352,
+        "cuda_allocated": 3359555584,
+        "cuda_reserved": 8193572864,
+        "ram_usage": 21199900672
       }
     }
   }

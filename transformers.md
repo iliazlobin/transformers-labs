@@ -132,3 +132,9 @@ ruff format /home/izlobin/ws/transformers-labs/model-evaluation/test.py
 ruff format /home/izlobin/ws/transformers-labs/model-evaluation/evaluate.py
 
 ```
+
+## ssh tunnel
+```sh
+ssh -L 16006:localhost:6006 paperspace@1.1.1.1
+
+```
