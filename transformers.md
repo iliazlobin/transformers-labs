@@ -138,3 +138,34 @@ ruff format /home/izlobin/ws/transformers-labs/model-evaluation/evaluate.py
 ssh -L 16006:localhost:6006 paperspace@184.105.3.44
 
 ```
+
+## azure workstation
+```sh
+cd /home/izlobin/ws/transformers-labs/terraform/azure-workstation
+
+az login
+# az group list --output table
+
+# infra
+terraform init
+terraform plan
+terraform apply -auto-approve
+terraform output
+
+# provisioning
+PUBLIC_IP=$(terraform output public_ip_address | tr -d '"')
+echo $PUBLIC_IP | x
+echo $PUBLIC_IP
+nmap -Pn -p 22,80,8080,6006 $PUBLIC_IP
+
+ssh izlobin@$PUBLIC_IP
+ssh izlobin@$PUBLIC_IP "whoami; pwd; ls -la"
+
+ls ~/back.tar.gz
+scp ~/back.tar.gz izlobin@$PUBLIC_IP:~/back.tar.gz
+scp ~/.ssh/id_rsa izlobin@$PUBLIC_IP:~/.ssh/id_rsa
+
+ssh izlobin@$PUBLIC_IP "tar xvzf ~/back.tar.gz"
+ssh izlobin@$PUBLIC_IP "cat ~/.bashrc.iz >> ~/.bashrc"
+
+```

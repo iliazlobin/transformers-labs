@@ -1,0 +1,602 @@
+[
+  {
+    "input": "Change to simpler wording: \" Torchwood \" launched with 2.4 million viewers in October 2006.",
+    "processed": "\" Torchwood \" launched with 2.4 million viewers in October 2006.",
+    "reference": "When the first episode of Torchwood was launched in October 2006 on BBC Three, 2.4 million people watched it.",
+    "task": "simplification"
+  },
+  {
+    "input": "Simplify this sentence: Felony disenfranchisement in Florida began with the 1838 ratification of the state constitution.",
+    "processed": "Felony disenfranchisement in Florida began with the 1838 ratification of the state constitution.",
+    "reference": "Florida \u2019 s constitution was ratified in 1838 and with that felony disenfranchisement was established in Florida.",
+    "task": "simplification"
+  },
+  {
+    "input": "Simplify this paragraph: Watley was born in Chicago, Illinois.",
+    "processed": "Watley was born in Chicago, Illinois.",
+    "reference": "She was born in Chicago.",
+    "task": "simplification"
+  },
+  {
+    "input": "Simplify this paragraph: As more people are living longer, dementia is becoming more common in the population as a whole.",
+    "processed": "As more people are living longer, dementia is becoming more common in the population as a whole.",
+    "reference": "Dementia is more common in older people, but younger people can be affected as well.",
+    "task": "simplification"
+  },
+  {
+    "input": "Rewrite the sentence to be simpler: Within a decade his short stories and novels prevailed over his historical non-fiction works, though historical themes continued to imbue his fiction.",
+    "processed": "Within a decade his short stories and novels prevailed over his historical non-fiction works, though historical themes continued to imbue his fiction.",
+    "reference": "Within ten years, his short stories and novels became more famous than his historical non-fiction works, though his fiction had history in it.",
+    "task": "simplification"
+  },
+  {
+    "input": "Simplify the sentence: Fogerty was discharged from the Army in July 1967.",
+    "processed": "Fogerty was discharged from the Army in July 1967.",
+    "reference": "In July 1967, he was discharged.",
+    "task": "simplification"
+  },
+  {
+    "input": "Simplify this text: Kaieda was born and grew up in Suginami, Tokyo.",
+    "processed": "Kaieda was born and grew up in Suginami, Tokyo.",
+    "reference": "He was born in 1949 in Tokyo and went to Keio University.",
+    "task": "simplification"
+  },
+  {
+    "input": "Rewrite this sentence for simplicity: The critics accused Courbet of a deliberate pursuit of ugliness.",
+    "processed": "The critics accused Courbet of a deliberate pursuit of ugliness.",
+    "reference": "Some of the critics said that Courbet was deliberately trying to paint ugliness.",
+    "task": "simplification"
+  },
+  {
+    "input": "Simplify the sentence: His gold medal was Spain's eighth gold of the Games.",
+    "processed": "His gold medal was Spain's eighth gold of the Games.",
+    "reference": "His first place was Spain's eighth first place of the Games.",
+    "task": "simplification"
+  },
+  {
+    "input": "Use simpler wording: Winter events include skiing, ice fishing and snowmobile derbies.",
+    "processed": "Winter events include skiing, ice fishing and snowmobile derbies.",
+    "reference": "Many people in Wisconsin go skiing, ice fishing and to snowmobile races.",
+    "task": "simplification"
+  },
+  {
+    "input": "Rewrite this with simpler wording: Defects in this gene result in hemophilia A, a recessive X-linked coagulation disorder.",
+    "processed": "Defects in this gene result in hemophilia A, a recessive X-linked coagulation disorder.",
+    "reference": "If there is something wrong with this gene, you get hemophilia A, which is a recessive disorder.",
+    "task": "simplification"
+  },
+  {
+    "input": "Change to simpler wording: Ken Bald was born in New York City, New York, and raised in suburban Mount Vernon, New York.",
+    "processed": "Ken Bald was born in New York City, New York, and raised in suburban Mount Vernon, NY.",
+    "reference": "He was born in New York City.",
+    "task": "simplification"
+  },
+  {
+    "input": "Write a simpler version for the sentence: On October 24, 2006, Microsoft released Windows Defender.",
+    "processed": "On October 24, 2006, Microsoft released Windows Defender.",
+    "reference": "It was released on October 24, 2006.",
+    "task": "simplification"
+  },
+  {
+    "input": "Make this easier to understand: The Precambrian is so named because it preceded the Cambrian, the first period of the Phanerozoic eon, which is named after Cambria, the Latinised name for Wales, where rocks from this age were first studied.",
+    "processed": "The Precambrian is so named because it preceded the Cambrian, the first period of the Phanerozoic eon, which is named after Cambria, the Latinised name for Wales, where rocks from this age were first studied.",
+    "reference": "It is named after the Roman name for Cymru/Wales, because rocks thought to be from this time were first studied there.",
+    "task": "simplification"
+  },
+  {
+    "input": "Make the sentence simple: Western Macedonia (, \" Dytiki \u0301 Makedoni \u0301 a \") is one of the thirteen regions of Greece, consisting of the western part of Greek Macedonia.",
+    "processed": "Western Macedonia (, \" Dytiki \u0301 Makedoni, \"Dytiki\" or \"Makedoni \") is one of the thirteen regions of Greece, consisting of the western part of Greek Macedonia.",
+    "reference": "West Macedonia is one of the thirteen peripheries of Greece. <SEP> It is also one of the 3 parts of the region of Macedonia and particularly the western.",
+    "task": "simplification"
+  },
+  {
+    "input": "Make the sentence simple: In 2005, the AHL franchise of the Calgary Flames (the Saint John Flames, which existed from 1993 to 2003) was reestablished in Omaha.",
+    "processed": "In 2005, the AHL franchise of the Calgary Flames (the Saint John Flames, which existed from 1993 to 2003) was reestablished in Omaha.",
+    "reference": "They moved to Omaha in 2005 from Saint John, New Brunswick where they were known as the Saint John Flames.",
+    "task": "simplification"
+  },
+  {
+    "input": "Make the sentence simpler: He went to Lincoln University, a historically black university in Pennsylvania.",
+    "processed": "He went to Lincoln University, a historically black university in Pennsylvania.",
+    "reference": "He went on to attend Lincoln University and graduated in 1930.",
+    "task": "simplification"
+  },
+  {
+    "input": "Write a simpler version for the sentence: The Prut flows southeast, eventually joining the Danube river near Giurgiules \u0326 ti, east of Galat \u0326 i.",
+    "processed": "The Prut flows southeast, eventually joining the Danube river near Giurgiules \u0326 ti, east of Galat.",
+    "reference": "It flows to the southeast to join the Danube river near Reni. <SEP> This is east of Galat \u0327 i.",
+    "task": "simplification"
+  },
+  {
+    "input": "Change to simpler wording: Lentil soup may include vegetables such as carrots, potatoes, celery, parsley, tomato, pumpkin, ripe plantain and onion.",
+    "processed": "Lentil soup may include vegetables such as carrots, potatoes, celery, parsley, tomato, pumpkin, ripe plantain and onion.",
+    "reference": "Red or green lentils may be used and in some recipes the lentils are boiled with vegetables such as carrots, potatoes, parsley and onion, and then pureed.",
+    "task": "simplification"
+  },
+  {
+    "input": "Rewrite this sentence for simplicity: The fourth-generation iPad was reintroduced on March 18, 2014, following the discontinuation of the iPad 2.",
+    "processed": "The fourth-generation iPad was reintroduced on March 18, 2014, following the discontinuation of the iPad 2.",
+    "reference": "It was brought back on March 18, 2014, after the iPad 2 was discontinued.",
+    "task": "simplification"
+  },
+  {
+    "input": "Simplify: The Shooz released four albums in the U.S. during the 1980s.",
+    "processed": "The Shooz released four albums in the U.S. during the 1980s.",
+    "reference": "They released many records in the 1980s.",
+    "task": "simplification"
+  },
+  {
+    "input": "Rewrite this with simpler wording: The incarcerated Aziz suffered from depression, diabetes, heart disease, and ulcers.",
+    "processed": "The incarcerated Aziz suffered from depression, diabetes, heart disease, and ulcers.",
+    "reference": "He also suffered from heart disease, depression, diabetes, and ulcers.",
+    "task": "simplification"
+  },
+  {
+    "input": "Rewrite this sentence for simplicity: Pascal also wrote in defence of the scientific method.",
+    "processed": "Pascal also wrote in defence of the scientific method.",
+    "reference": "He wrote in support of the scientific method and also contributed to physics.",
+    "task": "simplification"
+  },
+  {
+    "input": "Make this easier to understand: Bernard was born in Puerto Deseado, Santa Cruz Province, Argentina.",
+    "processed": "Bernard was born in Puerto Deseado, Santa Cruz Province, Argentina.",
+    "reference": "She was born in Puerto Deseado, Argentina.",
+    "task": "simplification"
+  },
+  {
+    "input": "Change to simpler wording: Slices of fruit or pastry are dipped in a caquelon of melted chocolate, often flavored with rum or kirschwasser.",
+    "processed": "Slices of fruit or pastry are dipped in a caquelon of melted chocolate, often flavored with rum or kirschwasser.",
+    "reference": "Slices of fruit or cake are put in a pot of warm, liquid chocolate.",
+    "task": "simplification"
+  },
+  {
+    "input": "Write a simpler version for the sentence: The film grossed $ 620.7 million at the box office and received critical acclaim.",
+    "processed": "The film grossed $ 620.7 million at the box office and received critical acclaim.",
+    "reference": "It earned $ 623.7 million at the box office and got good reviews.",
+    "task": "simplification"
+  },
+  {
+    "input": "Make the sentence simpler: The four group winners, Argentina, Yugoslavia, Uruguay and the United States, moved to the semi-finals.",
+    "processed": "The four group winners, Argentina, Yugoslavia, Uruguay and the United States, moved to the semi-finals.",
+    "reference": "The four winners, Argentina, United States, Uruguay and Yugoslavia met in two games to see who would make the final.",
+    "task": "simplification"
+  },
+  {
+    "input": "Rewrite this with simpler wording: is a \" Wario \" platform game developed by Good-Feel for the Wii.",
+    "processed": "Wario is a \" Wario \" platform game developed by Good-Feel for the Wii.",
+    "reference": "in North America) is a platform video game made by Good-feel and to be published by Nintendo for the Wii game console.",
+    "task": "simplification"
+  },
+  {
+    "input": "Rewrite this sentence for simplicity: The British Council is a charity governed by Royal Charter.",
+    "processed": "The British Council is a charity governed by Royal Charter.",
+    "reference": "The British Council is registered as a charity, both in England and Wales, and in Scotland.",
+    "task": "simplification"
+  },
+  {
+    "input": "Make this simpler: Arvella Schuller died on February 11, 2014, aged 84.",
+    "processed": "Arvella Schuller died on February 11, 2014, aged 84.",
+    "reference": "She died on February 11, 2014.",
+    "task": "simplification"
+  },
+  {
+    "input": "Rewrite the sentence to be simpler: During the cathedral \u2019 s long history, the favoured version changed.",
+    "processed": "During the cathedral \u2019 s long history, the favoured version changed.",
+    "reference": "During the cathedral \u2019 s history people have often made up stories about who he was.",
+    "task": "simplification"
+  },
+  {
+    "input": "Make the sentence simple: This is based on modern technology which has revealed the original colours used to paint the statue.",
+    "processed": "This is based on modern technology which has revealed the original colours used to paint the statue.",
+    "reference": "Modern technology has made it possible for us to know what the original colours were, and this has helped scientists to identify him.",
+    "task": "simplification"
+  },
+  {
+    "input": "Rewrite the sentence to be simpler: The Megaloptera, Neuroptera (in the modern sense) and Raphidioptera are very closely related, forming the group Neuropterida.",
+    "processed": "The Megaloptera, Neuroptera (in the modern sense) and Raphidioptera are very closely related, forming the group Neuropterida.",
+    "reference": "They are closely related to the Megaloptera and Neuroptera.",
+    "task": "simplification"
+  },
+  {
+    "input": "Simplify this sentence: Vera Ellen Wang was born and raised in New York City, and is of Chinese descent.",
+    "processed": "Vera Ellen Wang was born and raised in New York City, and is of Chinese descent.",
+    "reference": "She was born and raised in New York City.",
+    "task": "simplification"
+  },
+  {
+    "input": "Simplify this text: It is commonly used in tanning leather.",
+    "processed": "It is commonly used in tanning leather.",
+    "reference": "It is used to make leather.",
+    "task": "simplification"
+  },
+  {
+    "input": "Simplify the sentence: Rossellini was born in Rome.",
+    "processed": "Rossellini was born in Rome.",
+    "reference": "He was born in Rome.",
+    "task": "simplification"
+  },
+  {
+    "input": "Write a simpler version for the sentence: It is the third sequel to Steven Spielberg's \" Jaws \", and the fourth and final installment in the \" Jaws \" franchise.",
+    "processed": "It is the third sequel to Steven Spielberg's \" Jaws \", and the fourth and final installment in the \"Jaws \" franchise.",
+    "reference": "It is the third and final sequel to Steven Spielberg's Jaws.",
+    "task": "simplification"
+  },
+  {
+    "input": "Simplify this text: Polybutadiene rubber is a polymer formed from the polymerization of the monomer 1,3-butadiene.",
+    "processed": "Polybutadiene rubber is a polymer formed from the polymerization of the monomer 1,3-Butadiene.",
+    "reference": "Polybutadiene is a polymer, that is mainly used as synthetic rubber: It is made from the monomer 1,3-Butadiene.",
+    "task": "simplification"
+  },
+  {
+    "input": "Rewrite the sentence to be simpler: Stravinsky settled in West Hollywood.",
+    "processed": "Stravinsky settled in West Hollywood.",
+    "reference": "They applied for American citizenship and settled in Hollywood.",
+    "task": "simplification"
+  },
+  {
+    "input": "Write a simpler version for the sentence: It is the first Queen album to feature unreleased material from Mercury (who died from complications related to AIDS in November 1991) since the 1995 album \" Made in Heaven \" and Deacon (who retired from the music business in 1997) since the 1997 compilation album \" Queen Rocks \".",
+    "processed": "It is the first Queen album to feature unreleased material from Mercury (who died from complications related to AIDS in November 1991) since the 1995 album \" Made in Heaven \" and Deacon (who retired from the music business in 1997), since the 1997 compilation album \" Queen Rocks \".",
+    "reference": "It is the first album since 1995 to have new music from former group members Freddie Mercury (who died) and John Deacon (who retired).",
+    "task": "simplification"
+  },
+  {
+    "input": "Simplify this sentence: The kurus \u0327 was introduced in 1688.",
+    "processed": "The kurus \u0327 was introduced in 1688.",
+    "reference": "It was first introduced in 1688.",
+    "task": "simplification"
+  },
+  {
+    "input": "Make the sentence simple: Dutch traders also imported thousands of slaves to the fledgling colony from Indonesia, Madagascar, and parts of eastern Africa.",
+    "processed": "Dutch traders also imported thousands of slaves to the fledgling colony from Indonesia, Madagascar, and parts of eastern Africa.",
+    "reference": "Because of this, slaves were brought from Indonesia, Madagascar and India to work at the colony.",
+    "task": "simplification"
+  },
+  {
+    "input": "Change to simpler wording: The colony was on the verge of outright starvation for an extended period.",
+    "processed": "The colony was on the verge of outright starvation for an extended period.",
+    "reference": "The colony was in danger of starvation for long time.",
+    "task": "simplification"
+  },
+  {
+    "input": "Use simpler wording: The Worms have toured in Canada, the United States, the United Kingdom, and Australia.",
+    "processed": "The Worms have toured in Canada, the United States, and the United Kingdom, and Australia.",
+    "reference": "They have played in not just Canada, but also in the United States and Australia as well.",
+    "task": "simplification"
+  },
+  {
+    "input": "Simplify this paragraph: In order for a train to launch, the train must \" drift \" back to \" hook \" on to a catch car.",
+    "processed": "In order for a train to launch, the train must \" drift \" back to \" hook \" on to a catch car.",
+    "reference": "The train has to move back to hook onto the catch car in order to launch.",
+    "task": "simplification"
+  },
+  {
+    "input": "Simplify this paragraph: The album was supposed to be released on Halloween in 1996, but was pushed back to 1997.",
+    "processed": "The album was supposed to be released on Halloween in 1996, but was pushed back to 1997.",
+    "reference": "It was going to be released sometime in 1996 but was pushed back for some reason.",
+    "task": "simplification"
+  },
+  {
+    "input": "Simplify: Their eyes are non-functional and covered with furred skin.",
+    "processed": "Their eyes are non-functional and covered with furred skin.",
+    "reference": "Their eyes do not work, and covered with skin and fur.",
+    "task": "simplification"
+  },
+  {
+    "input": "Rewrite the sentence to be simpler: \" Hero \" is a song by American singer and songwriter Mariah Carey.",
+    "processed": "\" Hero \" is a song by American singer and songwriter Mariah Carey.",
+    "reference": "\" Hero \" is a song by Mariah Carey. <SEP> \" Hero \" is a pop and R & B ballad; although Carey explained that she was unhappy with the song, she realizes how important the song is to her fans and performs it live at her concerts because of its uplifting message.",
+    "task": "simplification"
+  },
+  {
+    "input": "Make this simpler: Entebbe sits on the northern shores of Lake Victoria, Africa's largest lake.",
+    "processed": "Entebbe sits on the northern shores of Lake Victoria, Africa's largest lake.",
+    "reference": "Entebbe is found on the shores of Lake Victoria.",
+    "task": "simplification"
+  },
+  {
+    "input": "Simplify this text: They have been nominated for five Brit Awards, winning the 2009 Best Single for \" The Promise \".",
+    "processed": "They have been nominated for five Brit Awards, winning the 2009 Best Single for \" The Promise \".",
+    "reference": "They have also been nominated for five BRIT Awards, winning Best Single in 2009 for The Promise.",
+    "task": "simplification"
+  },
+  {
+    "input": "Change to simpler wording: He invested a small fortune taken from the family's savings to begin a musical career for his daughter.",
+    "processed": "He invested a small fortune taken from the family's savings to begin a musical career for his daughter.",
+    "reference": "When he saw this, he used much of his family's savings to allow his daughter to start a musical career.",
+    "task": "simplification"
+  },
+  {
+    "input": "Simplify this paragraph: Badoer was born in Montebelluna, Veneto, Italy.",
+    "processed": "Badoer was born in Montebelluna, Veneto, Italy.",
+    "reference": "He was born in Montebelluna.",
+    "task": "simplification"
+  },
+  {
+    "input": "Rewrite this with simpler wording: Chloric acid is a powerful oxidizing agent.",
+    "processed": "Chloric acid is a powerful oxidizing agent.",
+    "reference": "It is a powerful oxidizing agent.",
+    "task": "simplification"
+  },
+  {
+    "input": "Rewrite this sentence for simplicity: A council of ministers of the Crown chaired by the Premier of Ontario, the Executive Council, almost always made up of members of the Legislative Assembly of Ontario, advises the Lieutenant Governor of Ontario on how to exercise the executive functions of the Ontario Crown.",
+    "processed": "A council of ministers of the Crown chaired by the Premier of Ontario, the Executive Council, almost always made up of members of the Legislative Assembly of Ontario and the Lieutenant Governor of the province, advises the Governor of Ontario on how to exercise the executive functions of the Ontario Crown.",
+    "reference": "It is made up of members of the Legislative Assembly of Ontario.",
+    "task": "simplification"
+  },
+  {
+    "input": "Make the sentence simple: Frequently, the name refers to Sarah, the wife of Abraham in the Hebrew Bible, the Christian Old Testament, and the Islamic Quran.",
+    "processed": "Frequently, the name refers to Sarah, the wife of Abraham in the Hebrew Bible, the Christian Old Testament, and the Islamic Quran.",
+    "reference": "It refers to Sarah, the wife of Abraham in Hebrew Bible.",
+    "task": "simplification"
+  },
+  {
+    "input": "Write a simpler version for the sentence: Lyle was born in Shepparton, Victoria, Australia.",
+    "processed": "Lyle was born in Shepparton, Victoria, Australia.",
+    "reference": "He was born in Shepparton, Victoria.",
+    "task": "simplification"
+  },
+  {
+    "input": "Make the sentence simpler: The book is a critique of some widely held beliefs about the nature of science and the scientific process.",
+    "processed": "The book is a critique of some widely held beliefs about the nature of science and the scientific process.",
+    "reference": "The book is asks questions about of some beliefs about what science is and the method used by scientists to do science.",
+    "task": "simplification"
+  },
+  {
+    "input": "Rewrite the sentence to be simpler: Corll was known to give free candy to local children, in particular teenage boys.",
+    "processed": "Corll was known to give free candy to local children, in particular teenage boys.",
+    "reference": "He had been known to give free candy to local children.",
+    "task": "simplification"
+  },
+  {
+    "input": "Use simpler wording: The Parliament of Romania is the national legislature of Romania, consisting of the Chamber of Deputies (\" Camera Deputat \u0326 ilor \"), and the Senate (\" Senat \").",
+    "processed": "The Parliament of Romania is the national legislature of Romania, consisting of the Chamber of Deputies (\" Camera Deputat \u0326 ilor \"), and the Senate (\" Senat \").",
+    "reference": "The Parliament of Romania is made up of two parts: the Chamber of Deputies and the Senate.",
+    "task": "simplification"
+  },
+  {
+    "input": "Simplify this paragraph: It is the second-heaviest known element and the penultimate element of the 7th period of the periodic table.",
+    "processed": "It is the second-heaviest known element and the penultimate element of the 7th period of the periodic table.",
+    "reference": "It is the second heaviest element of all, and is the second to last element.",
+    "task": "simplification"
+  },
+  {
+    "input": "Simplify this text: The group consists of three singing animated anthropomorphic chipmunks: Alvin, the mischievous troublemaker, who quickly became the star of the group; Simon, the tall, bespectacled intellectual; and Theodore, the chubby, impressionable sweetheart.",
+    "processed": "The group consists of three singing animated anthropomorphic chipmunks: Alvin, the mischievous troublemaker, who quickly became the star of the group; Simon, the tall, bespectacled intellectual; and Theodore, the chubby, impressionable sweetheart.",
+    "reference": "The group is made up of three animated chipmunks who sing and talk. <SEP> They are Alvin, Simon and Theodore.",
+    "task": "simplification"
+  },
+  {
+    "input": "Rewrite this with simpler wording: Lje (\u0409 \u0459; italics: \" \u0409 \u0459 \") is a letter of the Cyrillic script.",
+    "processed": "Lje (\u0409 \u0459; italics: \" \u0409 \u041e\u0459 \") is a letter of the Cyrillic script.",
+    "reference": "The Cyrillic letter lj (\u0409, \u0459) is a combination of \u041b and \u042c and is used in Serbian and Macedonian.",
+    "task": "simplification"
+  },
+  {
+    "input": "Simplification: Philosophy of Language may investigate the relations between language, language users, and the world.",
+    "processed": "The philosophy of language may investigate the relations between language, language users, and the world.",
+    "reference": "Philosophy of language is the study of how languages were created and are used.",
+    "task": "simplification"
+  },
+  {
+    "input": "Make this easier to understand: Gould was born in Bensonhurst, Brooklyn, New York.",
+    "processed": "Gould was born in Bensonhurst, Brooklyn, New York.",
+    "reference": "He was born in Brooklyn, New York City.",
+    "task": "simplification"
+  },
+  {
+    "input": "Make this easier to understand: Marchesi was born in Milan, Italy.",
+    "processed": "Marchesi was born in Milan, Italy.",
+    "reference": "He was born in Milan.",
+    "task": "simplification"
+  },
+  {
+    "input": "Simplify: Students are typically 16 \u2013 17 years of age, depending on the country and the students ' birthdays.",
+    "processed": "Students are typically 16 \u2013 17 years of age, depending on the country and the students'birthdays.",
+    "reference": "Students are usually 16 or 17 years old at this time, though it may be different because of the country or their birthdays.",
+    "task": "simplification"
+  },
+  {
+    "input": "Make the sentence simpler: Global Handwashing Day occurs on 15 October of each year.",
+    "processed": "Global Handwashing Day occurs on 15 October of each year.",
+    "reference": "It takes place on October 15 of each year.",
+    "task": "simplification"
+  },
+  {
+    "input": "Make this easier to understand: As an example, \" ESC E \" will switch to printing in bold font, while \" ESC F \" switches off bold printing.",
+    "processed": "As an example, \" ESC E \" will switch to printing in bold font, while \" ESC F \" switches off bold printing.",
+    "reference": "As an example, ESC E will switch on bold, and ESC F will switch it off.",
+    "task": "simplification"
+  },
+  {
+    "input": "Use simpler wording: Located on an island with no bridges to the mainland, Petersburg can be accessed only by air or sea.",
+    "processed": "Located on an island with no bridges to the mainland, Petersburg can be accessed only by air or sea.",
+    "reference": "There are no bridges so Petersburg can only be reached by air or sea.",
+    "task": "simplification"
+  },
+  {
+    "input": "Simplification: Wertham was born on March 20, 1895 in Nuremberg as Friedrich Ignatz Wertheimer.",
+    "processed": "Wertham was born on March 20, 1895 in Nuremberg as Friedrich Ignatz Wertheimer.",
+    "reference": "He was born on 20 March 20 1895 in Munich.",
+    "task": "simplification"
+  },
+  {
+    "input": "Simplify this sentence: During the party, Captain Crewe's solicitor (E. E. Clive) arrives with the sad news that Captain Crewe has died and his real estate, the basis for his wealth, has been confiscated.",
+    "processed": "During the party, Captain Crewe's solicitor (E. E. Clive) arrives with the sad news that he has died and his real estate, the basis for his wealth, has been confiscated.",
+    "reference": "One day, his lawyer arrives in the school with news that Captain Crewe has died and his real estate has been confiscated.",
+    "task": "simplification"
+  },
+  {
+    "input": "Make the sentence simple: However, if all four celebrities have been caught by the chaser, the prize fund during the Final Chase is \u00a3 20,000 (originally \u00a3 4,000).",
+    "processed": "However, if all four celebrities have been caught by the chaser, the prize fund during the Final Chase is \u00a3 20,000 (originally \u00a3 4,000).",
+    "reference": "If all four players are caught, their bank is set to \u00a3 4,000, and they must choose one player to play the Final Chase.",
+    "task": "simplification"
+  },
+  {
+    "input": "Make the sentence simple: Roger Ebert gave the movie three-and-a-half stars.",
+    "processed": "Roger Ebert gave the movie three-and-a-half stars.",
+    "reference": "Roger Ebert gave this movie three and a half stars.",
+    "task": "simplification"
+  },
+  {
+    "input": "Make the sentence simpler: It also launched on Sky Channel 624 on 8 May 2006 and NTL Channel 76/602 on 6 June.",
+    "processed": "It also launched on Sky Channel 624 on 8 May 2006 and NTL Channel 76/602 on 6 June.",
+    "reference": "It was also released on Sky in May and NTL on 6 June.",
+    "task": "simplification"
+  },
+  {
+    "input": "Make the sentence simpler: The British colony was preceded by an earlier Dutch colony of the same name, the \" Kaap de Goede Hoop \", established in 1652 by the Dutch East India Company.",
+    "processed": "The British colony was preceded by an earlier Dutch colony of the same name, the \" Kaap de Goede Hoop \", established in 1652 by the Dutch East India Company.",
+    "reference": "It was first established in 1652 by Jan van Riebeeck as a governorate of the Dutch East India Company.",
+    "task": "simplification"
+  },
+  {
+    "input": "Simplify this paragraph: Although primarily used for HTTP and FTP, Squid includes limited support for several other protocols including Internet Gopher, SSL, TLS and HTTPS.",
+    "processed": "Although primarily used for HTTP and FTP, Squid includes limited support for several other protocols including Internet Gopher, SSL, TLS and HTTPS.",
+    "reference": "It is mostly used in HTTP and FTP protocols, but it has some support for some other types of protocols, like SSL, TLS, and HTTPS.",
+    "task": "simplification"
+  },
+  {
+    "input": "Rewrite this sentence in a simpler manner: Cork was originally a monastic settlement, reputedly founded by Saint Finbarr in the 6th century.",
+    "processed": "Cork was originally a monastic settlement, reputedly founded by Saint Finbarr in the 6th century.",
+    "reference": "It was founded by Saint Finbarr in the sixth century.",
+    "task": "simplification"
+  },
+  {
+    "input": "Simplify: VLC 1.0.0 has more than 380 modules.",
+    "processed": "VLC 1.0 has more than 380 modules.",
+    "reference": "There are more than 300 modules in VLC.",
+    "task": "simplification"
+  },
+  {
+    "input": "Simplification: Thorbecke was born in Zwolle.",
+    "processed": "Thorbecke was born in Zwolle.",
+    "reference": "He was born in Zwolle.",
+    "task": "simplification"
+  },
+  {
+    "input": "Make this easier to understand: The construction of the bridge was undertaken by the collaboration of Sato Kogyo Pte Ltd and TTJ Design and Engineering Pte Ltd.",
+    "processed": "The construction of the bridge was undertaken by the collaboration of Sato Kogyo Pte Ltd and TTJ Design and Engineering Pte.",
+    "reference": "The construction of the bridge was done by two local engineering and construction companies.",
+    "task": "simplification"
+  },
+  {
+    "input": "Rewrite this with simpler wording: Interscope Records released it on March 6, 2015.",
+    "processed": "Interscope Records released it on March 6, 2015.",
+    "reference": "It was released on March 10, 2015.",
+    "task": "simplification"
+  },
+  {
+    "input": "Rewrite the sentence to be simpler: The county is named for U.S. President Thomas Jefferson.",
+    "processed": "The county is named for U.S. President Thomas Jefferson.",
+    "reference": "It is named for U.S. President Thomas Jefferson.",
+    "task": "simplification"
+  },
+  {
+    "input": "Make the sentence simple: Wright is currently rated as one of the leading indigenous British painters of his generation, largely for the distinctive realism in his portraiture.",
+    "processed": "Wright is currently rated as one of the leading indigenous British painters of his generation, largely for the distinctive realism in his portraiture.",
+    "reference": "Today, Wright is seen as one of the most important British painters of his time.",
+    "task": "simplification"
+  },
+  {
+    "input": "Make the sentence simpler: Miso is a part of many Japanese-style meals.",
+    "processed": "Miso is a part of many Japanese-style meals.",
+    "reference": "Miso is a very important part of Japanese food.",
+    "task": "simplification"
+  },
+  {
+    "input": "Simplification: It is, however, also practiced by other orders.",
+    "processed": "It is, however, also practiced by other orders.",
+    "reference": "It is also done by other orders.",
+    "task": "simplification"
+  },
+  {
+    "input": "Write a simpler version for the sentence: The USL W-League was a North American women's soccer developmental organization.",
+    "processed": "The USL W-League was a North American women's soccer developmental organization.",
+    "reference": "The USL W-League is a national women's soccer league. <SEP> The W-League is seen as North America \u2019 s main way for women to develop in soccer.",
+    "task": "simplification"
+  },
+  {
+    "input": "Make the sentence simple: The lack of a trained manpower base, a large professional organisation, or sufficient mate \u0301 riel reserves precluded a swift expansion of Dutch forces.",
+    "processed": "The lack of a trained manpower base, a large professional organisation, or sufficient mate \u0301 riel reserves precluded a swift expansion of Dutch forces.",
+    "reference": "The lack of trained troops, a large professional organization, or good weapons made it hard to make the Dutch forces larger.",
+    "task": "simplification"
+  },
+  {
+    "input": "Simplify this paragraph: Part of their equipment was brought by ship through Flushing harbour.",
+    "processed": "Part of their equipment was brought by ship through Flushing harbour.",
+    "reference": "Part of their equipment was brought by ship.",
+    "task": "simplification"
+  },
+  {
+    "input": "Simplify the sentence: If numbers differ by one order of magnitude, \" x \" is \" about \" ten times different in quantity than \" y \".",
+    "processed": "If numbers differ by one order of magnitude, \" x \" is \" about \" ten times different in quantity than \" y \".",
+    "reference": "If two numbers differ by one order of magnitude, one is about ten times larger than the other.",
+    "task": "simplification"
+  },
+  {
+    "input": "Simplification: Gobiidae is a family of bony fish in the order Gobiiformes, one of the largest fish families comprising more than 2,000 species in more than 200 genera, sometimes referred to as the \" true gobies \".",
+    "processed": "Gobiidae is a family of bony fish in the order Gobiiformes, one of the largest fish families comprising more than 2,000 species in more than 200 genera, sometimes referred to as the \" true gobies \".",
+    "reference": "This is one of the largest families of fish, with more than 2,000 species in more than 200 genera.",
+    "task": "simplification"
+  },
+  {
+    "input": "Simplify this sentence: An adventure is an exciting experience that is typically a bold, sometimes risky, undertaking.",
+    "processed": "An adventure is an exciting experience that is typically a bold, sometimes risky, undertaking.",
+    "reference": "An adventure is something exciting that happens to someone. <SEP> An adventurer is someone who goes on adventures or does things that are risky.",
+    "task": "simplification"
+  },
+  {
+    "input": "Simplify the sentence: Approximately 770,000 of these strokes were symptomatic and 11 million were first-ever silent MRI infarcts or hemorrhages.",
+    "processed": "About 770,000 of these strokes were symptomatic and 11 million were first-ever silent MRI infarcts or hemorrhages.",
+    "reference": "About 770,000 of these strokes had symptoms which could be seen and 11 million were first-ever silent strokes.",
+    "task": "simplification"
+  },
+  {
+    "input": "Make the sentence simpler: The order Diplura is one of the four groups of hexapods, alongside insects, Collembola (springtails) and Protura.",
+    "processed": "The order Diplura is one of the four groups of hexapods, alongside insects, Collembola (springtails) and Protura.",
+    "reference": "It is one of the four groups of hexapods, with insects, springtails and Protura.",
+    "task": "simplification"
+  },
+  {
+    "input": "Simplify the sentence: The game was released in Japan by Sega, in North America by Atlus USA, and in Europe and Australia by NIS America in March 2016.",
+    "processed": "The game was released in Japan by Sega, in North America by Atlus USA, and in Europe and Australia by NIS America in March 2016.",
+    "reference": "It was published in Japan by Sega, in North America by, and it will be released in Europe by.",
+    "task": "simplification"
+  },
+  {
+    "input": "Make the sentence simple: Roza Otunbayeva is a divorced mother of two children.",
+    "processed": "Roza Otunbayeva is a divorced mother of two children.",
+    "reference": "Otunbayeva is divorced and has two children.",
+    "task": "simplification"
+  },
+  {
+    "input": "Make the sentence simple: Effects of the two mustard agents are typically delayed: exposure to vapors becomes evident in 4 to 6 hours, and skin exposure in 2 to 48 hours.",
+    "processed": "Effects of the two mustard agents are typically delayed: exposure to vapors becomes evident in 4 to 6 hours, and skin exposure in 2 to 48 hours.",
+    "reference": "When they are breathed in, symptoms usually do not appear for 4 to 6 hours. <SEP> When mustard agents get on the skin, symptoms can take 2 to 48 hours to appear.",
+    "task": "simplification"
+  },
+  {
+    "input": "Simplification: The recovery of populations throughout the states of Wyoming, Montana and Idaho has been so successful that on February 27, 2008, the U.S. Fish and Wildlife Service removed the Northern Rocky Mountain wolf population from the endangered species list.",
+    "processed": "The recovery of populations throughout the states of Wyoming, Montana and Idaho has been so successful that on February 27, 2008, the U.S. Fish and Wildlife Service removed the Northern Rocky Mountain wolf population from the endangered species list.",
+    "reference": "The increase in the number of wolves in the states of Wyoming, Montana and Idaho has been so successful that they are no longer on the endangered species list.",
+    "task": "simplification"
+  },
+  {
+    "input": "Make the sentence simpler: The majority of the heat is produced by lighting fixtures, other electric devices and people in the mall.",
+    "processed": "The majority of the heat is produced by lighting fixtures, other electric devices and people in the mall.",
+    "reference": "Heat is produced by lighting fixtures, other electric devices and also by employees and guests of the mall in sufficient amounts to keep it comfortable.",
+    "task": "simplification"
+  },
+  {
+    "input": "Simplify the sentence: The capital is Mersch.",
+    "processed": "The capital is Mersch.",
+    "reference": "Its capital is Mersch.",
+    "task": "simplification"
+  },
+  {
+    "input": "Rewrite this with simpler wording: To combat Beckett, the nine pirate lords of the Brethren Court convene at Shipwreck Cove.",
+    "processed": "To combat Beckett, the nine pirate lords of the Brethren Court convene at Shipwreck Cove.",
+    "reference": "Barbossa explains that the Brethren Court has been summoned to meet at Shipwreck Cove and Feng, being one of the nine Pirate Lords, is honor bound to attend.",
+    "task": "simplification"
+  }
+]
