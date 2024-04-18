@@ -1,3 +1,5 @@
+# https://learn.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-terraform
+
 terraform {
   required_providers {
     azurerm = {
@@ -8,7 +10,12 @@ terraform {
 }
 
 provider "azurerm" {
-  features {}
+  # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/guides/features-block
+  features {
+    virtual_machine {
+      delete_os_disk_on_deletion = false
+    }
+  }
   skip_provider_registration = true
   subscription_id            = "7d3d96a4-fb3d-436b-a57a-b9df03298658" # azure-iz
 }
@@ -19,7 +26,7 @@ provider "azurerm" {
 # }
 
 data "azurerm_resource_group" "this" {
-  name     = "machine-learning"
+  name = "machine-learning"
 }
 
 resource "azurerm_virtual_network" "this" {
@@ -27,12 +34,6 @@ resource "azurerm_virtual_network" "this" {
   resource_group_name = data.azurerm_resource_group.this.name
   location            = data.azurerm_resource_group.this.location
   address_space       = ["10.0.0.0/24"]
-}
-
-resource "azurerm_network_security_group" "this" {
-  name                = "workspace-nsg"
-  location            = data.azurerm_resource_group.this.location
-  resource_group_name = data.azurerm_resource_group.this.name
 }
 
 resource "azurerm_subnet" "this" {
@@ -44,9 +45,10 @@ resource "azurerm_subnet" "this" {
 
 resource "azurerm_public_ip" "this" {
   name                = "workspace-public-ip"
+  sku                 = "Standard"
   location            = data.azurerm_resource_group.this.location
   resource_group_name = data.azurerm_resource_group.this.name
-  allocation_method   = "Dynamic"
+  allocation_method   = "Static"
 }
 
 resource "azurerm_network_interface" "this" {
@@ -55,11 +57,34 @@ resource "azurerm_network_interface" "this" {
   resource_group_name = data.azurerm_resource_group.this.name
 
   ip_configuration {
-    name                          = "internal"
+    name                          = "public"
     subnet_id                     = azurerm_subnet.this.id
     private_ip_address_allocation = "Dynamic"
     public_ip_address_id          = azurerm_public_ip.this.id
   }
+}
+
+resource "azurerm_network_security_group" "this" {
+  name                = "workstation-nsg"
+  location            = data.azurerm_resource_group.this.location
+  resource_group_name = data.azurerm_resource_group.this.name
+
+  security_rule {
+    name                       = "SSH"
+    priority                   = 1001
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_port_range          = "*"
+    destination_port_range     = "22"
+    source_address_prefix      = "*"
+    destination_address_prefix = "*"
+  }
+}
+
+resource "azurerm_network_interface_security_group_association" "example" {
+  network_interface_id      = azurerm_network_interface.this.id
+  network_security_group_id = azurerm_network_security_group.this.id
 }
 
 # resource "azurerm_virtual_machine" "test" {
@@ -165,6 +190,8 @@ resource "azurerm_network_interface" "this" {
 #   }
 # }
 
+# https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/linux_virtual_machine#diff_disk_settings
+# https://azure.microsoft.com/en-us/pricing/calculator/
 resource "azurerm_linux_virtual_machine" "workstation-nc24" {
   name                  = "workstation-nc24"
   location              = data.azurerm_resource_group.this.location
@@ -181,10 +208,13 @@ resource "azurerm_linux_virtual_machine" "workstation-nc24" {
     public_key = file("~/.ssh/id_rsa.pub")
   }
 
+  # https://learn.microsoft.com/en-us/azure/virtual-machines/disks-types#premium-ssd-v2
   os_disk {
-    name                 = "workstation-disk"
+    name                 = "workstation-nc24-os-disk"
     caching              = "ReadWrite"
-    storage_account_type = "Standard_LRS"
+    storage_account_type = "StandardSSD_LRS"
+    # storage_account_type = "Premium_LRS"
+    disk_size_gb = 30
   }
 
   source_image_reference {
@@ -194,8 +224,8 @@ resource "azurerm_linux_virtual_machine" "workstation-nc24" {
     version   = "latest"
   }
 
-  priority = "Spot"
-  max_bid_price = "1.0"
+  priority        = "Spot"
+  max_bid_price   = "1.0"
   eviction_policy = "Deallocate"
 
   # patch_mode = "AutomaticByPlatform"
@@ -214,7 +244,7 @@ resource "azurerm_linux_virtual_machine" "workstation-nc24" {
   # }
 
   # provisioner "file" {
-  #   source      = "~/.ssh/id_rsa"
+  #   source      = "calcula"
   #   destination = "~/.ssh/id_rsa"
   # }
 
@@ -225,6 +255,36 @@ resource "azurerm_linux_virtual_machine" "workstation-nc24" {
   #     "ls -la",
   #   ]
   # }
+}
+
+resource "azurerm_subnet_network_security_group_association" "example" {
+  subnet_id                 = azurerm_subnet.this.id
+  network_security_group_id = azurerm_network_security_group.this.id
+}
+
+resource "azurerm_managed_disk" "izlobin-home" {
+  name                 = "izlobin-home"
+  location             = data.azurerm_resource_group.this.location
+  resource_group_name  = data.azurerm_resource_group.this.name
+  storage_account_type = "StandardSSD_LRS"
+  # storage_account_type = "Premium_LRS"
+  create_option = "Empty"
+  disk_size_gb  = 100
+}
+
+# resource "azurerm_snapshot" "example" {
+#   name                = "izlobin-home-240418"
+#   location            = data.azurerm_resource_group.example.location
+#   resource_group_name = data.azurerm_resource_group.example.name
+#   create_option       = "Copy"
+#   source_uri          = azurerm_managed_disk.izlobin-home.id
+# }
+
+resource "azurerm_virtual_machine_data_disk_attachment" "izlobin-home" {
+  managed_disk_id    = azurerm_managed_disk.izlobin-home.id
+  virtual_machine_id = azurerm_linux_virtual_machine.workstation-nc24.id
+  lun                = "10"
+  caching            = "ReadWrite"
 }
 
 output "public_ip_address" {
