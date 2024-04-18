@@ -1,5 +1,41 @@
-# conda environment pytorch
+# env
 * https://pytorch.org/get-started/previous-versions/
+```sh
+
+nvcc --version
+
+# update system deps
+sudo apt update
+sudo apt upgrade -y
+
+sudo apt install -y ubuntu-drivers-common
+
+
+sudo apt install -y gcc
+gcc -v
+
+# install nvidia driver
+# https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=22.04&target_type=deb_network
+cd ~/dwl
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb
+sudo dpkg -i cuda-keyring_1.1-1_all.deb
+sudo apt-get update
+
+sudo apt-get install -y cuda-toolkit-12-4
+sudo apt-get install -y cuda-drivers
+
+sudo ubuntu-drivers devices
+sudo apt-get install -y cuda-drivers
+sudo apt install nvidia-driver-535-server
+sudo apt install nvidia-utils-535-server
+
+lsmod | grep nvidia
+sudo modprobe nvidia
+nvidia-smi
+
+```
+
+# conda
 ```sh
 conda deactivate
 # conda env remove -n pytorch-3.10
@@ -13,12 +49,22 @@ python --version
 echo $CONDA_PREFIX
 du -sh $CONDA_PREFIX
 
-conda config --set channel_priority strict
-conda clean -y --all
-conda update -y --all
+# conda install
+mkdir -p ~/dwl
+cd ~/dwl
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda-installer.sh
+chmod +x miniconda-installer.sh
+./miniconda-installer.sh
+conda init
+
+# conda reset
+# conda config --set channel_priority strict
+# conda clean -y --all
+# conda update -y --all
 
 # all
 # pip install sentencepiece pytz mpmath xxhash urllib3 tzdata typing-extensions tqdm sympy safetensors rouge regex python-dateutil pyarrow-hotfix psutil packaging nvidia-nvtx-cu12 nvidia-nvjitlink-cu12 nvidia-nccl-cu12 nvidia-curand-cu12 nvidia-cufft-cu12 nvidia-cuda-runtime-cu12 nvidia-cuda-nvrtc-cu12 nvidia-cuda-cupti-cu12 nvidia-cublas-cu12 numpy networkx multidict MarkupSafe idna fsspec frozenlist filelock dill charset-normalizer certifi attrs async-timeout yarl triton requests pyarrow pandas nvidia-cusparse-cu12 nvidia-cudnn-cu12 multiprocess jinja2 gekko aiosignal nvidia-cusolver-cu12 huggingface-hub aiohttp torch tokenizers transformers datasets accelerate peft auto-gptq
+
 
 # common packages
 # pip install ipykernel
@@ -26,16 +72,13 @@ conda install -y ipykernel ipywidgets conda-forge
 pip install python-dotenv pipreqs
 pip install jupyter ipywidgets
 
-# machine learning
-pip install scikit-learn
-pip install auto-gptq
-
+# https://pytorch.org/get-started/locally/
 # torch (https://pytorch.org/get-started/locally/)
-nvcc --version
 # conda install -y pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
-pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+# pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
 
-conda install -y pytorch==2.2.1 torchvision==0.17.1 torchaudio==2.2.1 pytorch-cuda=12.1 -c pytorch -c nvidia # wait long (3-5 min)
+conda install -y pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
+# conda install -y pytorch==2.2.1 torchvision==0.17.1 torchaudio==2.2.1 pytorch-cuda=12.1 -c pytorch -c nvidia # wait long (3-5 min)
 # conda install -y pytorch==2.2.1 torchvision==0.17.1 torchaudio==2.2.1 -c pytorch
 # conda install -y pytorch-cuda=12.1 -c pytorch -c nvidia
 
@@ -46,8 +89,12 @@ python -c "import torch; print(torch.version.cuda)"
 python -c "import torch; print(torch. __version__)"
 python -m torch.utils.collect_env
 
-# libs
+# ml libs
 conda install -c conda-forge scikit-learn
+
+pip install scikit-learn
+pip install auto-gptq
+
 
 # bench
 python benchmark.py
@@ -148,9 +195,19 @@ az login
 
 # infra
 terraform init
+terraform state list
+# terraform untaint azurerm_network_interface.this
+terraform taint azurerm_public_ip.this
+terraform taint azurerm_linux_virtual_machine.workstation-nc24
+terraform apply
 terraform plan
 terraform apply -auto-approve
 terraform output
+
+# update public-ip
+terraform taint azurerm_public_ip.this
+az network nic ip-config list -g machine-learning --nic-name workspace-nic
+az network nic ip-config update --name internal --nic-name workspace-nic --resource-group machine-learning --remove PublicIPAddress
 
 # provisioning
 PUBLIC_IP=$(terraform output public_ip_address | tr -d '"')
@@ -164,8 +221,45 @@ ssh izlobin@$PUBLIC_IP "whoami; pwd; ls -la"
 ls ~/back.tar.gz
 scp ~/back.tar.gz izlobin@$PUBLIC_IP:~/back.tar.gz
 scp ~/.ssh/id_rsa izlobin@$PUBLIC_IP:~/.ssh/id_rsa
-
 ssh izlobin@$PUBLIC_IP "tar xvzf ~/back.tar.gz"
 ssh izlobin@$PUBLIC_IP "cat ~/.bashrc.iz >> ~/.bashrc"
+
+# disk init
+sudo ls -alF /dev/disk/azure/scsi1/
+sudo mkfs.ext4 /dev/sda
+blkid
+
+# disk remount
+cat /etc/fstab
+sudo fdisk -lu
+
+sudo mount -o rw /dev/sdX /home/izlobin-new
+cp -r /home/izlobin/* /home/izlobin-new
+
+blkid
+sudo blkid -p /dev/sda
+# /dev/sda: UUID="3a787633-066f-47e0-8801-6abeaf7787f4" VERSION="1.0" BLOCK_SIZE="4096" TYPE="ext4" USAGE="filesystem"
+# /dev/sdc1: UUID="f3942cd1-ddc4-4dd6-b8d2-31e3219a00e5" BLOCK_SIZE="4096" TYPE="ext4" PARTUUID="c41b5f43-01"
+UUID=$(blkid  | grep _ | awk _)
+# sudo sed "UUID=$UUID /home/izlobin-new ext4 defaults,nofail 0 0" >> /etc/fstab
+sudo chown -R izlobin:izlobin /home/izlobin
+sudo chown -R izlobin:izlobin /home/izlobin-new/
+rsync -av . /home/izlobin-new/
+ls -la /home/izlobin-new/
+
+# disk increase
+lsblk
+sudo fdisk -l
+sudo resize2fs /dev/sdc1
+
+sudo ls -alF /dev/disk/azure/scsi1/
+
+echo 1 | sudo tee /sys/class/block/sdc/device/rescan
+sudo fdisk -l /dev/sdc
+
+echo 1 | sudo tee /sys/class/block/sda/device/rescan
+sudo fdisk -l /dev/sda
+
+df -Th
 
 ```
