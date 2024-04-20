@@ -191,7 +191,8 @@ ruff format /home/izlobin/ws/transformers-labs/model-evaluation/evaluate.py
 cd /home/izlobin/ws/transformers-labs/terraform/azure-workstation
 
 az login
-# az group list --output table
+az account list --output table
+az group list --output table
 
 # infra
 terraform init
@@ -270,5 +271,14 @@ df -Th
 sudo fdisk -l /dev/sdc
 # sudo swapon /dev/sdc
 
+
+```
+
+
+# azure spot prices
+* https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices
+```sh
+curl https://prices.azure.com/api/retail/prices?filter=serviceName eq 'Virtual Machines' > "azure-spot-prices/virtual-machines.json"
+curl https://prices.azure.com/api/retail/prices?filter=serviceFamily eq 'Compute' > "azure-spot-prices/compute.json"
 
 ```
