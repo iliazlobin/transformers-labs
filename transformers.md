@@ -216,10 +216,9 @@ echo $PUBLIC_IP
 echo $PUBLIC_IP | x
 nmap -Pn -p 22,80,8080,6006 $PUBLIC_IP
 
-ssh -L 16006:localhost:6006 izlobin@$PUBLIC_IP
-
 ssh izlobin@$PUBLIC_IP
 ssh izlobin@$PUBLIC_IP "whoami; pwd; ls -la"
+ssh -L 16006:localhost:6006 izlobin@$PUBLIC_IP
 
 ls ~/back.tar.gz
 scp ~/back.tar.gz izlobin@$PUBLIC_IP:~/back.tar.gz
@@ -240,13 +239,14 @@ sudo mount -o rw $VOLUME_DEV /home/izlobin-new
 ls -la /home/izlobin-new
 sudo umount /home/izlobin-new
 
-UUID=$(sudo blkid -s UUID -o value /dev/disk/cloud/azure_resource-part1)
+# UUID=$(sudo blkid -s UUID -o value /dev/disk/cloud/azure_resource-part1)
 UUID=$(sudo blkid -s UUID -o value $VOLUME_DEV)
-sudo cp /etc/fstab.bak /etc/fstab
-cat /etc/fstab.bak
+sudo cp /etc/fstab /etc/fstab.bak
+# sudo cp /etc/fstab.bak /etc/fstab
+# cat /etc/fstab.bak
 # sudo sed -iE "s|/dev/disk/cloud/azure_resource-part1.*\(auto.*\)|UUID=$UUID /home/izlobin \1|" /etc/fstab
 sudo sed -iE "s|.*azure_resource-part1.*\(auto.*\)|UUID=$UUID /home/izlobin \1|" /etc/fstab
-sudo sed -iE "s|.*/home/izlobin.*\(auto.*\)|UUID=$UUID /home/izlobin \1|" /etc/fstab
+# sudo sed -iE "s|.*/home/izlobin.*\(auto.*\)|UUID=$UUID /home/izlobin \1|" /etc/fstab
 cat /etc/fstab
 sudo mount -a remount
 ls -la /home/izlobin
