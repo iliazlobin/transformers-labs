@@ -1,5 +1,7 @@
 # env
-* https://pytorch.org/get-started/previous-versions/
+
+- https://pytorch.org/get-started/previous-versions/
+
 ```sh
 
 nvcc --version
@@ -36,6 +38,7 @@ nvidia-smi
 ```
 
 # conda
+
 ```sh
 conda deactivate
 # conda env remove -n pytorch-3.10
@@ -68,8 +71,9 @@ conda init
 
 # common packages
 # pip install ipykernel
-# conda install -y ipykernel ipywidgets conda-forge
-pip install jupyter ipywidgets python-dotenv pipreqs
+conda install -y ipykernel ipywidgets conda-forge
+pip install python-dotenv pipreqs
+pip install jupyter ipywidgets
 
 # https://pytorch.org/get-started/locally/
 # torch (https://pytorch.org/get-started/locally/)
@@ -89,7 +93,11 @@ python -c "import torch; print(torch. __version__)"
 python -m torch.utils.collect_env
 
 # ml libs
-# conda install -c conda-forge scikit-learn
+conda install -c conda-forge scikit-learn
+
+pip install scikit-learn
+pip install auto-gptq
+
 
 # bench
 python benchmark.py
@@ -140,6 +148,7 @@ python -c "import langchain; print(langchain.__version__)"
 ```
 
 ## Benchmark
+
 ```sh
 conda activate pytorch
 echo $CONDA_PREFIX
@@ -163,6 +172,7 @@ optimum-benchmark --config-dir benchmark/ --config-name pytorch_bert
 ```
 
 ## Ruff
+
 ```sh
 /home/izlobin/.vscode-server/extensions/charliermarsh.ruff-2024.16.0-linux-x64/bundled/libs/bin/ruff --version
 
@@ -175,18 +185,14 @@ ruff format /home/izlobin/ws/transformers-labs/model-evaluation/evaluate.py
 
 ```
 
-## ssh tunnel
-```sh
-ssh -L 16006:localhost:6006 paperspace@184.105.3.44
-
-```
-
 ## azure workstation
+
 ```sh
 cd /home/izlobin/ws/transformers-labs/terraform/azure-workstation
 
 az login
-# az group list --output table
+az account list --output table
+az group list --output table
 
 # infra
 terraform init
@@ -205,13 +211,15 @@ az network nic ip-config list -g machine-learning --nic-name workspace-nic
 az network nic ip-config update --name internal --nic-name workspace-nic --resource-group machine-learning --remove PublicIPAddress
 
 # provisioning
+cd /home/izlobin/ws/transformers-labs/terraform/azure-workstation
 PUBLIC_IP=$(terraform output public_ip_address | tr -d '"')
-echo $PUBLIC_IP | x
 echo $PUBLIC_IP
+echo $PUBLIC_IP | x
 nmap -Pn -p 22,80,8080,6006 $PUBLIC_IP
 
 ssh izlobin@$PUBLIC_IP
 ssh izlobin@$PUBLIC_IP "whoami; pwd; ls -la"
+ssh -L 16006:localhost:6006 izlobin@$PUBLIC_IP
 
 ls ~/back.tar.gz
 scp ~/back.tar.gz izlobin@$PUBLIC_IP:~/back.tar.gz
@@ -219,30 +227,32 @@ scp ~/.ssh/id_rsa izlobin@$PUBLIC_IP:~/.ssh/id_rsa
 ssh izlobin@$PUBLIC_IP "tar xvzf ~/back.tar.gz"
 ssh izlobin@$PUBLIC_IP "cat ~/.bashrc.iz >> ~/.bashrc"
 
+```
+
+## azure workstation disk
+```sh
 # disk init
-sudo ls -alF /dev/disk/azure/scsi1/
-sudo mkfs.ext4 /dev/sda
-blkid
+ls -alF /dev/disk/azure/scsi1/
+VOLUME=$(ls -alF /dev/disk/azure/scsi1/ | awk -F" " '$9 ~ /lun10/ {split($11,a,"/"); print a[length(a)]}')
+VOLUME_DEV="/dev/$VOLUME"
+echo $VOLUME_DEV
+sudo mount -o rw $VOLUME_DEV /home/izlobin-new
+ls -la /home/izlobin-new
+sudo umount /home/izlobin-new
 
-# disk remount
+# UUID=$(sudo blkid -s UUID -o value /dev/disk/cloud/azure_resource-part1)
+UUID=$(sudo blkid -s UUID -o value $VOLUME_DEV)
+sudo cp /etc/fstab /etc/fstab.bak
+# sudo cp /etc/fstab.bak /etc/fstab
+# cat /etc/fstab.bak
+# sudo sed -iE "s|/dev/disk/cloud/azure_resource-part1.*\(auto.*\)|UUID=$UUID /home/izlobin \1|" /etc/fstab
+sudo sed -iE "s|.*azure_resource-part1.*\(auto.*\)|UUID=$UUID /home/izlobin \1|" /etc/fstab
+# sudo sed -iE "s|.*/home/izlobin.*\(auto.*\)|UUID=$UUID /home/izlobin \1|" /etc/fstab
 cat /etc/fstab
-sudo fdisk -lu
+sudo mount -a remount
+ls -la /home/izlobin
 
-sudo mount -o rw /dev/sdX /home/izlobin-new
-cp -r /home/izlobin/* /home/izlobin-new
-
-blkid
-sudo blkid -p /dev/sda
-# /dev/sda: UUID="3a787633-066f-47e0-8801-6abeaf7787f4" VERSION="1.0" BLOCK_SIZE="4096" TYPE="ext4" USAGE="filesystem"
-# /dev/sdc1: UUID="f3942cd1-ddc4-4dd6-b8d2-31e3219a00e5" BLOCK_SIZE="4096" TYPE="ext4" PARTUUID="c41b5f43-01"
-UUID=$(blkid  | grep _ | awk _)
-# sudo sed "UUID=$UUID /home/izlobin-new ext4 defaults,nofail 0 0" >> /etc/fstab
-sudo chown -R izlobin:izlobin /home/izlobin
-sudo chown -R izlobin:izlobin /home/izlobin-new/
-rsync -av . /home/izlobin-new/
-ls -la /home/izlobin-new/
-
-# disk increase
+# disk resize
 lsblk
 sudo fdisk -l
 sudo resize2fs /dev/sdc1
@@ -256,5 +266,19 @@ echo 1 | sudo tee /sys/class/block/sda/device/rescan
 sudo fdisk -l /dev/sda
 
 df -Th
+
+# swap
+sudo fdisk -l /dev/sdc
+# sudo swapon /dev/sdc
+
+
+```
+
+
+# azure spot prices
+* https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices
+```sh
+curl https://prices.azure.com/api/retail/prices?filter=serviceName eq 'Virtual Machines' > "azure-spot-prices/virtual-machines.json"
+curl https://prices.azure.com/api/retail/prices?filter=serviceFamily eq 'Compute' > "azure-spot-prices/compute.json"
 
 ```
