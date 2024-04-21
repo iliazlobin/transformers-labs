@@ -269,7 +269,7 @@ resource "azurerm_managed_disk" "izlobin-home" {
   storage_account_type = "StandardSSD_LRS"
   # storage_account_type = "Premium_LRS"
   create_option = "Empty"
-  disk_size_gb  = 100
+  disk_size_gb  = 200
 }
 
 # resource "azurerm_snapshot" "example" {

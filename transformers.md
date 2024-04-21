@@ -243,7 +243,7 @@ sudo umount /home/izlobin-new
 # UUID=$(sudo blkid -s UUID -o value /dev/disk/cloud/azure_resource-part1)
 UUID=$(sudo blkid -s UUID -o value $VOLUME_DEV)
 sudo cp /etc/fstab /etc/fstab.bak
-# sudo cp /etc/fstab.bak /etc/fstab
+sudo cp /etc/fstab.bak /etc/fstab
 # cat /etc/fstab.bak
 # sudo sed -iE "s|/dev/disk/cloud/azure_resource-part1.*\(auto.*\)|UUID=$UUID /home/izlobin \1|" /etc/fstab
 sudo sed -iE "s|.*azure_resource-part1.*\(auto.*\)|UUID=$UUID /home/izlobin \1|" /etc/fstab
@@ -253,9 +253,10 @@ sudo mount -a remount
 ls -la /home/izlobin
 
 # disk resize
+df -h
 lsblk
 sudo fdisk -l
-sudo resize2fs /dev/sdc1
+sudo resize2fs /dev/sda
 
 sudo ls -alF /dev/disk/azure/scsi1/
 
