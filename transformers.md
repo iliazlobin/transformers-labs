@@ -216,9 +216,8 @@ PUBLIC_IP=$(terraform output public_ip_address | tr -d '"')
 echo $PUBLIC_IP
 echo $PUBLIC_IP | x
 nmap -Pn -p 22,80,8080,6006 $PUBLIC_IP
-
-ssh izlobin@$PUBLIC_IP
 ssh izlobin@$PUBLIC_IP "whoami; pwd; ls -la"
+ssh izlobin@$PUBLIC_IP
 ssh -L 16006:localhost:6006 izlobin@$PUBLIC_IP
 
 ls ~/back.tar.gz
