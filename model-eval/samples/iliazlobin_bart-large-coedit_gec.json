@@ -1,1 +1,602 @@
-[{"input":"Fix grammaticality in this sentence: Despite strict japanese society, I feel happy when I had dinner with my family.","processed":"Despite strict japanese society, I feel happy when I had dinner with my family.","reference":"Despite the strict Japanese society, I feel happy when I have dinner with my family.","task":"gec"},{"input":"Fix grammaticality in this sentence: They are increasing rapidly in Japan for a couple of years.","processed":"They are increasing rapidly in Japan for a couple of years.","reference":"They have been increasing rapidly in Japan for over a couple of years.","task":"gec"},{"input":"Grammar improvements: As I go to my friends's house, I play 'Wii' together every time.","processed":"As I go to my friends's house, I play 'Wii' together every time.","reference":"As Whenever I go to my friends' house, I we play 'Wii' together every time.","task":"gec"},{"input":"Fix the grammar mistakes: I have to come home as soon as possible, because my wife had a cough yesterday.","processed":"I have to come home as soon as possible, because my wife had a cough yesterday.","reference":"I had to come home as soon as possible because my wife had a cough yesterday.","task":"gec"},{"input":"Fix grammaticality: Of course, my wife and I went to my father's house to eat dinner together.","processed":"Of course, my wife and I went to my father's house to eat dinner together.","reference":"Of course, my wife and I went to my father's house to eat dinner with him.","task":"gec"},{"input":"Update to remove grammar errors: I have much time to do many things because today is free.","processed":"I have much time to do many things because today is free.","reference":"I have a lot of time to do many things because today because it is a free day.","task":"gec"},{"input":"Fix grammaticality of the sentence: Therefore I come to go their company to discuss once a few months.","processed":"Therefore, I come to their company to discuss once a few months.","reference":"Therefore I come to go to their company to discuss once a few months.","task":"gec"},{"input":"Remove grammar mistakes: Tonight, I ate yellow noodle soup with red pork and wonton at a roadside vendor cart.","processed":"Tonight, I ate yellow noodle soup with red pork and wonton at a roadside vendor cart.","reference":"Today, I ate yellow noodle soup with red pork and wonton at a roadside vendor cart.","task":"gec"},{"input":"Fix grammar errors: As it to me, the place which is important to me is HangZhou city located in ZheJiang province.","processed":"As it to me, the place which is important to me is HangZhou city located in ZheJiang province.","reference":"As it To me the place that is important to me is HangZhou city, located in Zhejiang province.","task":"gec"},{"input":"Remove grammatical mistakes: Of course I like HangZhou city also because there are many great Chinese traditional restaurants.","processed":"Of course I like HangZhou city also because there are many great Chinese traditional restaurants.","reference":"Of course, I like HangZhou city also because there are many great traditional Chinese traditional restaurants.","task":"gec"},{"input":"Fix the grammar mistakes: So I'm a little bit different from people who wanna get English ability as a tool of business or something.","processed":"So I'm a little bit different from people who wanna get English ability as a tool of business or something.","reference":"So I'm a little bit different from people who wanna get an English ability as a tool of business or something.","task":"gec"},{"input":"Improve the grammaticality of this sentence: I'm now really embarrassed cause I can't decide my future.","processed":"I'm now really embarrassed cause I can't decide my future.","reference":"But I'm really embarrassed right now cause I can't decide my future.","task":"gec"},{"input":"Fix grammatical mistakes in this sentence: People around me all do job hunting, which makes me even more hasty.","processed":"People around me all do job hunting, which makes me even more hasty.","reference":"People around me all do job hunting, which makes me even more anxious.","task":"gec"},{"input":"Fix errors in this text: I've been pretty happy all in my life so far.","processed":"I've been pretty happy all in my life so far.","reference":"I've been pretty happy all in all with my life so far.","task":"gec"},{"input":"Make the sentence fluent: First of all, if students learn in serious and strict learning environment, they can become more polite person in future.","processed":"First of all, if students learn in a serious and strict learning environment, they can become more polite person in future.","reference":"First of all, if students learn in a serious and strict learning environment, they can become a more polite people in the future.","task":"gec"},{"input":"Fix all grammatical errors: Taking all of these things into account, there is no doubt in my mind that a serious and strict teaching method is more effective than an humorous and easygoing that.","processed":"Taking all of these things into account, there is no doubt in my mind that a serious and strict teaching method is more effective than an humorous and easygoing one.","reference":"Taking all of these things into account, there is no doubt in my mind that a serious and strict teaching method is more effective than a humorous and easygoing one.","task":"gec"},{"input":"Make the sentence fluent: I'm little bit excited about this and hope to make many friends here.","processed":"I'm a little bit excited about this and hope to make many friends here.","reference":"I'm a little bit excited about this, and I hope to make many friends here.","task":"gec"},{"input":"Improve the grammaticality of this sentence: The characters are almost junior high-school boys or girls, so they are admirable for the younger children.","processed":"The characters are almost junior high-school boys or girls, so they are admirable for the younger children.","reference":"The characters are mostly junior high-school boys or girls, so they are admirable for the younger children.","task":"gec"},{"input":"Improve the grammaticality: Momiji manju is a waffle shaped like a maple leaf filled with sweet bean paste, and it's the most popular sweet in Hiroshima.","processed":"Momiji manju is a waffle shaped like a maple leaf filled with sweet bean paste, and it's the most popular sweet in Hiroshima.","reference":"Momiji manju is a waffle shaped like a maple leaf filled with sweet bean paste and is the most popular sweet in Hiroshima.","task":"gec"},{"input":"Fix grammaticality of the sentence: The biggest point is to add a lot of bief tendons.","processed":"The biggest point is to add a lot of bief tendons.","reference":"The biggest point is to add a lot of beef tendons.","task":"gec"},{"input":"Remove all grammatical errors from this text: Oden is a wonderful dish because it's easy to make while it takes much time, and we can consume vegetables and meat at the same time.","processed":"Oden is a wonderful dish because it's easy to make while it takes much time, and we can consume vegetables and meat at the same time.","reference":"Oden is a wonderful dish because while it takes a lot of time, it's easy to make, and we can consume vegetables and meat at the same time.","task":"gec"},{"input":"Fix grammar in the sentence: I sometimes felt irritated to see children playing innocently, but I thought again that I had to do anything to keep them smiling.","processed":"I sometimes felt irritated to see children playing innocently, but I thought again that I had to do anything to keep them smiling.","reference":"I sometimes felt irritated to see children playing innocently, but then I thought again that I had to do anything to keep them smiling.","task":"gec"},{"input":"Make the sentence grammatical: I was watching her wondering what she would do next.","processed":"I was watching her wondering what she would do next.","reference":"I was watching her, wondering what she would do next.","task":"gec"},{"input":"Fix grammaticality of the sentence: I felt happy to see that my daughter could do nice thing naturally and that her kindness was warmly accepted.","processed":"I felt happy to see that my daughter could do nice thing naturally and that her kindness was warmly accepted.","reference":"I felt happy to see that my daughter could do nice things naturally and that her kindness was warmly accepted.","task":"gec"},{"input":"Remove grammatical mistakes: According to today's newspaper, groups of Keio university and others developed a new method to diagnose nine lever diseases such as hepatitis B, C, and liver cancer from only one drop of the blood.","processed":"According to today's newspaper, groups of Keio university and others developed a new method to diagnose nine lever diseases such as hepatitis B, C, and liver cancer from only one drop of the blood.","reference":"According to today's newspaper, groups from Keio university and others developed a new method to diagnose nine liver diseases, such as hepatitis B, C, and liver cancer, from only one drop of blood.","task":"gec"},{"input":"Fix all grammatical errors: The earth would remain as it was even if human being would become extinct.","processed":"The earth would remain as it was even if human beings would become extinct.","reference":"The earth would remain as it was even if human beings were to become extinct.","task":"gec"},{"input":"Fix grammaticality of the sentence: He will come back next Saturday, so I have to spend my days only with my two children till then.","processed":"He will come back next Saturday, so I have to spend my days only with my two children till then.","reference":"He will come back next Saturday, so I have to spend my days only alone with my two children till then.","task":"gec"},{"input":"Fix all grammatical errors: My husband will come back too, but I came back with my two children little earlier than him because he can't take so much holodays.","processed":"My husband will come back too, but I came back with my two children a little earlier than him because he can't take so much holodays.","reference":"My husband will come back too, but I came back with my two children a little earlier than him because he can't take so many holidays.","task":"gec"},{"input":"Fix disfluencies in the sentence: I bought heart-shaped mugs with elephant's design that I loved at first sight, though they were not discounted.","processed":"I bought heart-shaped mugs with elephant's design that I loved at first sight, though they were not discounted.","reference":"I bought heart-shaped mugs with elephant's design elephant designs, and I loved them at first sight, even though they were not discounted.","task":"gec"},{"input":"Fix errors in this text: Mucin is polysaccaride and has effect of enhancing protein absorption and lowering cholesterol absorption.","processed":"Mucin is polysaccaride and has effect of enhancing protein absorption and lowering cholesterol absorption.","reference":"Mucin is a polysaccharide and has the effect of enhancing protein absorption and lowering cholesterol absorption.","task":"gec"},{"input":"Fix all grammatical errors: It looked pretty when it was placed on the hanger printed with characters, but the cloth itself was not so pretty and seemed to be uncomfortable.","processed":"It looked pretty when it was placed on the hanger printed with characters, but the cloth itself was not so pretty and seemed to be uncomfortable.","reference":"The costume looked pretty when it was placed on the hanger printed with characters, but the costume itself was not so pretty and seemed to be uncomfortable.","task":"gec"},{"input":"Fix grammar errors: They are not what she exactly wanted, but I hope she will like it.","processed":"They are not what she exactly wanted, but I hope she will like them.","reference":"They are not exactly what she wanted, but I hope she will like them.","task":"gec"},{"input":"Fix errors in this text: When I was a junior high school student, there were a dagashi store near my school, and I used to go there with my friends after school.","processed":"When I was a junior high school student, there were a dagashi store near my school, and I used to go there with my friends after school.","reference":"When I was a junior high school student, there was a dagashi store near my school, and I used to go there with my friends after school.","task":"gec"},{"input":"Fix grammar in the sentence: Tomato is used for the base of taste in many countries.","processed":"Tomato is used for the base of taste in many countries.","reference":"The tomato is used as the base of taste in many countries.","task":"gec"},{"input":"Fix grammaticality: It is promising for anti-aging effect, such as hypoglycemic effect and preventive arterial sclerosis effect.","processed":"It is promising for anti-aging effect, such as hypoglycemic effect and preventive arterial sclerosis effect.","reference":"It is promising for anti-aging effects, such as a hypoglycemic effect and a preventive arterial sclerosis effect.","task":"gec"},{"input":"Fix errors in this text: In Hina-nagashi, dolls made of paper or straw are thrown in rivers, supposedly taking troubles or bad spirits away with them.","processed":"In Hina-nagashi, dolls made of paper or straw are thrown in rivers, supposedly taking troubles or bad spirits away with them.","reference":"In Hina-nagashi, dolls made of paper or straw are thrown into rivers, supposedly taking troubles or bad spirits away with them.","task":"gec"},{"input":"Improve the grammar of this text: However, it looked a little strange for me when I got home, so I cut her hair again by myself.","processed":"However, it looked a little strange for me when I got home, so I cut her hair again by myself.","reference":"However, it looked a little strange to me when I got home, so I cut her hair again by myself.","task":"gec"},{"input":"Fix grammar errors: Children in elementary schools seem not to be addicted to the particular cartoons as much as when they were little.","processed":"Children in elementary schools seem not to be addicted to the particular cartoons as much as when they were little.","reference":"Children in elementary schools do not seem to be addicted to these particular cartoons as much as when they were little.","task":"gec"},{"input":"Fix all grammatical errors: I uploaded the photos of a comic books section in a bookstore.","processed":"I uploaded photos of a comic books section in a bookstore.","reference":"I uploaded the photos of a comic book section in a bookstore.","task":"gec"},{"input":"Fix errors in this text: The pictures are detailed, and we can find many surprises in it.","processed":"The pictures are detailed, and we can find many surprises in it.","reference":"The pictures are detailed, and we can find many surprises in them.","task":"gec"},{"input":"Improve the grammaticality of this text: The recipe is simple, and it says to make a dough by mixing flour, butter, sugar, milk, and dry yeast and let it raise for 10 minutes in a microwave.","processed":"The recipe is simple, and it says to make a dough by mixing flour, butter, sugar, milk, and dry yeast and let it raise for 10 minutes in a microwave.","reference":"The recipe is simple, and it says to make the dough by mixing flour, butter, sugar, milk, and dry yeast and then let it rise for 10 minutes in a microwave.","task":"gec"},{"input":"Fix grammatical errors in this sentence: But yukata is a little difficult to move for children, so I made colorful one-piece for my daughter and she put on that.","processed":"But yukata is a little difficult to move for children, so I made colorful one-piece for my daughter and she put on that.","reference":"But yukata is a little difficult to move in for children, so I made a colorful one-piece for my daughter, and she put that on.","task":"gec"},{"input":"Fix grammatical mistakes in this sentence: We had very good time.","processed":"We had a very good time.","reference":"We had a very good time.","task":"gec"},{"input":"Fix grammaticality of the sentence: The photo I loaded is the one she drew when she was just three years old, and this was not taken transversely but from the front.","processed":"The photo I loaded is the one she drew when she was just three years old, and this was not taken transversely but from the front.","reference":"The photo I loaded is one that she drew when she was just three years old, and this was not taken transversely but from the front.","task":"gec"},{"input":"Update to remove grammar errors: The weather forecast says it will be cloudy in the morning, and it's going to rain later.","processed":"The weather forecast says it will be cloudy in the morning, and it's going to rain later.","reference":"The weather forecast says it will be cloudy in the morning and that it's going to rain later.","task":"gec"},{"input":"Make the sentence grammatical: Isothiocyanate is volatile, so the grated radish will be less pungent when it's allowed to stand for a while.","processed":"Isothiocyanate is volatile, so the grated radish will be less pungent when it's allowed to stand for a while.","reference":"Isothiocyanate is volatile, so the grated radish will be less pungent if it's allowed to stand for a while.","task":"gec"},{"input":"Make the sentence grammatical: That's why we could see only two or three times a year.","processed":"That's why we could see only two or three times a year.","reference":"That's why we could see each other only two or three times a year.","task":"gec"},{"input":"Fix grammatical errors: A cup of coffee and something sweet make me so happy!","processed":"A cup of coffee and something sweet make me so happy!","reference":"A cup of coffee and something sweet makes me so happy!","task":"gec"},{"input":"Improve the grammar of this text: Even though we can get babies to sleep by rocking, they will wake up when we try to put them on the bed.","processed":"Even though we can get babies to sleep by rocking, they will wake up when we try to put them on the bed.","reference":"Even though we can get babies to sleep by rocking them, they will often wake up when we try to put them on the bed.","task":"gec"},{"input":"Fix grammar errors: Recently, I found very good way to get him to sleep!","processed":"Recently, I found a very good way to get him to sleep!","reference":"Recently, I found a very good way to get him to sleep!","task":"gec"},{"input":"Update to remove grammar errors: Next, I bounce on the balance boll, holding my son in my arms.","processed":"Next, I bounce on the balance boll, holding my son in my arms.","reference":"Next, I bounce on the balance boll ball, holding my son in my arms.","task":"gec"},{"input":"Make the sentence grammatical: He doesn't wake up!","processed":"He doesn't wake up!","reference":"And he doesn't wake up!","task":"gec"},{"input":"Improve the grammaticality: I feel like there is no place to live in this world.","processed":"I feel like there is no place to live in this world.","reference":"I feel like there is no place to live for me in this world.","task":"gec"},{"input":"Fix disfluencies in the sentence: The exhibition was very crowded and It took over 2 hours to look at mos of them.","processed":"The exhibition was very crowded and it took over 2 hours to look at mos of them.","reference":"The exhibition was very crowded, and It took over 2 hours to look at most of them.","task":"gec"},{"input":"Fix grammaticality in this sentence: I went to Egypt on my honeymoon last year, so the exhibition brought me some memories.","processed":"I went to Egypt on my honeymoon last year, so the exhibition brought me some memories.","reference":"I went to Egypt on my honeymoon last year, so the exhibition brought back some memories.","task":"gec"},{"input":"Fix errors in this text: The interest of investors in enterprises producing iron and steel, finished metal ware, food products, drinks, and tobacco products is also steady.","processed":"The interest of investors in enterprises producing iron and steel, finished metal ware, food products, drinks, and tobacco products is also steady.","reference":"The interest of investors in enterprises producing iron and steel, finished metal products, food products, drinks, and tobacco products is also steady.","task":"gec"},{"input":"Fix grammatical errors: Difficulty of choice in such uneasy matters as, for example, membership in NATO and European Union causes rather instable and often even unpredictable political situation.","processed":"Difficulty of choice in such uneasy matters as, for example, membership in NATO and European Union causes rather instable and often even unpredictable political situation.","reference":"The difficulty of choice in uneasy matters such as, for example, membership in NATO and the European Union causes rather unstable and often even unpredictable political situations.","task":"gec"},{"input":"Remove grammar mistakes: With regard to the importance of investment climate improvement the primary task of the Government is developing legal and organizational framework.","processed":"With regard to the importance of investment climate improvement, the primary task of the Government is developing legal and organizational framework.","reference":"With regard to the importance of investment climate improvement, the primary task of the Government is to develop the legal and organizational framework.","task":"gec"},{"input":"Fix the grammatical mistakes: Also in 2008 the Cabinet of Ministers of Ukraine has adopted new decree which establishes common mechanism of pre-trial settlement of disputes arising between investors and government bodies.","processed":"Also in 2008 the Cabinet of Ministers of Ukraine has adopted new decree which establishes common mechanism of pre-trial settlement of disputes arising between investors and government bodies.","reference":"Also, in 2008, the Cabinet of Ministers of Ukraine adopted a new decree which established a common mechanism for the pre-trial settlement of disputes arising between investors and government bodies.","task":"gec"},{"input":"Fix grammaticality of the sentence: But anyway would appreciate your help and corrections.","processed":"But anyway, I would appreciate your help and corrections.","reference":"But anyway, I would appreciate your help and corrections.","task":"gec"},{"input":"Grammar improvements: To write a diary in English is one of the most effective study.","processed":"To write a diary in English is one of the most effective study.","reference":"Write a diary in English is one of the most effective forms of study.","task":"gec"},{"input":"Fix grammatical mistakes in this sentence: I will do short presentation tomorrow.","processed":"I will do a short presentation tomorrow.","reference":"I will do a short presentation tomorrow.","task":"gec"},{"input":"Fix the grammatical mistakes: My Hero is not far from me.","processed":"My Hero is not far from me.","reference":"My hero is not far from me.","task":"gec"},{"input":"Fix grammaticality of the sentence: I swear I recover from cold first before next run.","processed":"I swear I'll recover from cold first before next run.","reference":"I swear I will recover from my cold first before my next run.","task":"gec"},{"input":"Fix grammar: I'll have sushi for lunch and udon for dinner tomorrow today.","processed":"I'll have sushi for lunch and udon for dinner tomorrow today.","reference":"I'll have sushi for lunch and udon for dinner tomorrow and today.","task":"gec"},{"input":"Improve the grammaticality of this sentence: American never talk to me, so I have to talk to them first.","processed":"American never talk to me, so I have to talk to them first.","reference":"Americans never talk to me, so I have to talk to them first.","task":"gec"},{"input":"Fix grammar in this sentence: So they are good teacher.","processed":"So they are a good teacher.","reference":"So they are a good teacher.","task":"gec"},{"input":"Fix grammaticality: I had met him first, and I tought he was good guy.","processed":"I had met him first, and I thought he was a good guy.","reference":"I had met him first, and I thought he was a good guy.","task":"gec"},{"input":"Grammar improvements: The ComicMarket is one of the biggest comic festival in Japan.","processed":"The ComicMarket is one of the biggest comic festival in Japan.","reference":"ComicMarket is one of the biggest comic festivals in Japan.","task":"gec"},{"input":"Make the sentence fluent: The book is for Kids, so I can understand the outline.","processed":"The book is for Kids, so I can understand the outline.","reference":"The book is for kids, so I can understand the outline.","task":"gec"},{"input":"Fix grammar errors: Or must I read after checking these unfamiliar words?","processed":"Or must I read after checking these unfamiliar words?","reference":"Or must should I read after checking these unfamiliar words?","task":"gec"},{"input":"Fix grammaticality: This year, I'd been very busy and worked even on every weekend in April and May.","processed":"This year, I'd been very busy and worked even on every weekend in April and May.","reference":"This year, I'd been very busy, and working worked even every weekend in April and May.","task":"gec"},{"input":"Fix grammaticality: I told my mom about this, and she said that she had a business partner was interested, too.","processed":"I told my mom about this, and she said that she had a business partner who was interested, too.","reference":"I told my mom about this, and she said that she had a business partner who was interested, too.","task":"gec"},{"input":"Fix the grammar mistakes: Could you please answer for me?","processed":"Could you please answer for me?","reference":"Could you please answer this question for me?","task":"gec"},{"input":"Fix the grammar mistakes: My friend, Kumiko suggested that I could share her umbrella.","processed":"My friend, Kumiko, suggested that I could share her umbrella.","reference":"My friend, Kumiko, suggested that I could share her umbrella.","task":"gec"},{"input":"Remove grammatical mistakes: I got a T-shirt at half price, and trousers cheaper than usually!","processed":"I got a T-shirt at half price, and trousers cheaper than usually!","reference":"I got a T-shirt at half price, and trousers cheaper than usual!","task":"gec"},{"input":"Fix grammaticality: It is anything but notebook computer!","processed":"It is anything but a notebook computer!","reference":"It is anything but a notebook computer!","task":"gec"},{"input":"Fix all grammatical errors: It means saving for a rainy day.","processed":"It means saving for a rainy day.","reference":"It means to saving for a rainy day.","task":"gec"},{"input":"Fix grammar errors in this sentence: So maybe I will go travel on usual days.","processed":"So maybe I will go travel on usual days.","reference":"So maybe I will go travel on the usual days.","task":"gec"},{"input":"Fix grammar in this sentence: I was very nervous at first because I thought my English is very terrible.","processed":"I was very nervous at first because I thought my English is very terrible.","reference":"I was very nervous at first because I thought my English was terrible.","task":"gec"},{"input":"Grammar improvements: I was very nervous at first because I thought my English is very terrible.","processed":"I was very nervous at first because I thought my English is very terrible.","reference":"I was very nervous at first because I thought my English was very terrible.","task":"gec"},{"input":"Fix grammaticality of the sentence: After phone call, I cleaned my messy room.","processed":"After phone call, I cleaned my messy room.","reference":"After the phone call, I cleaned my messy room.","task":"gec"},{"input":"Fix grammatical errors: It had been really hard and time-consuming but the hospital would continue working.","processed":"It had been really hard and time-consuming, but the hospital would continue working.","reference":"It had been really hard and time-consuming, but the hospital would continue operating.","task":"gec"},{"input":"Fix grammaticality in this sentence: But first of all, I'd like to thanks everybody for the helping hand you're giving me with my English understanding!","processed":"But first of all, I'd like to thanks everybody for the helping hand you're giving me with my English understanding!","reference":"But first of all, I'd like to thank everybody for the helping hand you're giving me with my English understanding!","task":"gec"},{"input":"Fix grammar in the sentence: Firstly, I would like to know where the school is and how to reach there from the nearest underground station.","processed":"Firstly, I would like to know where the school is and how to reach there from the nearest underground station.","reference":"Firstly, I would like to know where the school is and how to get there from the nearest underground station.","task":"gec"},{"input":"Remove grammatical mistakes: I was very embarrassed today, because I put my essay in lang-8.","processed":"I was very embarrassed today, because I put my essay in lang-8.","reference":"I was very embarrassed today because I put my essay on lang-8.","task":"gec"},{"input":"Fix grammar in the sentence: At first, I thought that is a very very good idea.","processed":"At first, I thought that is a very very good idea.","reference":"At first, I thought that it was a very, very good idea.","task":"gec"},{"input":"Remove grammar mistakes: That's another accident in my life, which is filled with coincidences and big surprise.","processed":"That's another accident in my life, which is filled with coincidences and big surprises.","reference":"That's another accident in my life, which is filled with coincidences and big surprises.","task":"gec"},{"input":"Fix grammatical errors in this sentence: I just do it.","processed":"I just do it.","reference":"I just did do it.","task":"gec"},{"input":"Fix the grammatical mistakes: If this happens to you, slow down the walking or stop it completely and put your arm up.","processed":"If this happens to you, slow down the walking or stop it completely and put your arm up.","reference":"If this happens to you, slow down the walking or stop it completely and put your arms up.","task":"gec"},{"input":"Fix grammatical mistakes in this sentence: Making a list of the things to carry on with you could save you of being in troubles.","processed":"Making a list of the things to carry on with you could save you of being in troubles.","reference":"Making a list of the things to carry on with you could save you from being in trouble.","task":"gec"},{"input":"Remove all grammatical errors from this text: I want to sell cheaper strawberries","processed":"I want to sell cheaper strawberries.","reference":"I want to sell cheaper strawberries.","task":"gec"},{"input":"Fix the grammatical mistakes: One day i decide invite her to a restaurant or club.","processed":"One day i decide to invite her to a restaurant or club.","reference":"One day I decided to invite her to a restaurant or club.","task":"gec"},{"input":"Update to remove grammar errors: I like active sports, and I try to do as often as I can.","processed":"I like active sports, and I try to do as often as I can.","reference":"I like active sports, and I try to take part in them as often as I can.","task":"gec"},{"input":"Improve the grammaticality: Tsunami come here soon.","processed":"Tsunami are coming soon.","reference":"Tsunami will come here soon.","task":"gec"},{"input":"Fix the grammar mistakes: It's rainy season in korea.","processed":"It's rainy season in korea.","reference":"It's the rainy season in Korea.","task":"gec"},{"input":"Make the sentence fluent: After my part-time job, my family and I went to have dinner.","processed":"After my part-time job, my family and I went to have dinner.","reference":"After I finished my part-time job, my family and I went to have out for dinner.","task":"gec"},{"input":"Fix grammaticality in this sentence: I had muscle pain a little today.","processed":"I had muscle pain a little today.","reference":"I had a little muscle pain a little today.","task":"gec"},{"input":"Fix grammaticality of the sentence: I am a lucky, because I could get my bonus if it was less than last year.","processed":"I am lucky, because I could get my bonus if it was less than last year.","reference":"I am lucky because I could get my bonus if though it was less than last year.","task":"gec"},{"input":"Fix errors in this text: I hurried to go there, at last I arrived there at 8 pm.","processed":"I hurried to go there, at last I arrived there at 8 pm.","reference":"I hurried to get there, and at last, I arrived there at 8 pm.","task":"gec"}]
+[
+  {
+    "input": "Fix grammaticality in this sentence: Despite strict japanese society, I feel happy when I had dinner with my family.",
+    "processed": "Despite strict japanese society, I feel happy when I had dinner with my family.",
+    "reference": "Despite the strict Japanese society, I feel happy when I have dinner with my family.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammaticality in this sentence: They are increasing rapidly in Japan for a couple of years.",
+    "processed": "They are increasing rapidly in Japan for a couple of years.",
+    "reference": "They have been increasing rapidly in Japan for over a couple of years.",
+    "task": "gec"
+  },
+  {
+    "input": "Grammar improvements: As I go to my friends's house, I play 'Wii' together every time.",
+    "processed": "As I go to my friends's house, I play 'Wii' together every time.",
+    "reference": "As Whenever I go to my friends' house, I we play 'Wii' together every time.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix the grammar mistakes: I have to come home as soon as possible, because my wife had a cough yesterday.",
+    "processed": "I have to come home as soon as possible, because my wife had a cough yesterday.",
+    "reference": "I had to come home as soon as possible because my wife had a cough yesterday.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammaticality: Of course, my wife and I went to my father's house to eat dinner together.",
+    "processed": "Of course, my wife and I went to my father's house to eat dinner together.",
+    "reference": "Of course, my wife and I went to my father's house to eat dinner with him.",
+    "task": "gec"
+  },
+  {
+    "input": "Update to remove grammar errors: I have much time to do many things because today is free.",
+    "processed": "I have much time to do many things because today is free.",
+    "reference": "I have a lot of time to do many things because today because it is a free day.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammaticality of the sentence: Therefore I come to go their company to discuss once a few months.",
+    "processed": "Therefore, I come to their company to discuss once a few months.",
+    "reference": "Therefore I come to go to their company to discuss once a few months.",
+    "task": "gec"
+  },
+  {
+    "input": "Remove grammar mistakes: Tonight, I ate yellow noodle soup with red pork and wonton at a roadside vendor cart.",
+    "processed": "Tonight, I ate yellow noodle soup with red pork and wonton at a roadside vendor cart.",
+    "reference": "Today, I ate yellow noodle soup with red pork and wonton at a roadside vendor cart.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammar errors: As it to me, the place which is important to me is HangZhou city located in ZheJiang province.",
+    "processed": "As it to me, the place which is important to me is HangZhou city located in ZheJiang province.",
+    "reference": "As it To me the place that is important to me is HangZhou city, located in Zhejiang province.",
+    "task": "gec"
+  },
+  {
+    "input": "Remove grammatical mistakes: Of course I like HangZhou city also because there are many great Chinese traditional restaurants.",
+    "processed": "Of course I like HangZhou city also because there are many great Chinese traditional restaurants.",
+    "reference": "Of course, I like HangZhou city also because there are many great traditional Chinese traditional restaurants.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix the grammar mistakes: So I'm a little bit different from people who wanna get English ability as a tool of business or something.",
+    "processed": "So I'm a little bit different from people who wanna get English ability as a tool of business or something.",
+    "reference": "So I'm a little bit different from people who wanna get an English ability as a tool of business or something.",
+    "task": "gec"
+  },
+  {
+    "input": "Improve the grammaticality of this sentence: I'm now really embarrassed cause I can't decide my future.",
+    "processed": "I'm now really embarrassed cause I can't decide my future.",
+    "reference": "But I'm really embarrassed right now cause I can't decide my future.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammatical mistakes in this sentence: People around me all do job hunting, which makes me even more hasty.",
+    "processed": "People around me all do job hunting, which makes me even more hasty.",
+    "reference": "People around me all do job hunting, which makes me even more anxious.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix errors in this text: I've been pretty happy all in my life so far.",
+    "processed": "I've been pretty happy all in my life so far.",
+    "reference": "I've been pretty happy all in all with my life so far.",
+    "task": "gec"
+  },
+  {
+    "input": "Make the sentence fluent: First of all, if students learn in serious and strict learning environment, they can become more polite person in future.",
+    "processed": "First of all, if students learn in a serious and strict learning environment, they can become more polite person in future.",
+    "reference": "First of all, if students learn in a serious and strict learning environment, they can become a more polite people in the future.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix all grammatical errors: Taking all of these things into account, there is no doubt in my mind that a serious and strict teaching method is more effective than an humorous and easygoing that.",
+    "processed": "Taking all of these things into account, there is no doubt in my mind that a serious and strict teaching method is more effective than an humorous and easygoing one.",
+    "reference": "Taking all of these things into account, there is no doubt in my mind that a serious and strict teaching method is more effective than a humorous and easygoing one.",
+    "task": "gec"
+  },
+  {
+    "input": "Make the sentence fluent: I'm little bit excited about this and hope to make many friends here.",
+    "processed": "I'm a little bit excited about this and hope to make many friends here.",
+    "reference": "I'm a little bit excited about this, and I hope to make many friends here.",
+    "task": "gec"
+  },
+  {
+    "input": "Improve the grammaticality of this sentence: The characters are almost junior high-school boys or girls, so they are admirable for the younger children.",
+    "processed": "The characters are almost junior high-school boys or girls, so they are admirable for the younger children.",
+    "reference": "The characters are mostly junior high-school boys or girls, so they are admirable for the younger children.",
+    "task": "gec"
+  },
+  {
+    "input": "Improve the grammaticality: Momiji manju is a waffle shaped like a maple leaf filled with sweet bean paste, and it's the most popular sweet in Hiroshima.",
+    "processed": "Momiji manju is a waffle shaped like a maple leaf filled with sweet bean paste, and it's the most popular sweet in Hiroshima.",
+    "reference": "Momiji manju is a waffle shaped like a maple leaf filled with sweet bean paste and is the most popular sweet in Hiroshima.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammaticality of the sentence: The biggest point is to add a lot of bief tendons.",
+    "processed": "The biggest point is to add a lot of bief tendons.",
+    "reference": "The biggest point is to add a lot of beef tendons.",
+    "task": "gec"
+  },
+  {
+    "input": "Remove all grammatical errors from this text: Oden is a wonderful dish because it's easy to make while it takes much time, and we can consume vegetables and meat at the same time.",
+    "processed": "Oden is a wonderful dish because it's easy to make while it takes much time, and we can consume vegetables and meat at the same time.",
+    "reference": "Oden is a wonderful dish because while it takes a lot of time, it's easy to make, and we can consume vegetables and meat at the same time.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammar in the sentence: I sometimes felt irritated to see children playing innocently, but I thought again that I had to do anything to keep them smiling.",
+    "processed": "I sometimes felt irritated to see children playing innocently, but I thought again that I had to do anything to keep them smiling.",
+    "reference": "I sometimes felt irritated to see children playing innocently, but then I thought again that I had to do anything to keep them smiling.",
+    "task": "gec"
+  },
+  {
+    "input": "Make the sentence grammatical: I was watching her wondering what she would do next.",
+    "processed": "I was watching her wondering what she would do next.",
+    "reference": "I was watching her, wondering what she would do next.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammaticality of the sentence: I felt happy to see that my daughter could do nice thing naturally and that her kindness was warmly accepted.",
+    "processed": "I felt happy to see that my daughter could do nice thing naturally and that her kindness was warmly accepted.",
+    "reference": "I felt happy to see that my daughter could do nice things naturally and that her kindness was warmly accepted.",
+    "task": "gec"
+  },
+  {
+    "input": "Remove grammatical mistakes: According to today's newspaper, groups of Keio university and others developed a new method to diagnose nine lever diseases such as hepatitis B, C, and liver cancer from only one drop of the blood.",
+    "processed": "According to today's newspaper, groups of Keio university and others developed a new method to diagnose nine lever diseases such as hepatitis B, C, and liver cancer from only one drop of the blood.",
+    "reference": "According to today's newspaper, groups from Keio university and others developed a new method to diagnose nine liver diseases, such as hepatitis B, C, and liver cancer, from only one drop of blood.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix all grammatical errors: The earth would remain as it was even if human being would become extinct.",
+    "processed": "The earth would remain as it was even if human beings would become extinct.",
+    "reference": "The earth would remain as it was even if human beings were to become extinct.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammaticality of the sentence: He will come back next Saturday, so I have to spend my days only with my two children till then.",
+    "processed": "He will come back next Saturday, so I have to spend my days only with my two children till then.",
+    "reference": "He will come back next Saturday, so I have to spend my days only alone with my two children till then.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix all grammatical errors: My husband will come back too, but I came back with my two children little earlier than him because he can't take so much holodays.",
+    "processed": "My husband will come back too, but I came back with my two children a little earlier than him because he can't take so much holodays.",
+    "reference": "My husband will come back too, but I came back with my two children a little earlier than him because he can't take so many holidays.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix disfluencies in the sentence: I bought heart-shaped mugs with elephant's design that I loved at first sight, though they were not discounted.",
+    "processed": "I bought heart-shaped mugs with elephant's design that I loved at first sight, though they were not discounted.",
+    "reference": "I bought heart-shaped mugs with elephant's design elephant designs, and I loved them at first sight, even though they were not discounted.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix errors in this text: Mucin is polysaccaride and has effect of enhancing protein absorption and lowering cholesterol absorption.",
+    "processed": "Mucin is polysaccaride and has effect of enhancing protein absorption and lowering cholesterol absorption.",
+    "reference": "Mucin is a polysaccharide and has the effect of enhancing protein absorption and lowering cholesterol absorption.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix all grammatical errors: It looked pretty when it was placed on the hanger printed with characters, but the cloth itself was not so pretty and seemed to be uncomfortable.",
+    "processed": "It looked pretty when it was placed on the hanger printed with characters, but the cloth itself was not so pretty and seemed to be uncomfortable.",
+    "reference": "The costume looked pretty when it was placed on the hanger printed with characters, but the costume itself was not so pretty and seemed to be uncomfortable.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammar errors: They are not what she exactly wanted, but I hope she will like it.",
+    "processed": "They are not what she exactly wanted, but I hope she will like them.",
+    "reference": "They are not exactly what she wanted, but I hope she will like them.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix errors in this text: When I was a junior high school student, there were a dagashi store near my school, and I used to go there with my friends after school.",
+    "processed": "When I was a junior high school student, there were a dagashi store near my school, and I used to go there with my friends after school.",
+    "reference": "When I was a junior high school student, there was a dagashi store near my school, and I used to go there with my friends after school.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammar in the sentence: Tomato is used for the base of taste in many countries.",
+    "processed": "Tomato is used for the base of taste in many countries.",
+    "reference": "The tomato is used as the base of taste in many countries.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammaticality: It is promising for anti-aging effect, such as hypoglycemic effect and preventive arterial sclerosis effect.",
+    "processed": "It is promising for anti-aging effect, such as hypoglycemic effect and preventive arterial sclerosis effect.",
+    "reference": "It is promising for anti-aging effects, such as a hypoglycemic effect and a preventive arterial sclerosis effect.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix errors in this text: In Hina-nagashi, dolls made of paper or straw are thrown in rivers, supposedly taking troubles or bad spirits away with them.",
+    "processed": "In Hina-nagashi, dolls made of paper or straw are thrown in rivers, supposedly taking troubles or bad spirits away with them.",
+    "reference": "In Hina-nagashi, dolls made of paper or straw are thrown into rivers, supposedly taking troubles or bad spirits away with them.",
+    "task": "gec"
+  },
+  {
+    "input": "Improve the grammar of this text: However, it looked a little strange for me when I got home, so I cut her hair again by myself.",
+    "processed": "However, it looked a little strange for me when I got home, so I cut her hair again by myself.",
+    "reference": "However, it looked a little strange to me when I got home, so I cut her hair again by myself.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammar errors: Children in elementary schools seem not to be addicted to the particular cartoons as much as when they were little.",
+    "processed": "Children in elementary schools seem not to be addicted to the particular cartoons as much as when they were little.",
+    "reference": "Children in elementary schools do not seem to be addicted to these particular cartoons as much as when they were little.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix all grammatical errors: I uploaded the photos of a comic books section in a bookstore.",
+    "processed": "I uploaded photos of a comic books section in a bookstore.",
+    "reference": "I uploaded the photos of a comic book section in a bookstore.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix errors in this text: The pictures are detailed, and we can find many surprises in it.",
+    "processed": "The pictures are detailed, and we can find many surprises in it.",
+    "reference": "The pictures are detailed, and we can find many surprises in them.",
+    "task": "gec"
+  },
+  {
+    "input": "Improve the grammaticality of this text: The recipe is simple, and it says to make a dough by mixing flour, butter, sugar, milk, and dry yeast and let it raise for 10 minutes in a microwave.",
+    "processed": "The recipe is simple, and it says to make a dough by mixing flour, butter, sugar, milk, and dry yeast and let it raise for 10 minutes in a microwave.",
+    "reference": "The recipe is simple, and it says to make the dough by mixing flour, butter, sugar, milk, and dry yeast and then let it rise for 10 minutes in a microwave.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammatical errors in this sentence: But yukata is a little difficult to move for children, so I made colorful one-piece for my daughter and she put on that.",
+    "processed": "But yukata is a little difficult to move for children, so I made colorful one-piece for my daughter and she put on that.",
+    "reference": "But yukata is a little difficult to move in for children, so I made a colorful one-piece for my daughter, and she put that on.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammatical mistakes in this sentence: We had very good time.",
+    "processed": "We had a very good time.",
+    "reference": "We had a very good time.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammaticality of the sentence: The photo I loaded is the one she drew when she was just three years old, and this was not taken transversely but from the front.",
+    "processed": "The photo I loaded is the one she drew when she was just three years old, and this was not taken transversely but from the front.",
+    "reference": "The photo I loaded is one that she drew when she was just three years old, and this was not taken transversely but from the front.",
+    "task": "gec"
+  },
+  {
+    "input": "Update to remove grammar errors: The weather forecast says it will be cloudy in the morning, and it's going to rain later.",
+    "processed": "The weather forecast says it will be cloudy in the morning, and it's going to rain later.",
+    "reference": "The weather forecast says it will be cloudy in the morning and that it's going to rain later.",
+    "task": "gec"
+  },
+  {
+    "input": "Make the sentence grammatical: Isothiocyanate is volatile, so the grated radish will be less pungent when it's allowed to stand for a while.",
+    "processed": "Isothiocyanate is volatile, so the grated radish will be less pungent when it's allowed to stand for a while.",
+    "reference": "Isothiocyanate is volatile, so the grated radish will be less pungent if it's allowed to stand for a while.",
+    "task": "gec"
+  },
+  {
+    "input": "Make the sentence grammatical: That's why we could see only two or three times a year.",
+    "processed": "That's why we could see only two or three times a year.",
+    "reference": "That's why we could see each other only two or three times a year.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammatical errors: A cup of coffee and something sweet make me so happy!",
+    "processed": "A cup of coffee and something sweet make me so happy!",
+    "reference": "A cup of coffee and something sweet makes me so happy!",
+    "task": "gec"
+  },
+  {
+    "input": "Improve the grammar of this text: Even though we can get babies to sleep by rocking, they will wake up when we try to put them on the bed.",
+    "processed": "Even though we can get babies to sleep by rocking, they will wake up when we try to put them on the bed.",
+    "reference": "Even though we can get babies to sleep by rocking them, they will often wake up when we try to put them on the bed.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammar errors: Recently, I found very good way to get him to sleep!",
+    "processed": "Recently, I found a very good way to get him to sleep!",
+    "reference": "Recently, I found a very good way to get him to sleep!",
+    "task": "gec"
+  },
+  {
+    "input": "Update to remove grammar errors: Next, I bounce on the balance boll, holding my son in my arms.",
+    "processed": "Next, I bounce on the balance boll, holding my son in my arms.",
+    "reference": "Next, I bounce on the balance boll ball, holding my son in my arms.",
+    "task": "gec"
+  },
+  {
+    "input": "Make the sentence grammatical: He doesn't wake up!",
+    "processed": "He doesn't wake up!",
+    "reference": "And he doesn't wake up!",
+    "task": "gec"
+  },
+  {
+    "input": "Improve the grammaticality: I feel like there is no place to live in this world.",
+    "processed": "I feel like there is no place to live in this world.",
+    "reference": "I feel like there is no place to live for me in this world.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix disfluencies in the sentence: The exhibition was very crowded and It took over 2 hours to look at mos of them.",
+    "processed": "The exhibition was very crowded and it took over 2 hours to look at mos of them.",
+    "reference": "The exhibition was very crowded, and It took over 2 hours to look at most of them.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammaticality in this sentence: I went to Egypt on my honeymoon last year, so the exhibition brought me some memories.",
+    "processed": "I went to Egypt on my honeymoon last year, so the exhibition brought me some memories.",
+    "reference": "I went to Egypt on my honeymoon last year, so the exhibition brought back some memories.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix errors in this text: The interest of investors in enterprises producing iron and steel, finished metal ware, food products, drinks, and tobacco products is also steady.",
+    "processed": "The interest of investors in enterprises producing iron and steel, finished metal ware, food products, drinks, and tobacco products is also steady.",
+    "reference": "The interest of investors in enterprises producing iron and steel, finished metal products, food products, drinks, and tobacco products is also steady.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammatical errors: Difficulty of choice in such uneasy matters as, for example, membership in NATO and European Union causes rather instable and often even unpredictable political situation.",
+    "processed": "Difficulty of choice in such uneasy matters as, for example, membership in NATO and European Union causes rather instable and often even unpredictable political situation.",
+    "reference": "The difficulty of choice in uneasy matters such as, for example, membership in NATO and the European Union causes rather unstable and often even unpredictable political situations.",
+    "task": "gec"
+  },
+  {
+    "input": "Remove grammar mistakes: With regard to the importance of investment climate improvement the primary task of the Government is developing legal and organizational framework.",
+    "processed": "With regard to the importance of investment climate improvement, the primary task of the Government is developing legal and organizational framework.",
+    "reference": "With regard to the importance of investment climate improvement, the primary task of the Government is to develop the legal and organizational framework.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix the grammatical mistakes: Also in 2008 the Cabinet of Ministers of Ukraine has adopted new decree which establishes common mechanism of pre-trial settlement of disputes arising between investors and government bodies.",
+    "processed": "Also in 2008 the Cabinet of Ministers of Ukraine has adopted new decree which establishes common mechanism of pre-trial settlement of disputes arising between investors and government bodies.",
+    "reference": "Also, in 2008, the Cabinet of Ministers of Ukraine adopted a new decree which established a common mechanism for the pre-trial settlement of disputes arising between investors and government bodies.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammaticality of the sentence: But anyway would appreciate your help and corrections.",
+    "processed": "But anyway, I would appreciate your help and corrections.",
+    "reference": "But anyway, I would appreciate your help and corrections.",
+    "task": "gec"
+  },
+  {
+    "input": "Grammar improvements: To write a diary in English is one of the most effective study.",
+    "processed": "To write a diary in English is one of the most effective study.",
+    "reference": "Write a diary in English is one of the most effective forms of study.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammatical mistakes in this sentence: I will do short presentation tomorrow.",
+    "processed": "I will do a short presentation tomorrow.",
+    "reference": "I will do a short presentation tomorrow.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix the grammatical mistakes: My Hero is not far from me.",
+    "processed": "My Hero is not far from me.",
+    "reference": "My hero is not far from me.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammaticality of the sentence: I swear I recover from cold first before next run.",
+    "processed": "I swear I'll recover from cold first before next run.",
+    "reference": "I swear I will recover from my cold first before my next run.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammar: I'll have sushi for lunch and udon for dinner tomorrow today.",
+    "processed": "I'll have sushi for lunch and udon for dinner tomorrow today.",
+    "reference": "I'll have sushi for lunch and udon for dinner tomorrow and today.",
+    "task": "gec"
+  },
+  {
+    "input": "Improve the grammaticality of this sentence: American never talk to me, so I have to talk to them first.",
+    "processed": "American never talk to me, so I have to talk to them first.",
+    "reference": "Americans never talk to me, so I have to talk to them first.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammar in this sentence: So they are good teacher.",
+    "processed": "So they are a good teacher.",
+    "reference": "So they are a good teacher.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammaticality: I had met him first, and I tought he was good guy.",
+    "processed": "I had met him first, and I thought he was a good guy.",
+    "reference": "I had met him first, and I thought he was a good guy.",
+    "task": "gec"
+  },
+  {
+    "input": "Grammar improvements: The ComicMarket is one of the biggest comic festival in Japan.",
+    "processed": "The ComicMarket is one of the biggest comic festival in Japan.",
+    "reference": "ComicMarket is one of the biggest comic festivals in Japan.",
+    "task": "gec"
+  },
+  {
+    "input": "Make the sentence fluent: The book is for Kids, so I can understand the outline.",
+    "processed": "The book is for Kids, so I can understand the outline.",
+    "reference": "The book is for kids, so I can understand the outline.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammar errors: Or must I read after checking these unfamiliar words?",
+    "processed": "Or must I read after checking these unfamiliar words?",
+    "reference": "Or must should I read after checking these unfamiliar words?",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammaticality: This year, I'd been very busy and worked even on every weekend in April and May.",
+    "processed": "This year, I'd been very busy and worked even on every weekend in April and May.",
+    "reference": "This year, I'd been very busy, and working worked even every weekend in April and May.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammaticality: I told my mom about this, and she said that she had a business partner was interested, too.",
+    "processed": "I told my mom about this, and she said that she had a business partner who was interested, too.",
+    "reference": "I told my mom about this, and she said that she had a business partner who was interested, too.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix the grammar mistakes: Could you please answer for me?",
+    "processed": "Could you please answer for me?",
+    "reference": "Could you please answer this question for me?",
+    "task": "gec"
+  },
+  {
+    "input": "Fix the grammar mistakes: My friend, Kumiko suggested that I could share her umbrella.",
+    "processed": "My friend, Kumiko, suggested that I could share her umbrella.",
+    "reference": "My friend, Kumiko, suggested that I could share her umbrella.",
+    "task": "gec"
+  },
+  {
+    "input": "Remove grammatical mistakes: I got a T-shirt at half price, and trousers cheaper than usually!",
+    "processed": "I got a T-shirt at half price, and trousers cheaper than usually!",
+    "reference": "I got a T-shirt at half price, and trousers cheaper than usual!",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammaticality: It is anything but notebook computer!",
+    "processed": "It is anything but a notebook computer!",
+    "reference": "It is anything but a notebook computer!",
+    "task": "gec"
+  },
+  {
+    "input": "Fix all grammatical errors: It means saving for a rainy day.",
+    "processed": "It means saving for a rainy day.",
+    "reference": "It means to saving for a rainy day.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammar errors in this sentence: So maybe I will go travel on usual days.",
+    "processed": "So maybe I will go travel on usual days.",
+    "reference": "So maybe I will go travel on the usual days.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammar in this sentence: I was very nervous at first because I thought my English is very terrible.",
+    "processed": "I was very nervous at first because I thought my English is very terrible.",
+    "reference": "I was very nervous at first because I thought my English was terrible.",
+    "task": "gec"
+  },
+  {
+    "input": "Grammar improvements: I was very nervous at first because I thought my English is very terrible.",
+    "processed": "I was very nervous at first because I thought my English is very terrible.",
+    "reference": "I was very nervous at first because I thought my English was very terrible.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammaticality of the sentence: After phone call, I cleaned my messy room.",
+    "processed": "After phone call, I cleaned my messy room.",
+    "reference": "After the phone call, I cleaned my messy room.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammatical errors: It had been really hard and time-consuming but the hospital would continue working.",
+    "processed": "It had been really hard and time-consuming, but the hospital would continue working.",
+    "reference": "It had been really hard and time-consuming, but the hospital would continue operating.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammaticality in this sentence: But first of all, I'd like to thanks everybody for the helping hand you're giving me with my English understanding!",
+    "processed": "But first of all, I'd like to thanks everybody for the helping hand you're giving me with my English understanding!",
+    "reference": "But first of all, I'd like to thank everybody for the helping hand you're giving me with my English understanding!",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammar in the sentence: Firstly, I would like to know where the school is and how to reach there from the nearest underground station.",
+    "processed": "Firstly, I would like to know where the school is and how to reach there from the nearest underground station.",
+    "reference": "Firstly, I would like to know where the school is and how to get there from the nearest underground station.",
+    "task": "gec"
+  },
+  {
+    "input": "Remove grammatical mistakes: I was very embarrassed today, because I put my essay in lang-8.",
+    "processed": "I was very embarrassed today, because I put my essay in lang-8.",
+    "reference": "I was very embarrassed today because I put my essay on lang-8.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammar in the sentence: At first, I thought that is a very very good idea.",
+    "processed": "At first, I thought that is a very very good idea.",
+    "reference": "At first, I thought that it was a very, very good idea.",
+    "task": "gec"
+  },
+  {
+    "input": "Remove grammar mistakes: That's another accident in my life, which is filled with coincidences and big surprise.",
+    "processed": "That's another accident in my life, which is filled with coincidences and big surprises.",
+    "reference": "That's another accident in my life, which is filled with coincidences and big surprises.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammatical errors in this sentence: I just do it.",
+    "processed": "I just do it.",
+    "reference": "I just did do it.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix the grammatical mistakes: If this happens to you, slow down the walking or stop it completely and put your arm up.",
+    "processed": "If this happens to you, slow down the walking or stop it completely and put your arm up.",
+    "reference": "If this happens to you, slow down the walking or stop it completely and put your arms up.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammatical mistakes in this sentence: Making a list of the things to carry on with you could save you of being in troubles.",
+    "processed": "Making a list of the things to carry on with you could save you of being in troubles.",
+    "reference": "Making a list of the things to carry on with you could save you from being in trouble.",
+    "task": "gec"
+  },
+  {
+    "input": "Remove all grammatical errors from this text: I want to sell cheaper strawberries",
+    "processed": "I want to sell cheaper strawberries.",
+    "reference": "I want to sell cheaper strawberries.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix the grammatical mistakes: One day i decide invite her to a restaurant or club.",
+    "processed": "One day i decide to invite her to a restaurant or club.",
+    "reference": "One day I decided to invite her to a restaurant or club.",
+    "task": "gec"
+  },
+  {
+    "input": "Update to remove grammar errors: I like active sports, and I try to do as often as I can.",
+    "processed": "I like active sports, and I try to do as often as I can.",
+    "reference": "I like active sports, and I try to take part in them as often as I can.",
+    "task": "gec"
+  },
+  {
+    "input": "Improve the grammaticality: Tsunami come here soon.",
+    "processed": "Tsunami are coming soon.",
+    "reference": "Tsunami will come here soon.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix the grammar mistakes: It's rainy season in korea.",
+    "processed": "It's rainy season in korea.",
+    "reference": "It's the rainy season in Korea.",
+    "task": "gec"
+  },
+  {
+    "input": "Make the sentence fluent: After my part-time job, my family and I went to have dinner.",
+    "processed": "After my part-time job, my family and I went to have dinner.",
+    "reference": "After I finished my part-time job, my family and I went to have out for dinner.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammaticality in this sentence: I had muscle pain a little today.",
+    "processed": "I had muscle pain a little today.",
+    "reference": "I had a little muscle pain a little today.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix grammaticality of the sentence: I am a lucky, because I could get my bonus if it was less than last year.",
+    "processed": "I am lucky, because I could get my bonus if it was less than last year.",
+    "reference": "I am lucky because I could get my bonus if though it was less than last year.",
+    "task": "gec"
+  },
+  {
+    "input": "Fix errors in this text: I hurried to go there, at last I arrived there at 8 pm.",
+    "processed": "I hurried to go there, at last I arrived there at 8 pm.",
+    "reference": "I hurried to get there, and at last, I arrived there at 8 pm.",
+    "task": "gec"
+  }
+]

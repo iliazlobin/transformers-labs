@@ -1,9 +1,7 @@
 # env
-
-- https://pytorch.org/get-started/previous-versions/
+* https://pytorch.org/get-started/previous-versions/
 
 ```sh
-
 nvcc --version
 
 # update system deps
