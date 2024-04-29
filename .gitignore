@@ -5,3 +5,4 @@
 model
 model-train/model-*
 test-trainer
+llama-2-7b-miniguanaco
