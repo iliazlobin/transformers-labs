@@ -10,7 +10,6 @@ sudo apt upgrade -y
 
 sudo apt install -y ubuntu-drivers-common
 
-
 sudo apt install -y gcc
 gcc -v
 
@@ -32,6 +31,12 @@ sudo apt install nvidia-utils-535-server
 lsmod | grep nvidia
 sudo modprobe nvidia
 nvidia-smi
+
+# transformers tlr deps
+sudo apt-get install -y pkg-config
+sudo apt-get install -y libmysqlclient-dev
+# https://github.com/huggingface/trl/releases
+pip install git+https://github.com/huggingface/trl.git@v0.8.6
 
 ```
 
