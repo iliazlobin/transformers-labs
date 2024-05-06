@@ -54,8 +54,8 @@ conda activate pytorch-3.10
 python --version
 echo $CONDA_PREFIX
 du -sh $CONDA_PREFIX
-
-# conda install
+asd
+# conda installa
 mkdir -p ~/dwl
 cd ~/dwl
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda-installer.sh
@@ -73,7 +73,7 @@ conda init
 
 
 # common packages
-# pip install ipykernel
+# pip install ipykerneasdfl
 conda install -y ipykernel ipywidgets conda-forge
 pip install python-dotenv pipreqs
 pip install jupyter ipywidgets
