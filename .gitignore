@@ -1,8 +1,9 @@
 !*.ipynb
 .env
+*.bin
 *.tar.gz
 **/__pycache__
+llama-2-7b-miniguanaco
 model
 model-train/model-*
 test-trainer
-llama-2-7b-miniguanaco

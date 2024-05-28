@@ -46,7 +46,7 @@ pip install git+https://github.com/huggingface/trl.git@v0.8.6
 conda deactivate
 # conda env remove -n pytorch-3.10
 # conda create -n pytorch-gptq python=3.12
-conda create -n pytorch-3.10 python=3.10
+# conda create -n pytorch-3.10 python=3.10
 # conda activate pytorch
 conda activate pytorch-3.10
 # conda activate pytorch-3.12
@@ -274,7 +274,6 @@ df -Th
 sudo fdisk -l /dev/sdc
 # sudo swapon /dev/sdc
 
-
 ```
 
 
@@ -283,5 +282,15 @@ sudo fdisk -l /dev/sdc
 ```sh
 curl https://prices.azure.com/api/retail/prices?filter=serviceName eq 'Virtual Machines' > "azure-spot-prices/virtual-machines.json"
 curl https://prices.azure.com/api/retail/prices?filter=serviceFamily eq 'Compute' > "azure-spot-prices/compute.json"
+
+```
+
+# video llava
+
+```sh
+conda activate pytorch-3.10
+pip install av
+pip install --upgrade transformers
+pip uninstall optimum auto-gptq # incompatible with transformers 4.41
 
 ```

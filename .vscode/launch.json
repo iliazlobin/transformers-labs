@@ -11,11 +11,14 @@
       "program": "${file}",
       "cwd": "${fileDirname}",
       "envFile": "${workspaceFolder}/.env",
-      // "env": {
-      //   "PYTPYDEVD_DISABLE_FILE_VALIDATION": "0"
-      // },
+      "env": {
+        // "PYTHONPATH": "${env:PYTHONPATH}:/home/izlobin/ws/vision-language-models",
+        // "LD_LIBRARY_PATH:": "${env:LD_LIBRARY_PATH}:/usr/local/cuda-12.4/lib64/",
+        // "PYTPYDEVD_DISABLE_FILE_VALIDATION": "0",
+      },
+      // "envFile": "${workspaceFolder}/.env",
       "console": "integratedTerminal",
-      "python": "/home/izlobin/miniconda3/envs/pytorch/bin/python",
+      "python": "/home/izlobin/miniconda3/envs/pytorch-3.10/bin/python",
       "pythonArgs": ["-Xfrozen_modules=off"]
     }
   ]
