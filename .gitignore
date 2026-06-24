@@ -1,8 +1,28 @@
+# Keep notebooks tracked even if a broader rule would ignore them
 !*.ipynb
+
+# Secrets / env
 .env
-*.bin
-*.tar.gz
+.env.*
+
+# Python
 **/__pycache__
+*.py[cod]
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Model weights, checkpoints & large artifacts
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.gguf
+*.onnx
+*.tar.gz
 llama-2-7b-miniguanaco
 model
 model-train/model-*

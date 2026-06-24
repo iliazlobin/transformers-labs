@@ -1,173 +1,105 @@
-# Transformers-Labs: Research Repository
+# transformers-labs
 
-## Abstract
+> Hands-on labs for fine-tuning, quantizing, and rigorously evaluating transformer models on text-editing / grammar tasks — turning base LLMs into competitive grammar correctors on a single consumer GPU.
 
-Transformers-Labs is a comprehensive research-oriented repository for experimentation, benchmarking, and fine-tuning of transformer-based models. The project provides a unified platform for training, evaluation, quantization, benchmarking, and deployment of state-of-the-art models, with robust support for multimodal and distributed workflows. It is designed to facilitate reproducible research, scalable experimentation, and rapid prototyping for both academic and industrial use cases.
+[![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?logo=pytorch&logoColor=white)](https://pytorch.org/)
+[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Transformers-4.39-FFD21E)](https://huggingface.co/docs/transformers/)
+[![PEFT / LoRA](https://img.shields.io/badge/PEFT-LoRA-blue)](https://huggingface.co/docs/peft/)
+[![Jupyter](https://img.shields.io/badge/Jupyter-F37626?logo=jupyter&logoColor=white)](https://jupyter.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-## Project Overview
+A working notebook lab-book exploring the full lifecycle of adapting transformer language models to **grammatical error correction (GEC) and text editing**: instruction-style fine-tuning, parameter-efficient training (LoRA), low-bit quantization (BitsAndBytes 4/8-bit), a reproducible evaluation harness, and GPU/cloud benchmarking. Models are trained against the [`grammarly/coedit`](https://huggingface.co/datasets/grammarly/coedit) and [IteraTeR](https://huggingface.co/datasets/wanyu/IteraTeR_full_sent) datasets and published to the Hub.
 
-This repository exists to advance research in transformer architectures, quantization techniques, and large-scale model deployment. Key goals include:
-- Benchmarking transformer models across hardware and cloud platforms
-- Fine-tuning and evaluating models for NLP and multimodal tasks
-- Experimenting with quantization (GPTQ, 4/8-bit) and efficient inference
-- Integrating with cloud infrastructure (Azure, AWS SageMaker)
-- Supporting multimodal research (video, text)
+---
 
-Capabilities include:
-- Model training and evaluation pipelines
-- Inference benchmarking (latency, throughput, accuracy)
-- Quantization and deployment workflows
-- Infrastructure-as-code for reproducible cloud setups
-- Multimodal experimentation (video-llava)
+## Why this repo
 
-## Repository Structure
+Production-grade text editing assistants are expensive to run. These labs ask a focused question: **how close can commodity base models (GPT-2, T5, BART, Phi-2, Gemma, Llama-2) get to a purpose-built editor like `grammarly/coedit-large` — when fine-tuned with LoRA and served in 4/8-bit on a single RTX 3080?** Every notebook is an experiment with the dataset, training recipe, quantization config, and measured outcome kept together so results are reproducible rather than anecdotal.
 
-- `model-train/` – Jupyter notebooks and scripts for model training and fine-tuning
-- `model-eval/` – Evaluation pipelines, metrics, and analysis notebooks
-- `inference-benchmark/` – Scripts for benchmarking inference performance
-- `optimum-benchmark/` – Advanced benchmarking using HuggingFace Optimum
-- `sagemaker-benchmark/`, `sagemaker-labs/` – AWS SageMaker integration for distributed training and benchmarking
-- `terraform/azure-workstation/` – Terraform scripts for provisioning Azure GPU workstations
-- `video-llava/` – Multimodal (video+text) model experimentation
-- `AutoGPTQ/` – GPTQ quantization, CUDA builds, and extension modules
-- `mistral-common/` – Utilities and shared code for Mistral models
-- `requirements.txt`, `pyproject.toml` – Python dependencies and environment configuration
-- `benchmarks/`, `model-info/`, `model/` – Model artifacts, configs, and benchmark results
+## What the labs cover
 
-## Features
+- **Fine-tuning across architectures** — seq2seq (T5, BART) and decoder-only (GPT-2, GPT-2-large, Phi-2, Gemma-2B, Falcon, Llama-2) on the CoEdIT text-editing tasks (`gec`, `fluency`, `coherence`, `clarity`, simplification, paraphrase, neutralize).
+- **Parameter-efficient training** — LoRA adapters via 🤗 PEFT (~19 notebooks) instead of full fine-tunes.
+- **Hardware-efficient methods** — 4-bit and 8-bit quantized training/inference with BitsAndBytes (`BitsAndBytesConfig`, ~27 notebooks) to fit larger models on limited VRAM.
+- **Instruction / SFT training** — supervised fine-tuning with 🤗 TRL `SFTTrainer` for the Llama-2 and Falcon recipes.
+- **A real evaluation harness** — batched generation with metrics computed via 🤗 `evaluate`: **ROUGE, SacreBLEU, SARI, and exact-match**, alongside live GPU/RAM utilization and throughput (samples/sec) logging.
+- **Benchmarking & deployment** — inference benchmarks (latency/throughput) with [optimum-benchmark](https://github.com/huggingface/optimum-benchmark) (Hydra-driven), plus SageMaker and Terraform (Azure / Paperspace) provisioning for GPU workstations.
 
-- Transformer fine-tuning (BERT, T5, LLaMA, Mistral, etc.)
-- GPTQ quantization (4/8-bit) via AutoGPTQ
-- HuggingFace TRL integration for RLHF and advanced training
-- SageMaker benchmarking and distributed training
-- Azure infrastructure provisioning with Terraform
-- CUDA-enabled PyTorch builds for efficient GPU utilization
-- Multimodal research (video-llava)
-- Inference benchmarking and reporting
-- Environment management with Conda and .env files
-- Code formatting and linting with Ruff
+## Selected findings
 
-## Environment Setup
+Fine-tuning collapses the gap between a generic base model and a dedicated grammar editor. Measured on the GEC task (validation slice, RTX 3080, `max_length=350`):
 
-### System Dependencies
-- CUDA Toolkit (>=11.x recommended)
-- NVIDIA drivers (latest)
-- GCC (>=9.x)
-- pkg-config, libmysqlclient-dev (for some quantization/builds)
+| Model | Params | ROUGE-1 | SARI | Exact-match |
+|---|--:|--:|--:|--:|
+| `grammarly/coedit-large` *(reference editor)* | 783M | 0.942 | 87.3 | 0.555 |
+| `google-t5/t5-large` *(base)* | 738M | 0.357 | 40.5 | 0.000 |
+| **`iliazlobin/t5-large-coedit`** *(LoRA fine-tune)* | 738M | **0.889** | **67.2** | **0.101** |
+| `facebook/bart-large` *(base)* | 406M | 0.760 | 55.0 | 0.000 |
+| **`iliazlobin/bart-large-coedit`** | 406M | **0.886** | **64.7** | **0.075** |
+| **`iliazlobin/gpt2-large-coedit`** | 774M | 0.882 | 67.0 | 0.097 |
+| **`iliazlobin/gemma-2b-coedit`** | 2.5B | 0.903 | 74.5 | 0.219 |
+| **`iliazlobin/phi-2-coedit`** | 2.8B | 0.903 | 75.0 | 0.225 |
 
-### Conda Environment & Key Packages
-```bash
-conda env create -f environment.yml
-conda activate transformers-labs
+Takeaways: LoRA fine-tuning lifts T5-large from **0.36 → 0.89 ROUGE-1** and **40 → 67 SARI** on GEC; quantized decoder-only models (Phi-2, Gemma-2B) close most of the remaining gap to the reference editor. Full per-task results for all models live in [`model-eval/results/`](model-eval/results/).
+
+## Tech stack
+
+`Python 3.12` · `PyTorch` · `Hugging Face Transformers 4.39` · `PEFT / LoRA` · `BitsAndBytes (4/8-bit)` · `TRL (SFTTrainer)` · `Datasets` · `Evaluate (ROUGE / SacreBLEU / SARI / EM)` · `optimum-benchmark` · `SageMaker` · `Terraform` · `Jupyter` · `Ruff`
+
+## Repository layout
+
 ```
-Key packages:
-- torch
-- transformers
-- trl
-- optimum
-- auto-gptq
-- langchain
-- evaluate
+transformers-labs/
+├── model-train/          # Fine-tuning notebooks: T5, BART, GPT-2, Phi-2, Gemma, Falcon, Llama-2 (LoRA / BnB / SFT)
+├── model-info/           # Inference walkthroughs per model family (coedit, flan-t5, llama2, mistral, phi2)
+├── model-eval/           # Evaluation harness (eval.py), metrics & analysis notebooks, results/ + samples/
+├── utils/                # Dataset loaders (CoEdIT, IteraTeR), metric computation, GPU/RAM monitoring
+├── inference-benchmark/  # optimum-benchmark configs + latency/throughput reports
+├── sagemaker-labs/       # AWS SageMaker benchmarking notebook
+├── terraform/            # GPU workstation provisioning (Azure, Paperspace)
+├── transformers-tutorial/# Foundational fine-tuning tutorials
+├── video-llava/          # Multimodal (video + text) Video-LLaVA experiment
+├── transformers.md       # Working notes on the transformers ecosystem
+├── requirements.txt / pyproject.toml
+```
 
-### .env File Usage
-- Store Hugging Face token and other secrets in `.env`
-- Example:
-  ```
-  HF_TOKEN=your_huggingface_token
-  AWS_ACCESS_KEY_ID=...
-  AZURE_SUBSCRIPTION_ID=...
-  ```
+## How to run
 
-### Official Install Docs
-- [PyTorch](https://pytorch.org/get-started/locally/)
-- [CUDA](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html)
-- [Transformers](https://huggingface.co/docs/transformers/installation)
-- [AutoGPTQ](https://github.com/PanQiWei/AutoGPTQ)
-- [TRL](https://github.com/huggingface/trl)
-- [Optimum](https://huggingface.co/docs/optimum/)
+```bash
+git clone https://github.com/iliazlobin/transformers-labs.git
+cd transformers-labs
 
-## Quickstart / Usage
+# Environment (Python 3.12; a CUDA GPU is recommended for training)
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+pip install torch peft bitsandbytes trl datasets evaluate accelerate jupyter
 
-### Train/Evaluate a Model
-- See `model-train/` and `model-eval/` notebooks for training and evaluation workflows
-- Example:
-  ```python
-  # Train
-  python model-train/train-gpt2.ipynb
-  # Evaluate
-  python model-eval/eval.ipynb
-  ```
+# Secrets — provide a Hugging Face token to pull/push models & datasets
+echo "HF_TOKEN=your_hf_token" > .env
 
-### Run Inference Benchmarks
-- Use scripts in `inference-benchmark/` and `optimum-benchmark/`
-- Example:
-  ```bash
-  python inference-benchmark/benchmark.py
-  ```
+# Explore: open the notebooks
+jupyter lab
+```
 
-### SageMaker Integration
-- See `sagemaker-benchmark/` and `sagemaker-labs/` for distributed training and benchmarking
-- Example:
-  ```bash
-  python sagemaker-benchmark/run_benchmark.py
-  ```
+Then:
+- **Fine-tune** — open a notebook in `model-train/` (e.g. `train-t5-coedit.ipynb`, `train-phi2-coedit.ipynb`).
+- **Evaluate** — run `model-eval/eval.py` (or `eval.ipynb`) to generate and score against ROUGE / SacreBLEU / SARI / EM; results are written to `model-eval/results/`.
+- **Benchmark inference** — see `inference-benchmark/` (optimum-benchmark, Hydra configs).
 
-### Azure Workstation Provisioning
-- Use Terraform scripts in `terraform/azure-workstation/`
-- Example:
-  ```bash
-  cd terraform/azure-workstation
-  terraform init
-  terraform apply -auto-approve
-  ```
+> Notebooks were developed on an RTX 3080 (and an A100 for larger runs). VRAM-heavy models rely on 4/8-bit quantization — adjust `batch_size` / quantization config to fit your GPU.
 
-### Multimodal Experimentation
-- See `video-llava/` for video+text model workflows
+## Walkthrough videos
 
-## Benchmarks
+- [Fine-tuning transformers for grammar correction — part 1](https://www.youtube.com/watch?v=rY0f1GRK0h8)
+- [Fine-tuning transformers for grammar correction — part 2](https://www.youtube.com/watch?v=k8XlLoGFIh0)
 
-- Run benchmarking pipelines in `inference-benchmark/`, `optimum-benchmark/`, and `benchmarks/`
-- Results are stored in CSV/JSON format for reproducibility
-- Example:
-  ```bash
-  python inference-benchmark/benchmark.py --model gpt2 --output results/gpt2_benchmark.csv
-  ```
-- Interpret results using provided analysis notebooks in `model-eval/`
+## Links
 
-## Development Notes
-
-- Code formatting: Use Ruff (`ruff format ...`) for linting and formatting
-- Jupyter/interactive workflow: Use `%load_ext autoreload` and `%autoreload 2` for live code reload
-- Debugging: Common issues include CUDA setup, missing drivers, and environment variables
-- Use `.env` for secrets and tokens
-
-## Research Roadmap
-
-- Extend to new transformer architectures (e.g., Mixtral, Phi-3)
-- Larger scale distributed experiments (multi-node, multi-GPU)
-- Advanced quantization and pruning strategies
-- Multimodal fusion and cross-modal benchmarks
-- Integration with additional cloud providers (GCP, OCI)
-- Automated hyperparameter tuning and experiment tracking
-
-## Contributing
-
-- Fork the repository and submit pull requests
-- Add new models, benchmarks, or infrastructure scripts
-- Cite this work in academic publications
-- See `CONTRIBUTING.md` for guidelines
-
-## References
-
-- [Hugging Face Transformers](https://huggingface.co/docs/transformers/)
-- [PyTorch](https://pytorch.org/)
-- [CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit)
-- [AutoGPTQ](https://github.com/PanQiWei/AutoGPTQ)
-- [TRL](https://github.com/huggingface/trl)
-- [Optimum](https://huggingface.co/docs/optimum/)
-- [SageMaker](https://aws.amazon.com/sagemaker/)
-- [Azure Machine Learning](https://azure.microsoft.com/en-us/products/machine-learning/)
+- **Portfolio:** [iliazlobin.com/portfolio](https://iliazlobin.com/portfolio)
+- **Author:** Ilia Zlobin — Principal Software Engineer · [GitHub @iliazlobin](https://github.com/iliazlobin)
+- **Fine-tuned models:** published under [`iliazlobin` on the Hugging Face Hub](https://huggingface.co/iliazlobin)
 
 ## License
 
-This repository is licensed under the MIT License. See `LICENSE` for details.
+Released under the [MIT License](LICENSE). © 2026 Ilia Zlobin.
